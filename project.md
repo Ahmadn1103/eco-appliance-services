@@ -86,11 +86,13 @@ Audit run 2026-09-28 (score 51/100 before fixes); reports are in `eco-appliance-
 - FAQ items all start closed.
 - Branded green scrollbar (page and scrollable panels) is defined in `app/globals.css`.
 - Mobile: hero leads with the photo; sections use tighter padding; the booking modal is capped to the screen height with a scrolling body.
+- Booking modal touch behaviour: it locks page scroll while open (`document.body.style.overflow`), uses `touch-pan-y` and `overflow-x-hidden` so fingers only scroll vertically, and skips the backdrop blur and pop-in animation on phones for smoother scrolling. `html, body` use `overflow-x: clip` in `app/globals.css` to stop sideways drift on touch devices.
 - Desktop header phone button uses the same light green look as the mobile call button.
 - Service descriptions must never be clipped (no `line-clamp`).
+- Branding: source logo is `assest/eco logo.jpeg`. `public/logo.jpeg` is the full lockup (used in schema/search), `public/logo-mark.png` is the cropped house-and-appliances emblem used in the header and footer circles. Favicons and app icons (`app/favicon.ico`, `app/icon.png`, `app/apple-icon.png`, and the files in `public/`) are generated from the emblem. Save icon PNGs and ICOs as RGBA or the Next build fails.
 
 ## Not yet deployed (local only)
-Home/Services page share `ServiceCards`; simplified contact form with required address; redesigned footer; green header phone button; compact Services page header on mobile; new coverage card on the Contact page; brands marquee; green selected tile in the estimator. Run `vercel --prod` only when the owner asks.
+Home/Services page share `ServiceCards`; simplified contact form with required address; redesigned footer; green header phone button; compact Services page header on mobile; new coverage card on the Contact page; brands marquee; green selected tile in the estimator; smoother vertical-only scrolling in the booking modal on mobile; new logo and favicons. Run `vercel --prod` only when the owner asks.
 
 ## Open items
 - [ ] Verify or reword remaining unverified claims: "master technician" / "Master Certified Field Pros", "Certified service" wording in the service cards, and the warranty-partner list. (The footer's licensed/insured/EPA lines were removed.)

@@ -93,7 +93,7 @@ export default function Footer({ onOpenBooking }: { onOpenBooking?: (appliance?:
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white p-0.5 ring-2 ring-emerald-500/40">
-                <Image src="/logo.jpeg" alt="Eco Appliance Services" fill sizes="48px" className="object-contain" />
+                <Image src="/logo-mark.png" alt="Eco Appliance Services" fill sizes="48px" className="object-contain" />
               </div>
               <div>
                 <span className="text-xl font-black text-white tracking-tight">

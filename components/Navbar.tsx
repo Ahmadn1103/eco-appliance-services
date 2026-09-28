@@ -56,7 +56,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           >
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-white border border-slate-200/90 shadow-xs p-0.5 group-hover:scale-105 transition-transform flex items-center justify-center">
               <Image
-                src="/logo.jpeg"
+                src="/logo-mark.png"
                 alt="Eco Appliance Services"
                 fill
                 sizes="40px"

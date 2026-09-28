@@ -260,3 +260,10 @@ html {
   border: 1px solid transparent;
   background-clip: padding-box;
 }
+
+/* Never allow sideways page drift on touch devices */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}

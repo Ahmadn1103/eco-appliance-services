@@ -130,6 +130,16 @@ export default function BookingModal({
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
+  // Lock the page behind the modal so touch drags never move the background (or scroll sideways).
+  useEffect(() => {
+    if (!isOpen) return;
+    const { overflow } = document.body.style;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = overflow;
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     if (initialAppliance) {
       setSelectedService(getInitialService(initialAppliance));
@@ -208,8 +218,8 @@ export default function BookingModal({
   const currentServiceObj = coreServices.find((s) => s.id === selectedService) || coreServices[0];
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-3 sm:p-4">
-      <div className="bg-white rounded-3xl max-w-lg w-full max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2rem)] flex flex-col shadow-2xl border border-slate-200 overflow-hidden relative animate-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 bg-slate-950/70 sm:backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-hidden touch-pan-y overscroll-none">
+      <div className="bg-white rounded-3xl max-w-lg w-full max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2rem)] flex flex-col shadow-2xl border border-slate-200 overflow-hidden relative sm:animate-in sm:zoom-in-95 sm:duration-200">
 
         {/* Top Header */}
         <div className="shrink-0 bg-gradient-to-r from-slate-950 via-slate-900 to-emerald-950 px-4 sm:px-6 py-3 sm:py-5 text-white flex items-center justify-between gap-2 border-b border-slate-800">
@@ -268,7 +278,7 @@ export default function BookingModal({
         )}
 
         {/* Modal Body */}
-        <div key={step} className="flex-1 min-h-0 overflow-y-auto overscroll-contain p-4 sm:p-6">
+        <div key={step} className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain touch-pan-y scroll-smooth p-4 sm:p-6 [-webkit-overflow-scrolling:touch]">
 
           {/* STEP 1: CHOOSE SERVICE & TIME */}
           {step === 1 && (
