@@ -1,0 +1,52 @@
+{
+  "summary": {
+    "health_score": 51,
+    "business_type": "Local service (HVAC and appliance repair, DC/MD/VA)",
+    "top_findings": [
+      "metadataBase/og:url point to ecoapplianceservices.com, a for-sale parked page",
+      "No robots.txt or sitemap.xml",
+      "Identical title and description on all pages",
+      "No canonical tags",
+      "Hard-coded aggregateRating (5.0, 482 reviews) unverified"
+    ],
+    "quick_wins": [
+      "Fix metadataBase to the real domain",
+      "Add app/robots.ts and app/sitemap.ts",
+      "Per-page metadata with canonicals",
+      "Remove or substantiate aggregateRating",
+      "Absolute logo/image URLs in schema"
+    ]
+  },
+  "categories": [
+    {"name": "Technical SEO", "score": 55, "what_works": ["HTTPS with HSTS", "SSR HTML", "Real 404s"], "findings": [
+      {"title": "No robots.txt / sitemap.xml", "severity": "High", "description": "Both return 404 on the live site.", "recommendation": "Add app/robots.ts and app/sitemap.ts."},
+      {"title": "Wrong canonical host", "severity": "Critical", "description": "metadataBase uses a parked for-sale domain; OG/Twitter images resolve there.", "recommendation": "Set metadataBase to the real production domain."}
+    ]},
+    {"name": "Content Quality", "score": 55, "what_works": ["Clear service descriptions"], "findings": [
+      {"title": "Thin site, weak trust signals", "severity": "Medium", "description": "3 pages; no About or FAQ; no address, licence info or reviews found in audited HTML.", "recommendation": "Add service/area pages and trust content."}
+    ]},
+    {"name": "On-Page SEO", "score": 40, "what_works": ["One H1 per page", "Logical heading structure"], "findings": [
+      {"title": "Duplicate titles and descriptions", "severity": "High", "description": "Only root layout defines metadata.", "recommendation": "Add unique metadata and canonical per page."}
+    ]},
+    {"name": "Schema", "score": 55, "what_works": ["HVACBusiness JSON-LD present"], "findings": [
+      {"title": "Unverified aggregateRating", "severity": "High", "description": "Hard-coded 5.0 / 482 reviews.", "recommendation": "Remove unless backed by real visible reviews."},
+      {"title": "Incomplete LocalBusiness fields", "severity": "Medium", "description": "Missing url, address, sameAs, logo; relative image.", "recommendation": "Complete with absolute URLs."}
+    ]},
+    {"name": "Performance", "score": 60, "what_works": ["next/image with srcset"], "findings": [
+      {"title": "Not measured", "severity": "Info", "description": "No Lighthouse/CrUX run; 780KB hero source, many font weights.", "recommendation": "Run PageSpeed Insights (mobile)."}
+    ]},
+    {"name": "AI Search Readiness", "score": 35, "what_works": ["Crawlable SSR content"], "findings": [
+      {"title": "Few citable facts or entity signals", "severity": "Medium", "description": "No FAQ, pricing, sameAs.", "recommendation": "Add FAQ, pricing ranges, sameAs profiles."}
+    ]},
+    {"name": "Images", "score": 70, "what_works": ["All images have alt text"], "findings": [
+      {"title": "OG image weak and broken", "severity": "Medium", "description": "800x600 logo on the wrong host.", "recommendation": "1200x630 branded image with absolute URL."}
+    ]}
+  ],
+  "action_plan": {"phases": [
+    {"name": "Phase 1: Critical Fixes", "timeframe": "Week 1", "items": ["Fix metadataBase/domain", "robots.ts + sitemap.ts", "Per-page metadata + canonicals", "Fix aggregateRating"]},
+    {"name": "Phase 2: High-Impact Improvements", "timeframe": "Weeks 2-3", "items": ["Complete LocalBusiness schema", "OG image", "Trust content and real address"]},
+    {"name": "Phase 3: Content & Authority", "timeframe": "Month 2", "items": ["Service and city pages", "FAQ/pricing", "Google Business Profile"]},
+    {"name": "Phase 4: Monitoring & Iteration", "timeframe": "Ongoing", "items": ["Search Console", "PageSpeed checks", "Re-audit"]}
+  ]},
+  "artifacts": {"findings_dir": "findings/", "screenshots_dir": "screenshots/"}
+}
