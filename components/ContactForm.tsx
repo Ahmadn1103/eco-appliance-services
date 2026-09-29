@@ -187,7 +187,7 @@ export default function ContactForm({ initialService = "" }: ContactFormProps) {
                   type="button"
                   aria-pressed={active}
                   onClick={() => setFormData({ ...formData, service: name })}
-                  className={`min-w-0 flex items-center gap-2 p-2.5 sm:p-3 rounded-2xl border text-left transition-all active:scale-[0.97] ${
+                  className={`min-w-0 flex flex-col sm:flex-row items-center justify-center sm:justify-start text-center sm:text-left gap-1.5 sm:gap-2.5 p-3 rounded-2xl border transition-all active:scale-[0.97] ${
                     active
                       ? "border-emerald-600 bg-gradient-to-br from-emerald-600 to-teal-700 text-white shadow-md shadow-emerald-600/25"
                       : "border-slate-200 bg-white text-slate-800 hover:border-emerald-400 hover:bg-emerald-50"
@@ -200,7 +200,7 @@ export default function ContactForm({ initialService = "" }: ContactFormProps) {
                   >
                     <Icon className="w-[18px] h-[18px]" />
                   </span>
-                  <span className="min-w-0 break-words text-[13px] font-bold leading-tight">{short}</span>
+                  <span className="min-w-0 text-[13px] font-bold leading-tight">{short}</span>
                 </button>
               );
             })}
