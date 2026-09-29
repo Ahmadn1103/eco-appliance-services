@@ -25,8 +25,8 @@ const steps = [
   {
     num: "04",
     icon: ShieldCheck,
-    title: "90-Day Guaranteed Peace",
-    desc: "We perform full cycle testing to guarantee performance and protect you with our 90-day comprehensive parts and labor warranty.",
+    title: "30-Day Guaranteed Peace",
+    desc: "We perform full cycle testing to guarantee performance and protect you with our 30-day comprehensive parts and labor warranty.",
   },
 ];
 

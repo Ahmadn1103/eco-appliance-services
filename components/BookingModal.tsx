@@ -427,7 +427,7 @@ export default function BookingModal({
                     placeholder="e.g. John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full p-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
+                    className="w-full p-2.5 text-base rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
                   />
                 </div>
                 <div>
@@ -440,7 +440,7 @@ export default function BookingModal({
                     placeholder="(703) 555-0123"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full p-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
+                    className="w-full p-2.5 text-base rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
                   />
                 </div>
               </div>
@@ -457,7 +457,7 @@ export default function BookingModal({
                     placeholder="123 Main St, Apt 4B"
                     value={formData.address}
                     onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                    className="w-full p-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
+                    className="w-full p-2.5 text-base rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
                   />
                 </div>
                 <div>
@@ -471,7 +471,7 @@ export default function BookingModal({
                     placeholder="20001"
                     value={formData.zip}
                     onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
-                    className="w-full p-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
+                    className="w-full p-2.5 text-base rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
                   />
                 </div>
               </div>
@@ -487,7 +487,7 @@ export default function BookingModal({
                     placeholder="name@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full p-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
+                    className="w-full p-2.5 text-base rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium"
                   />
                 </div>
                 <div>
@@ -498,7 +498,7 @@ export default function BookingModal({
                     type="date"
                     value={customDate}
                     onChange={(e) => setCustomDate(e.target.value)}
-                    className="w-full p-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium bg-white"
+                    className="w-full p-2.5 text-base rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none font-medium bg-white"
                   />
                 </div>
               </div>
@@ -522,7 +522,7 @@ export default function BookingModal({
                     <select
                       value={warrantyCompany}
                       onChange={(e) => setWarrantyCompany(e.target.value)}
-                      className="p-2 text-xs rounded-xl border border-slate-300 bg-white font-medium outline-none"
+                      className="p-2 text-base rounded-xl border border-slate-300 bg-white font-medium outline-none"
                     >
                       <option value="American Home Shield">American Home Shield</option>
                       <option value="Choice Home Warranty">Choice Home Warranty</option>
@@ -575,7 +575,7 @@ export default function BookingModal({
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                     100% Diagnostic Credit on Repair
                   </span>
-                  <span>90-Day Parts & Labor Warranty</span>
+                  <span>30-Day Parts & Labor Warranty</span>
                 </div>
 
                 <div className="pt-2 text-center border-t border-slate-100">

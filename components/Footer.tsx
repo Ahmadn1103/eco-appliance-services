@@ -35,13 +35,13 @@ export default function Footer() {
           </a>
           <p className="text-sm italic text-ink">HVAC &amp; Precision Appliance Services</p>
           <p className="text-xs sm:text-sm leading-relaxed max-w-md">
-            Honest diagnosis, upfront pricing, and workmanship backed by a 90-day parts and labor guarantee, serving Washington DC,
+            Honest diagnosis, upfront pricing, and workmanship backed by a 30-day parts and labor guarantee, serving Washington DC,
             Maryland, and Northern Virginia.
           </p>
           <div className="flex flex-wrap gap-2">
             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-primary-strong bg-primary/10 border border-line-tint px-3 py-1.5 rounded-full">
               <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-              90-Day Warranty
+              30-Day Warranty
             </span>
             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-primary-strong bg-primary/10 border border-line-tint px-3 py-1.5 rounded-full">
               <BadgeDollarSign className="w-3.5 h-3.5" aria-hidden="true" />

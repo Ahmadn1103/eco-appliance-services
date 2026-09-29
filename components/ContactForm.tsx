@@ -41,7 +41,7 @@ const timeWindows: { label: string; short: string; icon: LucideIcon }[] = [
 ];
 
 const inputClass =
-  "w-full px-4 py-3 rounded-xl border border-slate-300 bg-white hover:border-slate-400 focus:border-emerald-600 focus:ring-4 focus:ring-emerald-500/15 text-[15px] font-medium text-slate-900 placeholder:text-slate-400 outline-none transition-all";
+  "w-full px-4 py-3 rounded-xl border border-slate-300 bg-white hover:border-slate-400 focus:border-emerald-600 focus:ring-4 focus:ring-emerald-500/15 text-base font-medium text-slate-900 placeholder:text-slate-400 outline-none transition-all";
 
 const emptyForm = (service: string) => ({
   name: "",
@@ -187,20 +187,20 @@ export default function ContactForm({ initialService = "" }: ContactFormProps) {
                   type="button"
                   aria-pressed={active}
                   onClick={() => setFormData({ ...formData, service: name })}
-                  className={`flex items-center gap-2.5 p-3 rounded-2xl border text-left transition-all active:scale-[0.97] ${
+                  className={`min-w-0 flex items-center gap-2 p-2.5 sm:p-3 rounded-2xl border text-left transition-all active:scale-[0.97] ${
                     active
                       ? "border-emerald-600 bg-gradient-to-br from-emerald-600 to-teal-700 text-white shadow-md shadow-emerald-600/25"
                       : "border-slate-200 bg-white text-slate-800 hover:border-emerald-400 hover:bg-emerald-50"
                   }`}
                 >
                   <span
-                    className={`w-9 h-9 shrink-0 rounded-xl flex items-center justify-center ${
+                    className={`w-8 h-8 sm:w-9 sm:h-9 shrink-0 rounded-xl flex items-center justify-center ${
                       active ? "bg-white/20 text-white" : "bg-emerald-50 text-emerald-600"
                     }`}
                   >
                     <Icon className="w-[18px] h-[18px]" />
                   </span>
-                  <span className="text-[13px] font-bold leading-tight">{short}</span>
+                  <span className="min-w-0 break-words text-[13px] font-bold leading-tight">{short}</span>
                 </button>
               );
             })}
@@ -222,7 +222,7 @@ export default function ContactForm({ initialService = "" }: ContactFormProps) {
                   type="button"
                   aria-pressed={active}
                   onClick={() => setFormData({ ...formData, preferredTime: label })}
-                  className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border text-[13px] font-bold transition-all active:scale-[0.97] ${
+                  className={`min-w-0 flex items-center justify-center gap-2 py-2.5 px-2 rounded-xl border text-[13px] font-bold transition-all active:scale-[0.97] ${
                     active
                       ? "border-emerald-600 bg-emerald-600 text-white shadow-sm"
                       : "border-slate-200 bg-white text-slate-700 hover:border-emerald-400 hover:bg-emerald-50"

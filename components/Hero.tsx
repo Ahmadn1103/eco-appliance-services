@@ -21,7 +21,7 @@ const highlights: { label: string; icon: LucideIcon }[] = [
   { label: "Same-Day Dispatch", icon: Zap },
   { label: "$89 Diagnostic, Credited to Repair", icon: BadgeDollarSign },
   { label: "Home Warranty Claims Welcome", icon: ShieldCheck },
-  { label: "90-Day Parts & Labor Warranty", icon: CheckCircle2 },
+  { label: "30-Day Parts & Labor Warranty", icon: CheckCircle2 },
 ];
 
 export default function Hero() {
