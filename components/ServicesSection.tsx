@@ -38,7 +38,7 @@ export default function ServicesSection() {
           </div>
           <h2 className="text-2xl sm:text-3xl font-black mb-1">What We Fix &amp; Clean For You</h2>
           <p className="text-sm sm:text-base text-ink-soft">
-            Quick, reliable service with upfront pricing and our 90-day parts &amp; labor guarantee.
+            Quick, reliable service with upfront pricing and our 30-day parts &amp; labor guarantee.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export default function ServicesSection() {
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 ring-1 ring-white/25 text-[11px] sm:text-xs font-bold">
                 <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-                90-Day Warranty
+                30-Day Warranty
               </span>
             </div>
           </div>

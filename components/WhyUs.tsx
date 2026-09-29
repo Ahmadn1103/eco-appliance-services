@@ -25,14 +25,14 @@ const pillars = [
     desc: "Our service vehicles carry high-failure OEM parts, high-grade diagnostic tools, and testing meters, allowing us to complete most repairs in a single visit.",
   },
   {
-    title: "90-Day Parts & Labor Guarantee",
-    desc: "We stand behind the quality of our work. Every repair is backed by a 90-day comprehensive parts and labor warranty for complete peace of mind.",
+    title: "30-Day Parts & Labor Guarantee",
+    desc: "We stand behind the quality of our work. Every repair is backed by a 30-day comprehensive parts and labor warranty for complete peace of mind.",
   },
 ];
 
 const metrics = [
   { icon: BadgeDollarSign, label: "Diagnostic, Credited", value: "$89", note: "Applied 100% to your approved repair" },
-  { icon: ShieldCheck, label: "Parts & Labor", value: "90-Day", note: "Comprehensive warranty on every repair" },
+  { icon: ShieldCheck, label: "Parts & Labor", value: "30-Day", note: "Comprehensive warranty on every repair" },
   { icon: Clock, label: "Dispatch", value: "Same-Day", note: "Priority slots across DC, MD & VA" },
 ];
 
@@ -82,7 +82,7 @@ export default function WhyUs() {
           ))}
           <div className="border-t border-line-tint pt-5 text-sm">
             Questions before you book?{" "}
-            <a href={PHONE_HREF} className="font-bold underline underline-offset-2 hover:text-primary">
+            <a href={PHONE_HREF} className="font-bold whitespace-nowrap underline underline-offset-2 hover:text-primary">
               Call {PHONE_DISPLAY}
             </a>
           </div>

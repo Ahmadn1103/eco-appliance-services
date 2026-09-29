@@ -27,8 +27,8 @@ export default function ZipChecker({ service, className = "" }: ZipCheckerProps)
 
   return (
     <div className={className}>
-      <form onSubmit={submit} className="flex gap-2" noValidate>
-        <div className="relative flex-1">
+      <form onSubmit={submit} className="flex flex-col min-[420px]:flex-row gap-2" noValidate>
+        <div className="relative flex-1 min-w-0">
           <MapPin className="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2" aria-hidden="true" />
           <input
             type="text"
@@ -41,13 +41,13 @@ export default function ZipChecker({ service, className = "" }: ZipCheckerProps)
               setResult("idle");
             }}
             aria-label="Your ZIP code"
-            placeholder="Enter your ZIP code"
-            className="w-full pl-10 pr-3 py-3 text-sm bg-surface border border-line rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-ink placeholder:text-muted"
+            placeholder="ZIP code"
+            className="w-full pl-11 pr-4 py-3.5 text-base font-semibold bg-surface border-2 border-line rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 text-ink placeholder:text-ink-soft placeholder:font-medium"
           />
         </div>
         <button
           type="submit"
-          className="pressable inline-flex items-center gap-1.5 px-5 py-3 bg-primary hover:bg-primary-strong text-on-primary rounded-full text-sm font-black shrink-0 shadow-xs"
+          className="pressable inline-flex items-center justify-center gap-1.5 px-6 py-3.5 bg-primary hover:bg-primary-strong text-on-primary rounded-full text-sm font-black shrink-0 shadow-xs"
         >
           <Search className="w-4 h-4" aria-hidden="true" />
           Check
