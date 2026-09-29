@@ -170,19 +170,13 @@ a[href]:focus-visible {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.menu-veil { animation: veilIn 220ms ease-out both; }
-.menu-veil.is-leaving { animation: veilOut 180ms ease-in both; }
+.menu-veil { animation: veilIn 120ms ease-out both; }
+.menu-veil.is-leaving { animation: veilOut 100ms ease-in both; }
 .menu-panel { animation: panelIn 340ms var(--ease-out-quint) both; }
 .menu-panel.is-leaving { animation: panelOut 180ms ease-in both; }
-.header-dropdown { animation: dropDownIn 220ms var(--ease-out-quint) both; }
-.header-dropdown.is-leaving { animation: dropDownOut 160ms ease-in both; }
-.menu-item { animation: itemIn 260ms var(--ease-out-quint) both; }
-.menu-item:nth-child(1) { animation-delay: 70ms; }
-.menu-item:nth-child(2) { animation-delay: 110ms; }
-.menu-item:nth-child(3) { animation-delay: 150ms; }
-.menu-item:nth-child(4) { animation-delay: 190ms; }
-.menu-item:nth-child(5) { animation-delay: 230ms; }
-.menu-item:nth-child(6) { animation-delay: 270ms; }
+.header-dropdown { animation: dropDownIn 140ms ease-out both; will-change: transform, opacity; }
+.header-dropdown.is-leaving { animation: dropDownOut 100ms ease-in both; }
+.menu-item { animation: none; }
 
 .panel-swap { animation: panelSwap 320ms var(--ease-out-quint) both; }
 

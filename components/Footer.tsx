@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { ArrowRight, BadgeDollarSign, Clock, MapPin, Phone, ShieldCheck } from "lucide-react";
-import { navLinks, PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
+import { navLinks, PHONE_DISPLAY, PHONE_HREF, SOCIAL_LINKS } from "@/lib/site";
 import { coreServices } from "@/lib/services";
 import { useSite } from "@/components/SiteShell";
 import QrPanel from "@/components/QrPanel";
 import { QrCode } from "lucide-react";
+import { FacebookIcon, InstagramIcon } from "@/components/BrandIcons";
 
 function ColumnHeading({ children }: { children: React.ReactNode }) {
   return (
@@ -121,17 +122,37 @@ export default function Footer() {
             Scan to Call
           </h4>
           <QrPanel />
+          <div className="mt-4 grid grid-cols-2 gap-2">
+            <a
+              href={SOCIAL_LINKS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pressable inline-flex items-center justify-center gap-2 rounded-full bg-surface border border-line px-4 py-2.5 text-sm font-bold text-ink hover:border-primary hover:text-primary"
+            >
+              <FacebookIcon className="w-4 h-4" />
+              Facebook
+            </a>
+            <a
+              href={SOCIAL_LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pressable inline-flex items-center justify-center gap-2 rounded-full bg-surface border border-line px-4 py-2.5 text-sm font-bold text-ink hover:border-primary hover:text-primary"
+            >
+              <InstagramIcon className="w-4 h-4" />
+              Instagram
+            </a>
+          </div>
         </div>
       </div>
 
       <div className="border-t border-line py-6 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
           <p>© 2026 Eco Appliance Services. All rights reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-5 text-center">
             <span>Same-Day Dispatch</span>
-            <span aria-hidden="true">•</span>
+            <span aria-hidden="true" className="hidden sm:inline">•</span>
             <span>Home Warranty Claims Welcome</span>
-            <span aria-hidden="true">•</span>
+            <span aria-hidden="true" className="hidden sm:inline">•</span>
             <span>Serving DC, MD &amp; VA</span>
           </div>
         </div>
