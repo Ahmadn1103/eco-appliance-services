@@ -1,0 +1,630 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner:
+      - generic [ref=e4]:
+        - link "Smart Appliance Services Logo SMART APPLIANCE SERVICES" [ref=e5] [cursor=pointer]:
+          - /url: "#home"
+          - img "Smart Appliance Services Logo" [ref=e7]
+          - generic [ref=e8]:
+            - generic [ref=e9]: SMART APPLIANCE
+            - generic [ref=e12]: SERVICES
+        - navigation [ref=e14]:
+          - link "Home" [ref=e15] [cursor=pointer]:
+            - /url: "#home"
+          - link "Services" [ref=e16] [cursor=pointer]:
+            - /url: "#services"
+          - link "About Us" [ref=e17] [cursor=pointer]:
+            - /url: "#about"
+          - link "Service Area" [ref=e18] [cursor=pointer]:
+            - /url: "#service-area"
+          - link "Reviews" [ref=e19] [cursor=pointer]:
+            - /url: "#reviews"
+          - link "Contact" [ref=e20] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e21]:
+          - link "(571) 459-8155" [ref=e22] [cursor=pointer]:
+            - /url: tel:5714598155
+          - button "Book Service" [ref=e26] [cursor=pointer]
+          - button "Open social QR codes" [ref=e30] [cursor=pointer]
+    - main [ref=e37]:
+      - generic [ref=e38]:
+        - img "Smart Appliance Services technician testing a refrigerator control board in a home kitchen" [ref=e39]
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - paragraph [ref=e43]: Professional • Reliable • Affordable
+            - heading "Expert Appliance Repair for Your Home" [level=1] [ref=e44]:
+              - text: Expert Appliance Repair
+              - generic [ref=e45]: for Your Home
+            - paragraph [ref=e46]: Fast, honest and professional service for all major home appliances. We get your appliances running again, so you can get back to what matters most.
+            - generic [ref=e47]:
+              - button "Schedule Your Repair" [ref=e48] [cursor=pointer]
+              - link "(571) 459-8155" [ref=e52] [cursor=pointer]:
+                - /url: tel:5714598155
+          - generic [ref=e57]:
+            - heading "Do we service your area?" [level=2] [ref=e58]
+            - paragraph [ref=e59]: We serve homes within 40 miles of Washington, DC. Enter your ZIP to check.
+            - generic [ref=e61]:
+              - generic [ref=e62]: Your 5-digit ZIP code
+              - textbox "Your 5-digit ZIP code" [ref=e67]:
+                - /placeholder: Enter your ZIP code
+              - button "Check" [ref=e68] [cursor=pointer]
+      - generic [ref=e70]:
+        - heading "Choose Your Appliance" [level=2] [ref=e71]
+        - paragraph [ref=e72]: Select an appliance to see common problems and book your appointment right below.
+        - tablist "Appliances we repair" [ref=e73]:
+          - tab "Refrigerator Cooling issues, leaks, not running" [selected] [ref=e74] [cursor=pointer]:
+            - generic [ref=e78]: Refrigerator
+            - generic [ref=e79]: Cooling issues, leaks, not running
+          - tab "Washer Not spinning, not draining, leaks" [ref=e80] [cursor=pointer]:
+            - generic [ref=e86]: Washer
+            - generic [ref=e87]: Not spinning, not draining, leaks
+          - tab "Dryer No heat, not starting, noisy" [ref=e88] [cursor=pointer]:
+            - generic [ref=e94]: Dryer
+            - generic [ref=e95]: No heat, not starting, noisy
+          - tab "Oven & Range Heating issues, error codes" [ref=e96] [cursor=pointer]:
+            - generic [ref=e102]: Oven & Range
+            - generic [ref=e103]: Heating issues, error codes
+          - tab "Dishwasher Not cleaning, leaks, not draining" [ref=e104] [cursor=pointer]:
+            - generic [ref=e109]: Dishwasher
+            - generic [ref=e110]: Not cleaning, leaks, not draining
+          - tab "Garbage Disposal Not working, jammed" [ref=e111] [cursor=pointer]:
+            - generic [ref=e118]: Garbage Disposal
+            - generic [ref=e119]: Not working, jammed
+          - tab "Microwave Not heating, turns off" [ref=e120] [cursor=pointer]:
+            - generic [ref=e125]: Microwave
+            - generic [ref=e126]: Not heating, turns off
+        - tabpanel "Refrigerator repair" [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e133]:
+              - heading "Refrigerator Repair" [level=3] [ref=e134]
+              - paragraph [ref=e135]: French door, side-by-side, built-in & column units
+            - list [ref=e136]:
+              - listitem [ref=e137]: $89 diagnostic, credited toward repair
+              - listitem [ref=e141]: Same-day or next-morning priority dispatch
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - paragraph [ref=e147]: A failing refrigerator is an emergency. Our technicians arrive with the right diagnostic tools to test compressors, start relays, defrost systems, evaporator fan motors and sealed systems, protecting your groceries and your peace of mind.
+              - generic [ref=e148]:
+                - heading "Common problems we fix" [level=4] [ref=e149]
+                - list [ref=e150]:
+                  - listitem [ref=e151]:
+                    - generic [ref=e155]: Not cooling or freezer thawing
+                  - listitem [ref=e156]:
+                    - generic [ref=e160]: Ice maker stopped dispensing or leaking water
+                  - listitem [ref=e161]:
+                    - generic [ref=e165]: Frost buildup on the back evaporator wall
+                  - listitem [ref=e166]:
+                    - generic [ref=e170]: Loud buzzing compressor or clicking relay
+                  - listitem [ref=e171]:
+                    - generic [ref=e175]: Water pooling under crisper drawers
+                  - listitem [ref=e176]:
+                    - generic [ref=e180]: Constant running with warm interior temperatures
+              - generic [ref=e181]:
+                - heading "Do we service your area?" [level=4] [ref=e182]
+                - paragraph [ref=e183]: Enter your ZIP. We serve homes within 40 miles of Washington, DC.
+                - generic [ref=e185]:
+                  - generic [ref=e186]: Your 5-digit ZIP code
+                  - textbox "Your 5-digit ZIP code" [ref=e191]:
+                    - /placeholder: Enter your ZIP code
+                  - button "Check" [ref=e192] [cursor=pointer]
+                - link "Prefer to call? (571) 459-8155" [ref=e193] [cursor=pointer]:
+                  - /url: tel:5714598155
+            - generic [ref=e197]:
+              - generic [ref=e198]:
+                - heading "Book Your Refrigerator Repair" [level=3] [ref=e199]
+                - paragraph [ref=e200]: Book online in seconds. Our dispatch desk will confirm your arrival window.
+              - generic [ref=e201]:
+                - generic [ref=e202]:
+                  - text: Website
+                  - textbox [ref=e203]
+                - generic [ref=e204]:
+                  - textbox "Full name" [ref=e209]:
+                    - /placeholder: Full name *
+                  - textbox "Mobile phone" [ref=e213]:
+                    - /placeholder: Mobile phone *
+                  - textbox "Email" [ref=e218]:
+                    - /placeholder: Email (for confirmation) *
+                  - textbox "Service address with ZIP code" [ref=e223]:
+                    - /placeholder: Address & 5-digit ZIP *
+                  - textbox "Preferred date" [ref=e227]
+                  - combobox "Preferred arrival window" [ref=e232] [cursor=pointer]:
+                    - option "Morning (8:00 AM - 12:00 PM)" [selected]
+                    - option "Early Afternoon (12:00 PM - 3:30 PM)"
+                    - option "Late Afternoon / Evening (3:30 PM - 7:30 PM)"
+                    - option "Earliest Available Emergency Slot"
+                - textbox "Appliance brand and model" [ref=e233]:
+                  - /placeholder: Brand & model (optional, e.g. Samsung, LG, GE)
+                - textbox "Describe the problem" [ref=e234]:
+                  - /placeholder: What is it doing? (e.g. not cooling, error code, leaking)
+                - button "Confirm & Dispatch Technician" [ref=e235] [cursor=pointer]
+                - paragraph [ref=e236]: $89 diagnostic fee, credited 100% toward an approved repair. No payment online.
+      - generic [ref=e237]:
+        - generic [ref=e238]:
+          - heading "Why Choose Smart Appliance Services?" [level=2] [ref=e239]
+          - list [ref=e240]:
+            - listitem [ref=e241]:
+              - generic [ref=e245]: Experienced, certified technicians
+            - listitem [ref=e246]:
+              - generic [ref=e250]: Same-day and next-day appointments
+            - listitem [ref=e251]:
+              - generic [ref=e255]: All major brands and models
+            - listitem [ref=e256]:
+              - generic [ref=e260]: "Honest, upfront pricing: $89 diagnostic, credited toward repair"
+            - listitem [ref=e261]:
+              - generic [ref=e265]: Fully licensed and insured
+            - listitem [ref=e266]:
+              - generic [ref=e270]: 30-day labor and parts warranty
+        - generic [ref=e271]:
+          - generic [ref=e276]:
+            - paragraph [ref=e277]: Service Area
+            - paragraph [ref=e278]: DMV Area
+            - paragraph [ref=e279]: Within 40 miles of Washington, DC (DC, Maryland, Virginia)
+            - link "Check your ZIP code" [ref=e280] [cursor=pointer]:
+              - /url: "#service-area"
+          - generic [ref=e285]:
+            - paragraph [ref=e286]: All Work Guaranteed
+            - paragraph [ref=e287]: Your satisfaction is our top priority.
+      - generic [ref=e288]:
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]: WHO WE ARE
+              - heading "About Smart Appliance Services" [level=2] [ref=e298]
+              - generic [ref=e299]:
+                - generic [ref=e300]: Appliance repairs? Leave it to us.
+                - generic [ref=e301]: DIAGNOSE • REPAIR • MAINTENANCE
+            - button "Schedule Online Inspection" [ref=e302] [cursor=pointer]
+          - generic [ref=e308]:
+            - generic [ref=e309]:
+              - generic [ref=e310]:
+                - paragraph [ref=e311]:
+                  - text: Founded in 2021 by master appliance specialist Armani,
+                  - strong [ref=e312]: Smart Appliance Services LLC
+                  - text: "was built on a simple promise: providing fast, honest diagnostics and expert repairs without high-pressure sales or inflated part markups."
+                - paragraph [ref=e313]:
+                  - text: With over
+                  - strong [ref=e314]: 15+ years of hands-on field experience
+                  - text: ", our technicians carry OEM diagnostic software and stocked service vehicles to resolve issues on the very first visit throughout DC, Maryland, and Northern Virginia."
+              - generic [ref=e315]:
+                - generic [ref=e316]:
+                  - generic [ref=e317]: On-Time Dispatch
+                  - heading "Dependable Service" [level=3] [ref=e323]
+                  - paragraph [ref=e324]: We show up on time, respect your home, and get the job done right the first time. Real-time technician dispatch across the DMV.
+                - generic [ref=e325]:
+                  - generic [ref=e326]: Master Technicians
+                  - heading "Skilled & Certified Technicians" [level=3] [ref=e332]
+                  - paragraph [ref=e333]: Our technicians are factory-trained and equipped with digital diagnostics, OEM schematics, and specialized master tools.
+                - generic [ref=e334]:
+                  - generic [ref=e335]: $89 Credited with Repair
+                  - heading "Fair & Transparent Pricing" [level=3] [ref=e341]
+                  - paragraph [ref=e342]: Diagnostic fee is only $89 (100% credited toward your repair upon approval). No hidden add-ons, just clear flat-rate quotes.
+                - generic [ref=e343]:
+                  - generic [ref=e344]: All Major Brands
+                  - heading "Residential Appliance Experts" [level=3] [ref=e350]
+                  - paragraph [ref=e351]: From simple seal replacements to complex sealed refrigeration compressors and inverter drives, we service all major brands.
+                - generic [ref=e352]:
+                  - generic [ref=e353]: Lasting Durability
+                  - heading "Precision Solutions" [level=3] [ref=e358]
+                  - paragraph [ref=e359]: We restore equipment efficiency and reduce household electrical strain, keeping your home running smoothly for years to come.
+            - generic [ref=e362]:
+              - img "Smart Appliance Services Master Technician" [ref=e363]
+              - generic [ref=e364]:
+                - generic [ref=e370]:
+                  - generic [ref=e371]: Armani & Master Team
+                  - generic [ref=e372]: 15+ Years Hands-On Experience
+                - generic [ref=e373]: Est. 2021
+          - generic [ref=e374]:
+            - generic [ref=e375]:
+              - generic [ref=e376]: 15+
+              - generic [ref=e377]: Years Experience
+              - generic [ref=e378]: Hands-on Expertise
+            - generic [ref=e379]:
+              - generic [ref=e380]: 10+
+              - generic [ref=e381]: Warranty Partners
+              - generic [ref=e382]: Authorized Vendor
+            - generic [ref=e383]:
+              - generic [ref=e384]: $89
+              - generic [ref=e385]: Diagnostic Fee
+              - generic [ref=e386]: 100% Credited With Repair
+            - generic [ref=e387]:
+              - generic [ref=e388]: 30-Day
+              - generic [ref=e389]: Labor & Parts Warranty
+              - generic [ref=e390]: Guaranteed Workmanship
+        - generic [ref=e392]:
+          - generic [ref=e393]:
+            - generic [ref=e394]:
+              - generic [ref=e395]: Comprehensive Brand Expertise
+              - heading "Factory-Trained On All Major Brands & Systems" [level=3] [ref=e400]
+            - generic [ref=e401]: Using 100% Genuine OEM Factory Replacement Parts
+          - generic [ref=e406]:
+            - generic [ref=e407]:
+              - paragraph [ref=e408]: Samsung
+              - paragraph [ref=e409]: Smart Appliances
+            - generic [ref=e410]:
+              - paragraph [ref=e411]: LG Electronics
+              - paragraph [ref=e412]: Inverter DirectDrive
+            - generic [ref=e413]:
+              - paragraph [ref=e414]: Whirlpool
+              - paragraph [ref=e415]: Laundry & Kitchen
+            - generic [ref=e416]:
+              - paragraph [ref=e417]: Bosch
+              - paragraph [ref=e418]: Quiet Dish & Cook
+            - generic [ref=e419]:
+              - paragraph [ref=e420]: GE Profile / Café
+              - paragraph [ref=e421]: Complete Suites
+            - generic [ref=e422]:
+              - paragraph [ref=e423]: KitchenAid
+              - paragraph [ref=e424]: Gourmet Ranges
+            - generic [ref=e425]:
+              - paragraph [ref=e426]: Sub-Zero & Wolf
+              - paragraph [ref=e427]: Luxury Refrigeration
+            - generic [ref=e428]:
+              - paragraph [ref=e429]: Maytag
+              - paragraph [ref=e430]: Commercial Tech
+            - generic [ref=e431]:
+              - paragraph [ref=e432]: Frigidaire
+              - paragraph [ref=e433]: Cooling & Cooking
+            - generic [ref=e434]:
+              - paragraph [ref=e435]: Thermador
+              - paragraph [ref=e436]: Luxury Kitchen Suites
+            - generic [ref=e437]:
+              - paragraph [ref=e438]: Electrolux
+              - paragraph [ref=e439]: Swedish Precision
+            - generic [ref=e440]:
+              - paragraph [ref=e441]: Miele
+              - paragraph [ref=e442]: German Engineering
+      - generic [ref=e444]:
+        - generic [ref=e445]:
+          - heading "We Come to You, Within 40 Miles of DC" [level=2] [ref=e446]:
+            - text: We Come to You, Within
+            - generic [ref=e447]: 40 Miles
+            - text: of DC
+          - paragraph [ref=e448]: Enter your ZIP code to see if we service your address.
+          - generic [ref=e451]:
+            - generic [ref=e452]: Your 5-digit ZIP code
+            - textbox "Your 5-digit ZIP code" [ref=e457]:
+              - /placeholder: Enter your ZIP code
+            - button "Check" [ref=e458] [cursor=pointer]
+        - generic [ref=e459]:
+          - generic [ref=e460]:
+            - heading "Washington, DC" [level=3] [ref=e461]
+            - list [ref=e465]:
+              - listitem [ref=e466]: All DC neighborhoods
+          - generic [ref=e467]:
+            - heading "Maryland" [level=3] [ref=e468]
+            - list [ref=e472]:
+              - listitem [ref=e473]: Montgomery County
+              - listitem [ref=e474]: Prince George's County
+              - listitem [ref=e475]: Bethesda
+              - listitem [ref=e476]: Rockville
+              - listitem [ref=e477]: Silver Spring
+              - listitem [ref=e478]: Gaithersburg
+          - generic [ref=e479]:
+            - heading "Northern Virginia" [level=3] [ref=e480]
+            - list [ref=e484]:
+              - listitem [ref=e485]: Fairfax
+              - listitem [ref=e486]: Arlington
+              - listitem [ref=e487]: Alexandria
+              - listitem [ref=e488]: Loudoun
+              - listitem [ref=e489]: Prince William
+              - listitem [ref=e490]: McLean
+              - listitem [ref=e491]: Reston
+              - listitem [ref=e492]: Vienna
+        - paragraph [ref=e493]: Some outer parts of a county may fall beyond the 40-mile line, so check your ZIP above.
+        - generic [ref=e494]:
+          - paragraph [ref=e495]:
+            - generic [ref=e496]: Outside 40 miles or right on the edge?
+            - text: Give us a call and we will let you know if we can make it out.
+          - link "(571) 459-8155" [ref=e497] [cursor=pointer]:
+            - /url: tel:5714598155
+      - generic [ref=e500]:
+        - generic [ref=e502]:
+          - generic [ref=e503]: Customer Reviews
+          - heading "What DMV Homeowners Say" [level=2] [ref=e507]
+          - paragraph [ref=e508]: Feedback from neighbors who rely on our prompt diagnostics, transparent $89 fee credit, and 30-day warranty.
+        - list [ref=e510]:
+          - listitem [ref=e511]:
+            - generic [ref=e512]:
+              - generic [ref=e513]:
+                - img "5 out of 5 stars" [ref=e514]
+                - generic [ref=e525]: Refrigeration
+              - paragraph [ref=e526]: “Our French door refrigerator stopped cooling on a Sunday with hundreds of dollars in groceries inside. Smart Appliance Services sent a technician out within 2 hours. He had the inverter sensor on his van and repaired it immediately. Incredible service and fair pricing!”
+            - generic [ref=e527]:
+              - paragraph [ref=e528]: Marcus Vance
+              - text: McLean, VA
+          - listitem [ref=e529]:
+            - generic [ref=e530]:
+              - generic [ref=e531]:
+                - img "5 out of 5 stars" [ref=e532]
+                - generic [ref=e543]: Garbage Disposals
+              - paragraph [ref=e544]: “Our kitchen garbage disposal jammed completely and leaked water into the cabinet below. Armani diagnosed the motor flywheel blockage and replaced the worn seal in 30 minutes. Super clean, courteous, and transparent flat-rate pricing!”
+            - generic [ref=e545]:
+              - paragraph [ref=e546]: Elena Rostova
+              - text: Bethesda, MD
+          - listitem [ref=e547]:
+            - generic [ref=e548]:
+              - generic [ref=e549]:
+                - img "5 out of 5 stars" [ref=e550]
+                - generic [ref=e561]: Dishwashers
+              - paragraph [ref=e562]: “Our Bosch dishwasher was flashing error code E15 and wouldn't drain. Another company told us to buy a new machine. The Smart Appliance technician diagnosed a simple clogged pressure sensor, replaced it, and tested the wash cycle in under an hour. Saved us a fortune!”
+            - generic [ref=e563]:
+              - paragraph [ref=e564]: David Chen
+              - text: Washington, DC
+          - listitem [ref=e565]:
+            - generic [ref=e566]:
+              - generic [ref=e567]:
+                - img "5 out of 5 stars" [ref=e568]
+                - generic [ref=e579]: Dryers
+              - paragraph [ref=e580]: “Our dryer was taking nearly 2 hours to dry a load of towels. The technician quickly diagnosed a faulty heating element coil, replaced it with OEM parts, and checked the airflow. Now clothes dry in 35 minutes! Total lifesaver.”
+            - generic [ref=e581]:
+              - paragraph [ref=e582]: Sarah Jenkins
+              - text: Arlington, VA
+          - listitem [ref=e583]:
+            - generic [ref=e584]:
+              - generic [ref=e585]:
+                - img "5 out of 5 stars" [ref=e586]
+                - generic [ref=e597]: Washers
+              - paragraph [ref=e598]: “Front-load washer sounded like a jet engine during spin cycles. The technician explained the tub bearing issue clearly, quoted an upfront price, and fixed it cleanly without leaving a single drop of dirty water on our hardwood floors. Highly recommend!”
+            - generic [ref=e599]:
+              - paragraph [ref=e600]: Robert Morales
+              - text: Silver Spring, MD
+          - listitem [ref=e601]:
+            - generic [ref=e602]:
+              - generic [ref=e603]:
+                - img "5 out of 5 stars" [ref=e604]
+                - generic [ref=e615]: Ranges & Ovens
+              - paragraph [ref=e616]: “Very professional from the dispatch call to the actual repair. Our $89 diagnostic fee was credited 100% toward fixing the bake igniter on our gas range, plus they gave us a 30-day parts and labor warranty. Will always use Smart Appliance Services!”
+            - generic [ref=e617]:
+              - paragraph [ref=e618]: Patricia Miller
+              - text: Alexandria, VA
+          - listitem [aria-hidden] [ref=e619]:
+            - generic [ref=e620]:
+              - generic [ref=e621]: Refrigeration
+              - paragraph [ref=e634]: “Our French door refrigerator stopped cooling on a Sunday with hundreds of dollars in groceries inside. Smart Appliance Services sent a technician out within 2 hours. He had the inverter sensor on his van and repaired it immediately. Incredible service and fair pricing!”
+            - generic [ref=e635]:
+              - paragraph [ref=e636]: Marcus Vance
+              - text: McLean, VA
+          - listitem [aria-hidden] [ref=e637]:
+            - generic [ref=e638]:
+              - generic [ref=e639]: Garbage Disposals
+              - paragraph [ref=e652]: “Our kitchen garbage disposal jammed completely and leaked water into the cabinet below. Armani diagnosed the motor flywheel blockage and replaced the worn seal in 30 minutes. Super clean, courteous, and transparent flat-rate pricing!”
+            - generic [ref=e653]:
+              - paragraph [ref=e654]: Elena Rostova
+              - text: Bethesda, MD
+          - listitem [aria-hidden] [ref=e655]:
+            - generic [ref=e656]:
+              - generic [ref=e657]: Dishwashers
+              - paragraph [ref=e670]: “Our Bosch dishwasher was flashing error code E15 and wouldn't drain. Another company told us to buy a new machine. The Smart Appliance technician diagnosed a simple clogged pressure sensor, replaced it, and tested the wash cycle in under an hour. Saved us a fortune!”
+            - generic [ref=e671]:
+              - paragraph [ref=e672]: David Chen
+              - text: Washington, DC
+          - listitem [aria-hidden] [ref=e673]:
+            - generic [ref=e674]:
+              - generic [ref=e675]: Dryers
+              - paragraph [ref=e688]: “Our dryer was taking nearly 2 hours to dry a load of towels. The technician quickly diagnosed a faulty heating element coil, replaced it with OEM parts, and checked the airflow. Now clothes dry in 35 minutes! Total lifesaver.”
+            - generic [ref=e689]:
+              - paragraph [ref=e690]: Sarah Jenkins
+              - text: Arlington, VA
+          - listitem [aria-hidden] [ref=e691]:
+            - generic [ref=e692]:
+              - generic [ref=e693]: Washers
+              - paragraph [ref=e706]: “Front-load washer sounded like a jet engine during spin cycles. The technician explained the tub bearing issue clearly, quoted an upfront price, and fixed it cleanly without leaving a single drop of dirty water on our hardwood floors. Highly recommend!”
+            - generic [ref=e707]:
+              - paragraph [ref=e708]: Robert Morales
+              - text: Silver Spring, MD
+          - listitem [aria-hidden] [ref=e709]:
+            - generic [ref=e710]:
+              - generic [ref=e711]: Ranges & Ovens
+              - paragraph [ref=e724]: “Very professional from the dispatch call to the actual repair. Our $89 diagnostic fee was credited 100% toward fixing the bake igniter on our gas range, plus they gave us a 30-day parts and labor warranty. Will always use Smart Appliance Services!”
+            - generic [ref=e725]:
+              - paragraph [ref=e726]: Patricia Miller
+              - text: Alexandria, VA
+      - generic [ref=e728]:
+        - generic [ref=e729]:
+          - generic [ref=e730]: Got Questions? We Have Answers
+          - heading "Frequently Asked Questions" [level=2] [ref=e735]
+          - paragraph [ref=e736]: Clear, honest answers about our $89 diagnostic fee, 30-day warranty, and appliance repair services.
+        - generic [ref=e737]:
+          - button "How does the $89 diagnostic fee work?" [ref=e739] [cursor=pointer]
+          - button "What is covered under your 30-Day Warranty?" [ref=e748] [cursor=pointer]
+          - button "Do you work with home warranty companies?" [ref=e757] [cursor=pointer]
+          - button "What areas in the DMV do you service?" [ref=e766] [cursor=pointer]
+          - button "Do you have legal licensing and insurance?" [ref=e775] [cursor=pointer]
+          - button "What are your operating hours?" [ref=e784] [cursor=pointer]
+          - button "How can I follow your work or connect on social media?" [ref=e793] [cursor=pointer]
+      - generic [ref=e805]:
+        - generic [ref=e806]:
+          - heading "Contact Us" [level=2] [ref=e807]
+          - paragraph [ref=e808]: Have a broken appliance? Call us or request a technician below and our dispatch team will confirm your arrival window.
+        - generic [ref=e809]:
+          - generic [ref=e810]:
+            - generic [ref=e811]:
+              - generic [ref=e812]: Call Dispatch
+              - link "Primary DMV Line (571) 459-8155" [ref=e816] [cursor=pointer]:
+                - /url: tel:5714598155
+                - generic [ref=e817]: Primary DMV Line
+                - text: (571) 459-8155
+              - link "Secondary Support Line (571) 899-2995" [ref=e818] [cursor=pointer]:
+                - /url: tel:5718992995
+                - generic [ref=e819]: Secondary Support Line
+                - text: (571) 899-2995
+            - generic [ref=e820]:
+              - generic [ref=e821]:
+                - generic [ref=e822]: Email
+                - link "Smart.applianceservices.va@gmail.com" [ref=e827] [cursor=pointer]:
+                  - /url: mailto:Smart.applianceservices.va@gmail.com
+              - generic [ref=e828]:
+                - generic [ref=e829]: Operating Hours
+                - generic [ref=e834]:
+                  - generic [ref=e835]:
+                    - term [ref=e836]: Monday – Friday
+                    - definition [ref=e837]: 8:00 AM – 5:00 PM
+                  - generic [ref=e838]:
+                    - term [ref=e839]: Saturday
+                    - definition [ref=e840]: 9:00 AM – 4:00 PM
+                  - generic [ref=e841]:
+                    - term [ref=e842]: Sunday
+                    - definition [ref=e843]: Closed
+              - generic [ref=e844]:
+                - generic [ref=e845]: Service Area
+                - paragraph [ref=e850]:
+                  - text: Mobile service within
+                  - strong [ref=e851]: 40 miles of Washington, DC
+                  - text: ", across DC, Maryland and Northern Virginia."
+              - generic [ref=e852]:
+                - generic [ref=e853]: Follow Us
+                - generic [ref=e854]:
+                  - link "Facebook" [ref=e855] [cursor=pointer]:
+                    - /url: https://www.facebook.com/smartapplianceservicess/
+                  - link "@ssmartappliance" [ref=e860] [cursor=pointer]:
+                    - /url: https://instagram.com/ssmartappliance
+          - generic [ref=e866]:
+            - generic [ref=e867]:
+              - heading "Request an Appliance Technician" [level=3] [ref=e868]
+              - paragraph [ref=e869]: Tell us what needs repair and when you are free.
+            - generic [ref=e870]:
+              - generic [ref=e871]:
+                - text: Website
+                - textbox [ref=e872]
+              - generic [ref=e873]:
+                - generic [ref=e874]: Appliance needing service
+                - combobox "Appliance needing service" [ref=e875] [cursor=pointer]:
+                  - option "Refrigerators & Freezers" [selected]
+                  - option "Washers"
+                  - option "Dryers"
+                  - option "Ranges, Ovens & Cooktops"
+                  - option "Dishwashers"
+                  - option "Garbage Disposals"
+                  - option "Microwaves"
+              - generic [ref=e876]:
+                - textbox "Full name" [ref=e881]:
+                  - /placeholder: Full name *
+                - textbox "Mobile phone" [ref=e885]:
+                  - /placeholder: Mobile phone *
+                - textbox "Email" [ref=e890]:
+                  - /placeholder: Email (for confirmation) *
+                - textbox "Service address with ZIP code" [ref=e895]:
+                  - /placeholder: Address & 5-digit ZIP *
+                - textbox "Preferred date" [ref=e899]
+                - combobox "Preferred arrival window" [ref=e904] [cursor=pointer]:
+                  - option "Morning (8:00 AM - 12:00 PM)" [selected]
+                  - option "Early Afternoon (12:00 PM - 3:30 PM)"
+                  - option "Late Afternoon / Evening (3:30 PM - 7:30 PM)"
+                  - option "Earliest Available Emergency Slot"
+              - textbox "Appliance brand and model" [ref=e905]:
+                - /placeholder: Brand & model (optional, e.g. Samsung, LG, GE)
+              - textbox "Describe the problem" [ref=e906]:
+                - /placeholder: What is it doing? (e.g. not cooling, error code, leaking)
+              - button "Confirm & Dispatch Technician" [ref=e907] [cursor=pointer]
+              - paragraph [ref=e908]: $89 diagnostic fee, credited 100% toward an approved repair. No payment online.
+      - generic [ref=e910]:
+        - link "Call Now (571) 459-8155" [ref=e911] [cursor=pointer]:
+          - /url: tel:5714598155
+          - generic [ref=e915]:
+            - generic [ref=e916]: Call Now
+            - generic [ref=e917]: (571) 459-8155
+        - button "Book Online Fast & easy scheduling →" [ref=e918] [cursor=pointer]:
+          - generic [ref=e922]:
+            - generic [ref=e923]: Book Online
+            - generic [ref=e924]: Fast & easy scheduling →
+        - link "DMV Area Within 40 miles of DC →" [ref=e925] [cursor=pointer]:
+          - /url: "#service-area"
+          - generic [ref=e930]:
+            - generic [ref=e931]: DMV Area
+            - generic [ref=e932]: Within 40 miles of DC →
+        - button "Schedule Your Repair" [ref=e934] [cursor=pointer]
+    - contentinfo [ref=e938]:
+      - generic [ref=e940]:
+        - generic [ref=e941]:
+          - link "Smart Appliance Services Logo SMART APPLIANCE SERVICES • Appliance repairs? Leave it to us." [ref=e942] [cursor=pointer]:
+            - /url: /
+            - img "Smart Appliance Services Logo" [ref=e944]
+            - generic [ref=e945]:
+              - generic [ref=e946]: SMART APPLIANCE
+              - generic [ref=e949]:
+                - generic [ref=e950]: SERVICES
+                - generic [ref=e951]: •
+                - generic [ref=e952]: Appliance repairs? Leave it to us.
+          - paragraph [ref=e953]:
+            - text: Reliable appliance repair across the DMV with over
+            - strong [ref=e954]: 15+ years of hands-on expertise
+            - text: . Founded in 2021 and proudly partnered with
+            - strong [ref=e955]: 10+ leading home warranty companies
+            - text: .
+          - generic [ref=e956]:
+            - generic [ref=e957]: $89 Diagnostic (Credited)
+            - generic [ref=e962]: 30-Day Warranty
+          - generic [ref=e967]:
+            - generic [ref=e968]: Official Social Channels
+            - generic [ref=e969]:
+              - link "Facebook" [ref=e970] [cursor=pointer]:
+                - /url: https://www.facebook.com/smartapplianceservicess/
+              - link "@ssmartappliance" [ref=e978] [cursor=pointer]:
+                - /url: https://instagram.com/ssmartappliance
+        - generic [ref=e986]:
+          - heading "Services" [level=4] [ref=e987]
+          - list [ref=e990]:
+            - listitem [ref=e991]:
+              - link "Refrigerator" [ref=e992] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e993]:
+              - link "Washer" [ref=e994] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e995]:
+              - link "Dryer" [ref=e996] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e997]:
+              - link "Oven & Range" [ref=e998] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e999]:
+              - link "Dishwasher" [ref=e1000] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e1001]:
+              - link "Garbage Disposal" [ref=e1002] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e1003]:
+              - link "Microwave" [ref=e1004] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e1005]:
+              - link "Service Area (40 miles)" [ref=e1006] [cursor=pointer]:
+                - /url: "#service-area"
+          - link "All Services" [ref=e1008] [cursor=pointer]:
+            - /url: "#services"
+        - generic [ref=e1012]:
+          - heading "DMV Dispatch" [level=4] [ref=e1013]
+          - generic [ref=e1016]:
+            - generic [ref=e1017]:
+              - generic [ref=e1018]: Primary Hotline
+              - link "(571) 459-8155" [ref=e1019] [cursor=pointer]:
+                - /url: tel:5714598155
+            - generic [ref=e1023]:
+              - generic [ref=e1024]: Secondary Line
+              - link "(571) 899-2995" [ref=e1025] [cursor=pointer]:
+                - /url: tel:5718992995
+            - generic [ref=e1029]:
+              - generic [ref=e1034]:
+                - generic [ref=e1035]: "Mon–Fri: 8AM–5PM"
+                - generic [ref=e1036]: "Saturday: 9AM–4PM"
+              - generic [ref=e1037]: DC • Maryland • Virginia
+        - generic [ref=e1042]:
+          - heading "Scan QR Code" [level=4] [ref=e1043]
+          - generic [ref=e1051]:
+            - generic [ref=e1052]:
+              - button "Facebook" [ref=e1053] [cursor=pointer]
+              - button "Instagram" [ref=e1054] [cursor=pointer]
+              - button "Call" [ref=e1055] [cursor=pointer]
+            - generic [ref=e1056]: Loading QR...
+            - generic [ref=e1058]:
+              - generic [ref=e1059]: Official Page & Special Offers
+              - generic [ref=e1060]: Scan with your phone camera
+      - generic [ref=e1062]:
+        - paragraph [ref=e1063]: © 2026 Smart Appliance Services LLC. All rights reserved.
+        - generic [ref=e1064]:
+          - generic [ref=e1065]: $89 Diagnostic (Credited With Repair)
+          - generic [ref=e1066]: •
+          - generic [ref=e1067]: 30-Day Labor & Parts Warranty
+          - generic [ref=e1068]: •
+          - generic [ref=e1069]: 10+ Home Warranty Partners
+          - generic [ref=e1070]: •
+          - generic [ref=e1071]: Licensed & Insured
+  - button "Open Next.js Dev Tools" [ref=e1077] [cursor=pointer]

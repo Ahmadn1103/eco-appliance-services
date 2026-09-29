@@ -1,216 +1,214 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Phone, Calendar, Menu, X, Sparkles, ShieldCheck } from "lucide-react";
+import { Phone, Calendar, Menu, QrCode, X } from "lucide-react";
+import { navLinks, PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
+import { useSite } from "@/components/SiteShell";
 
-interface NavbarProps {
-  onOpenBooking?: () => void;
-}
+export default function Navbar() {
+  const { openBooking, openSocial } = useSite();
+  const [active, setActive] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [leaving, setLeaving] = useState(false);
+  const progressRef = useRef<HTMLDivElement>(null);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
-export default function Navbar({ onOpenBooking }: NavbarProps) {
-  const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+  const closeMenu = useCallback(() => {
+    setLeaving(true);
+    clearTimeout(leaveTimer.current);
+    leaveTimer.current = setTimeout(() => {
+      setMenuOpen(false);
+      setLeaving(false);
+    }, 160);
   }, []);
 
-  // Strict 3-page navigation matching contract scope
-  const navPages = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
-  ];
-
-  const handleBookingClick = () => {
-    if (onOpenBooking) {
-      onOpenBooking();
-    } else {
-      window.location.href = "/contact#schedule";
+  const toggleMenu = () => {
+    if (menuOpen && !leaving) closeMenu();
+    else {
+      clearTimeout(leaveTimer.current);
+      setLeaving(false);
+      setMenuOpen(true);
     }
   };
 
+  // Active link follows the section that is in view.
+  useEffect(() => {
+    const targets = navLinks
+      .map((l) => document.getElementById(l.id))
+      .filter((el): el is HTMLElement => el !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-30% 0px -60% 0px" },
+    );
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+
+  // Scroll-progress hairline (written straight to the DOM to avoid re-rendering on every scroll).
+  useEffect(() => {
+    const onScroll = () => {
+      const el = progressRef.current;
+      if (!el) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      el.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMenu();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen, closeMenu]);
+
+  useEffect(() => () => clearTimeout(leaveTimer.current), []);
+
   return (
-    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 px-3 sm:px-6 pointer-events-none">
-      <div className="max-w-5xl mx-auto">
-        {/* Floating Glass Pill */}
+    <>
+      <div
+        ref={progressRef}
+        aria-hidden="true"
+        className="fixed top-0 left-0 right-0 z-[60] h-0.5 origin-left scale-x-0 bg-gradient-to-r from-primary via-primary to-accent"
+      />
+
+      {menuOpen && (
+        <button
+          type="button"
+          aria-label="Close menu"
+          onClick={closeMenu}
+          className={`menu-veil fixed inset-0 z-40 bg-ink/25 lg:hidden ${leaving ? "is-leaving" : ""}`}
+        />
+      )}
+
+      <header className="fixed top-2 sm:top-4 left-0 right-0 z-50 w-full px-3 sm:px-6 pointer-events-none">
         <div
-          className={`pointer-events-auto transition-all duration-300 rounded-full px-3.5 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between border ${
-            isScrolled
-              ? "bg-white/90 backdrop-blur-2xl border-white/80 shadow-[0_16px_40px_-8px_rgba(15,23,42,0.15)] ring-1 ring-slate-900/5"
-              : "bg-white/80 backdrop-blur-xl border-white/60 shadow-[0_12px_32px_-6px_rgba(15,23,42,0.1)]"
+          className={`max-w-6xl mx-auto pointer-events-auto border border-line/90 bg-surface/95 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.08),0_2px_10px_rgba(5,150,105,0.08)] transition-all duration-200 ${
+            menuOpen ? "rounded-3xl" : "rounded-full"
           }`}
         >
-          {/* Brand Logo & Title */}
-          <Link
-            href="/"
-            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none"
-          >
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-white border border-slate-200/90 shadow-xs p-0.5 group-hover:scale-105 transition-transform flex items-center justify-center">
-              <Image
-                src="/logo-mark.png"
-                alt="Eco Appliance Services"
-                fill
-                sizes="40px"
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
-                <span className="text-base sm:text-lg font-black tracking-tight text-slate-950 group-hover:text-emerald-700 transition-colors">
-                  Eco <span className="text-emerald-600">Appliance</span>
+          <div className="px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-4">
+            {/* Logo lockup */}
+            <a href="#home" className="flex items-center gap-2.5 group shrink-0" aria-label="Eco Appliance Services, home">
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-xl border border-line bg-surface p-0.5 transition-transform group-hover:scale-105 group-active:scale-95">
+                <Image src="/logo-mark.png" alt="" fill sizes="40px" className="object-contain" priority />
+              </div>
+              <div className="flex flex-col leading-none">
+                <span className="text-xs sm:text-sm font-black tracking-tight text-ink group-hover:text-primary-strong transition-colors">
+                  Eco <span className="text-primary">Appliance</span>
                 </span>
-                <span className="hidden sm:inline-block text-[10px] font-extrabold tracking-wider uppercase px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-                  HVAC & Repair
+                <span className="mt-1 text-[8px] sm:text-[9px] font-black tracking-[0.2em] uppercase text-muted">
+                  Services
                 </span>
               </div>
-              <span className="hidden md:inline text-[11px] text-slate-500 font-medium -mt-0.5">
-                Appliance repairs? Leave it to us.
-              </span>
-            </div>
-          </Link>
+              <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse" aria-hidden="true" />
+            </a>
 
-          {/* Desktop 3-Page Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-100/70 p-1 rounded-full border border-slate-200/60 backdrop-blur-md">
-            {navPages.map((page) => {
-              const isActive =
-                page.href === "/"
-                  ? pathname === "/"
-                  : pathname?.startsWith(page.href);
-
-              return (
-                <Link
-                  key={page.name}
-                  href={page.href}
-                  className={`px-4 sm:px-5 py-1.5 text-xs sm:text-sm font-bold rounded-full transition-all duration-200 ${
-                    isActive
-                      ? "bg-slate-950 text-white shadow-xs"
-                      : "text-slate-600 hover:text-slate-950 hover:bg-white/80"
+            {/* Desktop segmented chip nav */}
+            <nav aria-label="Primary" className="hidden lg:flex bg-surface-alt border border-line p-1 rounded-full">
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  aria-current={active === link.id ? "true" : undefined}
+                  className={`nav-chip px-4 py-1.5 rounded-full text-xs font-bold ${
+                    active === link.id
+                      ? "bg-primary text-on-primary shadow-xs"
+                      : "text-ink-soft hover:text-ink hover:bg-surface"
                   }`}
                 >
-                  {page.name}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Right Action Buttons */}
-          <div className="hidden sm:flex items-center gap-2.5">
-            <a
-              href="tel:5714621813"
-              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 hover:border-emerald-300 hover:shadow-md active:scale-95 rounded-full transition-all border border-emerald-200"
-            >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <Phone className="w-3.5 h-3.5 text-emerald-600" />
-              <span>(571) 462-1813</span>
-            </a>
-
-            <button
-              onClick={handleBookingClick}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-extrabold text-white bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 rounded-full shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>Schedule Service</span>
-            </button>
-          </div>
-
-          {/* Mobile Actions: Call & Menu Toggle */}
-          <div className="flex sm:hidden items-center gap-1.5">
-            <a
-              href="tel:5714621813"
-              className="p-2 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-full transition-colors border border-emerald-200"
-              aria-label="Call (571) 462-1813"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
-            <button
-              onClick={handleBookingClick}
-              className="inline-flex items-center gap-1 px-3.5 py-2 text-xs font-extrabold text-white bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 active:scale-95 rounded-full shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
-            >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>Book</span>
-            </button>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-800 hover:text-slate-950 rounded-full bg-slate-100 border border-slate-200 focus:outline-none"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Dropdown Glass Menu */}
-        {mobileMenuOpen && (
-          <div className="pointer-events-auto mt-2 rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 p-4 shadow-[0_20px_45px_-10px_rgba(15,23,42,0.18)] animate-in slide-in-from-top-3 duration-200">
-            <div className="flex flex-col space-y-2">
-              <div className="flex items-center justify-between pb-2 border-b border-slate-100 px-2">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                  Menu Navigation (3 Pages)
-                </span>
-                <span className="text-[11px] font-bold text-emerald-600 flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  Same-Day Dispatch
-                </span>
-              </div>
-
-              {navPages.map((page) => {
-                const isActive =
-                  page.href === "/"
-                    ? pathname === "/"
-                    : pathname?.startsWith(page.href);
-
-                return (
-                  <Link
-                    key={page.name}
-                    href={page.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`px-4 py-2.5 text-sm font-bold rounded-2xl flex items-center justify-between transition-colors ${
-                      isActive
-                        ? "bg-slate-950 text-white"
-                        : "text-slate-800 hover:bg-slate-100"
-                    }`}
-                  >
-                    <span>{page.name}</span>
-                    {isActive && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    )}
-                  </Link>
-                );
-              })}
-
-              <div className="pt-3 border-t border-slate-100 space-y-2">
-                <a
-                  href="tel:5714621813"
-                  className="flex items-center justify-center gap-2 w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold text-xs rounded-2xl border border-slate-200 transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5 text-emerald-600" />
-                  Call Urgent Dispatch: (571) 462-1813
+                  {link.label}
                 </a>
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    handleBookingClick();
-                  }}
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-extrabold text-xs rounded-2xl shadow-md transition-all"
-                >
-                  <Calendar className="w-4 h-4" />
-                  Schedule Repair Online
-                </button>
-              </div>
+              ))}
+            </nav>
+
+            {/* Right cluster */}
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+              <a
+                href={PHONE_HREF}
+                className="pressable hidden xl:inline-flex items-center gap-1.5 rounded-full bg-surface-alt border border-line px-3 py-1.5 text-xs font-bold hover:border-primary"
+              >
+                <Phone className="pressable-icon w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                {PHONE_DISPLAY}
+              </a>
+              <a
+                href={PHONE_HREF}
+                aria-label={`Call ${PHONE_DISPLAY}`}
+                className="icon-btn xl:hidden p-1.5 sm:p-2 rounded-full bg-surface-alt border border-line text-primary hover:border-primary"
+              >
+                <Phone className="w-4 h-4" aria-hidden="true" />
+              </a>
+              <button
+                type="button"
+                onClick={() => openBooking()}
+                className="btn-cta inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-primary via-primary to-accent text-on-primary px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-sm"
+              >
+                <Calendar className="relative z-10 w-3.5 h-3.5" aria-hidden="true" />
+                <span className="relative z-10 sm:hidden">Book</span>
+                <span className="relative z-10 hidden sm:inline">Book Service</span>
+              </button>
+              <button
+                type="button"
+                onClick={openSocial}
+                aria-label="Scan QR code to call or follow us"
+                className="icon-btn hidden lg:inline-flex p-2 rounded-full bg-surface-alt border border-line text-ink-soft hover:border-primary hover:text-primary"
+              >
+                <QrCode className="w-4 h-4" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                onClick={toggleMenu}
+                aria-label="Toggle navigation menu"
+                aria-expanded={menuOpen && !leaving}
+                className={`icon-btn lg:hidden p-1.5 sm:p-2 rounded-full border ${
+                  menuOpen && !leaving
+                    ? "bg-primary text-on-primary border-primary"
+                    : "bg-surface-alt text-ink border-line"
+                }`}
+              >
+                {menuOpen && !leaving ? <X className="w-4 h-4" aria-hidden="true" /> : <Menu className="w-4 h-4" aria-hidden="true" />}
+              </button>
             </div>
           </div>
-        )}
-      </div>
-    </header>
+
+          {/* Mobile menu drops down inside the pill */}
+          {menuOpen && (
+            <div className={`header-dropdown lg:hidden px-3 pb-3 ${leaving ? "is-leaving" : ""}`}>
+              <div className="rounded-2xl bg-surface-alt border border-line p-1.5">
+                <div className="grid grid-cols-3 gap-1">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.id}
+                      href={`#${link.id}`}
+                      onClick={closeMenu}
+                      className={`menu-item pressable px-2 py-2.5 rounded-xl text-xs font-bold text-center ${
+                        active === link.id
+                          ? "bg-primary text-on-primary"
+                          : "text-ink-soft hover:bg-surface hover:text-ink"
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </header>
+    </>
   );
 }

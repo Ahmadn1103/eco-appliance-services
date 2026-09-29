@@ -18,21 +18,21 @@ Marketing and booking site for an appliance repair business serving the DC / Mar
 ## Structure
 | Path | Purpose |
 |---|---|
-| `app/page.tsx` | Home page: Hero, Services, Why Us, Process, FAQ, CTA banner, Footer (Warranty Partners, Featured Showcase, Estimator and DMV Coverage were removed from the home page to keep it short) |
-| `app/services/`, `app/contact/` | Services and contact pages. The Services page keeps Featured Showcase and the Diagnostic Estimator |
+| `app/page.tsx` | **Single page** (server component, metadata + FAQ JSON-LD). Sections in order: Hero (`#home`), Services (`#services`), Why Us, Process (`#process`), Service Area (`#service-area`), Brands strip, FAQ (`#faq`), Contact (`#contact`), CTA bar. `/services` and `/contact` redirect to `/#services` and `/#contact` (see `next.config.ts`) |
+| `components/SiteShell.tsx` | Client wrapper: Navbar, `<main>`, Footer, BookingModal, SocialModal (QR). `useSite()` exposes `openBooking(service?)` and `openSocial()` to any button |
+| `components/ZipChecker.tsx` | Reusable ZIP availability checker (hero, services panel, service area). Data: `lib/service-area-zips.ts` (generated, 40 mi from DC, do not edit by hand), logic: `lib/service-area.ts` |
+| `components/QrPanel.tsx` | Call / Facebook / Instagram QR toggle (footer and social modal), generated client-side with `qrcode`. Set the real URLs in `SOCIAL_LINKS` in `lib/site.ts`; empty ones show "Link coming soon" |
+| `lib/services.ts` | Service data (lucide icons) driving the tiles, panel, hero picker and footer links. Edit service content here only |
 | `app/api/inquiries/route.ts` | Form handler: validates input and sends emails via Resend |
-| `components/ServiceCards.tsx` | The 5 core service cards plus the Home Warranty card (emoji icons, descriptions, fix lists, turnaround). **Shared by the home page and the Services page**, so edit service content here only |
-| `components/ServicesSection.tsx` | Home page section: heading, `ServiceCards`, and the auto-scrolling "Brands We Service" strip |
+| `components/ServicesSection.tsx` | Tile selector (`role="tablist"`) plus detail panel with the quick contact form |
 | `components/BookingModal.tsx` | 2-step booking flow (choose service and arrival window, then address and contact) |
 | `components/ContactForm.tsx` | Quick contact form: tap-to-pick service and time, then name, phone, email, ZIP and required street address. Date and notes are optional and collapsed |
 | `components/Footer.tsx` | Footer with a green "book today" CTA band, icon link columns and a back-to-top button |
 | `components/*` | Navbar, Hero, sections |
-| `components/Reveal.tsx` | Scroll-reveal wrapper (IntersectionObserver, triggers ~600px before a section is visible). Motion CSS lives in `app/globals.css` and is disabled for `prefers-reduced-motion` |
 | `lib/site.ts` | `SITE_URL` (from `NEXT_PUBLIC_SITE_URL`, falls back to the vercel.app URL), used for canonicals, sitemap, robots and schema |
 | `lib/faqs.ts` | FAQ content, shared by `FAQSection` and the FAQPage JSON-LD on the home page |
 | `app/robots.ts`, `app/sitemap.ts` | robots.txt and sitemap.xml |
 | `app/opengraph-image.tsx`, `app/twitter-image.tsx` | Generated 1200x630 social preview image |
-| `app/services/layout.tsx`, `app/contact/layout.tsx` | Per-page metadata (the pages are client components, so metadata lives in these layouts) |
 
 ## How bookings work
 1. Both forms POST JSON to `/api/inquiries`.
