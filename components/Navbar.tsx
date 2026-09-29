@@ -20,7 +20,7 @@ export default function Navbar() {
     leaveTimer.current = setTimeout(() => {
       setMenuOpen(false);
       setLeaving(false);
-    }, 160);
+    }, 100);
   }, []);
 
   const toggleMenu = () => {
@@ -96,7 +96,7 @@ export default function Navbar() {
 
       <header className="fixed top-2 sm:top-4 left-0 right-0 z-50 w-full px-3 sm:px-6 pointer-events-none">
         <div
-          className={`max-w-6xl mx-auto pointer-events-auto border border-line/90 bg-surface/95 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.08),0_2px_10px_rgba(5,150,105,0.08)] transition-all duration-200 ${
+          className={`max-w-6xl mx-auto pointer-events-auto border border-line/90 bg-surface lg:bg-surface/95 lg:backdrop-blur-xl shadow-[0_8px_24px_rgba(0,0,0,0.08)] ${
             menuOpen ? "rounded-3xl" : "rounded-full"
           }`}
         >

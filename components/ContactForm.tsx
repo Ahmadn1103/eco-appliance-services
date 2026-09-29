@@ -318,15 +318,15 @@ export default function ContactForm({ initialService = "" }: ContactFormProps) {
               showMore ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
             }`}
           >
-            <div className="overflow-hidden">
-              <div className="px-4 pb-4 space-y-3">
-                <div className="grid grid-cols-1 gap-3">
+            <div className="overflow-hidden min-w-0">
+              <div className="px-4 pb-4 space-y-3 min-w-0">
+                <div className="grid grid-cols-1 gap-3 min-w-0">
                   <input
                     type="date"
                     aria-label="Preferred date"
                     value={formData.preferredDate}
                     onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                    className={inputClass}
+                    className={`${inputClass} block min-w-0 max-w-full appearance-none`}
                     tabIndex={showMore ? 0 : -1}
                   />
                 </div>
