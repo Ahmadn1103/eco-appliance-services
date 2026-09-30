@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Eco Appliance Services",
     short_name: "Eco Appliance",
-    description: "Premier HVAC, Air Duct & Appliance Repairs across Washington DC, Maryland & Virginia",
+    description: "Appliance Repair & Installation, Dryer Vent & Duct Cleaning across Washington DC, Maryland & Virginia",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

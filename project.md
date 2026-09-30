@@ -18,13 +18,13 @@ Marketing and booking site for an appliance repair business serving the DC / Mar
 ## Structure
 | Path | Purpose |
 |---|---|
-| `app/page.tsx` | **Single page** (server component, metadata + FAQ JSON-LD). Sections in order: Hero (`#home`), Services (`#services`), Why Us, Process (`#process`), Service Area (`#service-area`), Brands strip, FAQ (`#faq`), Contact (`#contact`), CTA bar. `/services` and `/contact` redirect to `/#services` and `/#contact` (see `next.config.ts`) |
+| `app/page.tsx` | **Single page** (server component, metadata + FAQ JSON-LD). Sections in order: Hero (`#home`), Services (`#services`), Why Us, Process (`#process`), Service Area (`#service-area`), FAQ (`#faq`), Contact (`#contact`), CTA bar. `/services` and `/contact` redirect to `/#services` and `/#contact` (see `next.config.ts`) |
 | `components/SiteShell.tsx` | Client wrapper: Navbar, `<main>`, Footer, BookingModal, SocialModal (QR). `useSite()` exposes `openBooking(service?)` and `openSocial()` to any button |
 | `components/ZipChecker.tsx` | Reusable ZIP availability checker (hero, services panel, service area). Data: `lib/service-area-zips.ts` (generated, 40 mi from DC, do not edit by hand), logic: `lib/service-area.ts` |
 | `components/QrPanel.tsx` | Call / Facebook / Instagram QR toggle (footer and social modal), generated client-side with `qrcode`. Set the real URLs in `SOCIAL_LINKS` in `lib/site.ts`; empty ones show "Link coming soon" |
-| `lib/services.ts` | Service data (lucide icons) driving the tiles, panel, hero picker and footer links. Edit service content here only |
+| `lib/services.ts` | Service data (lucide icons). `serviceGroups` (appliances, then dryer vent, then duct cleaning) drives the services section, hero picker and footer links; `applianceCategories` is the "Appliances We Service" listing; `bookableServices` feeds the booking popup and quick contact form. Edit service content here only |
 | `app/api/inquiries/route.ts` | Form handler: validates input and sends emails via Resend |
-| `components/ServicesSection.tsx` | Tile selector (`role="tablist"`) plus detail panel with the quick contact form |
+| `components/ServicesSection.tsx` | Services section: appliance repair card, appliance categories + brands, home warranty band, then dryer vent and duct cleaning cards, each with Book and Call buttons. Brand list lives in `lib/site.ts` |
 | `components/BookingModal.tsx` | 2-step booking flow (choose service and arrival window, then address and contact) |
 | `components/ContactForm.tsx` | Quick contact form: tap-to-pick service and time, then name, phone, email, ZIP and required street address. Date and notes are optional and collapsed |
 | `components/Footer.tsx` | Footer with a green "book today" CTA band, icon link columns and a back-to-top button |
@@ -72,7 +72,7 @@ vercel --prod    # deploy
 
 ## SEO
 Audit run 2026-09-28 (score 51/100 before fixes); reports are in `eco-appliance-services.vercel.app-audit/`.
-- Done: per-page titles, descriptions and canonicals; robots.txt and sitemap.xml; generated OG image; HVACBusiness schema (no rating) plus FAQPage schema.
+- Done: per-page titles, descriptions and canonicals; robots.txt and sitemap.xml; generated OG image; HomeAndConstructionBusiness schema (no rating) plus FAQPage schema.
 - Set `NEXT_PUBLIC_SITE_URL` in Vercel once the custom domain is connected, then redeploy.
 - `ecoapplianceservices.com` (with the "e") is a for-sale parked page, not ours. The Resend domain is `ecoappliancservices.com` (no "e"); confirm which one is the real website domain.
 - The business is a startup. Do not add experience claims ("15+ years", "since 2021"), ratings, review counts or testimonials until they are real and verifiable. The reviews section, "5-Star Google Rated" badge and footer star rating were removed for this reason. Re-add reviews (and `aggregateRating` schema) only from real Google reviews.

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { ArrowRight, BadgeDollarSign, Clock, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { navLinks, PHONE_DISPLAY, PHONE_HREF, SOCIAL_LINKS } from "@/lib/site";
-import { coreServices } from "@/lib/services";
+import { serviceGroups } from "@/lib/services";
 import { useSite } from "@/components/SiteShell";
 import QrPanel from "@/components/QrPanel";
 import { QrCode } from "lucide-react";
@@ -34,7 +34,7 @@ export default function Footer() {
               Eco <span className="text-primary">Appliance</span> Services
             </span>
           </a>
-          <p className="text-sm italic text-ink">HVAC &amp; Precision Appliance Services</p>
+          <p className="text-sm italic text-ink">Appliance Repair &amp; Installation</p>
           <p className="text-xs sm:text-sm leading-relaxed max-w-md">
             Honest diagnosis, upfront pricing, and workmanship backed by a 30-day parts and labor guarantee, serving Washington DC,
             Maryland, and Northern Virginia.
@@ -68,9 +68,9 @@ export default function Footer() {
           <div>
             <ColumnHeading>Services</ColumnHeading>
             <ul className="space-y-2 text-xs sm:text-sm">
-              {coreServices.map((s) => (
+              {serviceGroups.map((s) => (
                 <li key={s.id}>
-                  <button type="button" onClick={() => openBooking(s.title)} className="text-left hover:text-primary">
+                  <button type="button" onClick={() => openBooking(s.bookAs)} className="text-left hover:text-primary">
                     {s.title}
                   </button>
                 </li>

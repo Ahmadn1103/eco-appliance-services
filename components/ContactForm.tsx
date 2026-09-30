@@ -7,11 +7,6 @@ import {
   Phone,
   ShieldCheck,
   AlertCircle,
-  Flame,
-  WashingMachine,
-  Refrigerator,
-  CookingPot,
-  Wind,
   Zap,
   Sunrise,
   Sun,
@@ -20,18 +15,11 @@ import {
   Loader2,
   type LucideIcon,
 } from "lucide-react";
+import { bookableServices, findBookableService } from "@/lib/services";
 
 interface ContactFormProps {
   initialService?: string;
 }
-
-const coreServices: { name: string; short: string; icon: LucideIcon }[] = [
-  { name: "Dryer Vent Cleaning", short: "Dryer Vent", icon: Flame },
-  { name: "Laundry (Washer) Repair", short: "Washer", icon: WashingMachine },
-  { name: "Refrigeration Repair", short: "Refrigerator", icon: Refrigerator },
-  { name: "Cooktop / Dishwasher Repair", short: "Cooktop / Dishwasher", icon: CookingPot },
-  { name: "House Duct Cleaning", short: "Duct Cleaning", icon: Wind },
-];
 
 const timeWindows: { label: string; short: string; icon: LucideIcon }[] = [
   { label: "First Available / Urgent Dispatch", short: "ASAP", icon: Zap },
@@ -56,9 +44,7 @@ const emptyForm = (service: string) => ({
 });
 
 export default function ContactForm({ initialService = "" }: ContactFormProps) {
-  const defaultService =
-    coreServices.find((s) => s.name.toLowerCase() === initialService.toLowerCase())?.name ??
-    coreServices[1].name;
+  const defaultService = (findBookableService(initialService) ?? bookableServices[0]).name;
 
   const [formData, setFormData] = useState(emptyForm(defaultService));
   const [showMore, setShowMore] = useState(false);
@@ -179,7 +165,7 @@ export default function ContactForm({ initialService = "" }: ContactFormProps) {
             What do you need?
           </legend>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-            {coreServices.map(({ name, short, icon: Icon }) => {
+            {bookableServices.map(({ name, short, icon: Icon }) => {
               const active = formData.service === name;
               return (
                 <button

@@ -20,7 +20,7 @@ const steps = [
     num: "03",
     icon: Wrench,
     title: "Precision OEM Repair",
-    desc: "Using factory-certified OEM parts stocked in our vehicles, we repair your appliance or clean your ducts cleanly and correctly.",
+    desc: "Using factory-certified OEM parts stocked in our vehicles, we repair your appliance, or clean your vents and ducts, cleanly and correctly.",
   },
   {
     num: "04",
@@ -41,9 +41,9 @@ export default function ProcessSection() {
             <CalendarCheck className="w-3.5 h-3.5" aria-hidden="true" />
             Hassle-Free Process
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">How Eco Appliance Services Works</h2>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight">How Eco Appliance Services Works</h2>
           <p className="mt-3 text-sm sm:text-lg text-ink-soft">
-            From your first call to the final cycle test, we make HVAC and appliance services straightforward, transparent, and
+            From your first call to the final cycle test, we make appliance repair straightforward, transparent, and
             completely stress-free.
           </p>
         </div>

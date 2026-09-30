@@ -5,7 +5,6 @@ import ServicesSection from "@/components/ServicesSection";
 import WhyUs from "@/components/WhyUs";
 import ProcessSection from "@/components/ProcessSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
-import BrandsStrip from "@/components/BrandsStrip";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import CtaBar from "@/components/CtaBar";
@@ -38,7 +37,6 @@ export default function Home() {
         <WhyUs />
         <ProcessSection />
         <ServiceAreaSection />
-        <BrandsStrip />
         <FAQSection />
         <ContactSection />
         <CtaBar />

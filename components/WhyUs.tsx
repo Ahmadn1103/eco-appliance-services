@@ -6,7 +6,7 @@ import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
 const pillars = [
   {
     title: "Skilled, Dependable Technicians",
-    desc: "Our technicians are trained to diagnose and repair HVAC, air duct, refrigeration, laundry, and kitchen appliance failures, and to get it right the first time.",
+    desc: "Our technicians are trained to diagnose and repair refrigerators, washers, dryers, ovens, ranges, dishwashers, and more, and to get it right the first time.",
   },
   {
     title: "Honest Diagnosis & Integrity",
@@ -49,7 +49,7 @@ export default function WhyUs() {
             Honest Service. Upfront Pricing. Work You Can Trust.
           </h2>
           <p className="text-sm sm:text-base text-ink-soft mb-5 max-w-2xl">
-            When a refrigerator warms up, air ducts spread dust, or a washer fails mid-cycle, you don’t need guesswork. You need a
+            When a refrigerator warms up, a dryer stops heating, or a washer fails mid-cycle, you don’t need guesswork. You need a
             professional who knows these systems inside and out.
           </p>
           <ul className="space-y-3">
