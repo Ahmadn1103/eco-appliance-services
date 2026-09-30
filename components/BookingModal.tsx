@@ -13,16 +13,12 @@ import {
   ArrowLeft,
   Sparkles,
   Zap,
-  Flame,
-  WashingMachine,
-  Refrigerator,
-  CookingPot,
-  Wind,
   Sunrise,
   Sun,
   CalendarDays,
   type LucideIcon,
 } from "lucide-react";
+import { bookableServices, findBookableService } from "@/lib/services";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -35,57 +31,6 @@ export default function BookingModal({
   onClose,
   initialAppliance = "",
 }: BookingModalProps) {
-  // 5 Contract Core Services with consistent icons & badges matching the site
-  const coreServices: {
-    id: string;
-    name: string;
-    icon: LucideIcon;
-    badge: string;
-    time: string;
-    desc: string;
-  }[] = [
-    {
-      id: "Dryer vent cleaning",
-      name: "Dryer Vent Cleaning",
-      icon: Flame,
-      badge: "FIRE SAFETY",
-      time: "45 min clean",
-      desc: "Clears deep lint to roof, stops dryer fire hazards",
-    },
-    {
-      id: "Laundry (washer) repair",
-      name: "Laundry (Washer) Repair",
-      icon: WashingMachine,
-      badge: "SAME-DAY WASHER",
-      time: "45–90 min fix",
-      desc: "Fixes leaks, spinning faults, draining clogs & error codes",
-    },
-    {
-      id: "Refrigeration repair",
-      name: "Refrigeration Repair",
-      icon: Refrigerator,
-      badge: "PRIORITY COOLING",
-      time: "2–4 hr emergency",
-      desc: "Emergency cooling, noisy compressors & ice makers",
-    },
-    {
-      id: "Cooktop / dishwasher repair",
-      name: "Cooktop / Dishwasher Repair",
-      icon: CookingPot,
-      badge: "KITCHEN PROS",
-      time: "60 min fix",
-      desc: "Igniters, element heating, drainage & cloudy wash",
-    },
-    {
-      id: "House duct cleaning",
-      name: "House Duct Cleaning",
-      icon: Wind,
-      badge: "HVAC AIR QUALITY",
-      time: "2–3 hr whole-home",
-      desc: "Medical-grade HEPA negative vacuuming for fresh air",
-    },
-  ];
-
   const timeOptions: { label: string; icon: LucideIcon }[] = [
     { label: "ASAP / Same-Day Dispatch", icon: Zap },
     { label: "Morning (8 AM - 12 PM)", icon: Sunrise },
@@ -93,21 +38,10 @@ export default function BookingModal({
     { label: "Next Available Day", icon: CalendarDays },
   ];
 
-  // Helper to find matching service from initial string
-  const getInitialService = (init: string) => {
-    if (!init) return coreServices[0].id;
-    const lower = init.toLowerCase();
-    const found = coreServices.find(
-      (s) =>
-        s.id.toLowerCase().includes(lower) ||
-        s.name.toLowerCase().includes(lower) ||
-        lower.includes(s.name.toLowerCase().split(" ")[0]),
-    );
-    return found ? found.id : coreServices[0].id;
-  };
+  const getInitialService = (init: string) => (findBookableService(init) ?? bookableServices[0]).name;
 
   const [step, setStep] = useState(1);
-  const [selectedService, setSelectedService] = useState(coreServices[0].id);
+  const [selectedService, setSelectedService] = useState(bookableServices[0].name);
   const [timePreference, setTimePreference] = useState("ASAP / Same-Day Dispatch");
   const [customDate, setCustomDate] = useState("");
   
@@ -170,7 +104,7 @@ export default function BookingModal({
     setSubmitting(true);
     setSubmitError("");
 
-    const chosenServiceObj = coreServices.find((s) => s.id === selectedService) || coreServices[0];
+    const chosenServiceObj = bookableServices.find((s) => s.name === selectedService) || bookableServices[0];
     const finalBilling = isWarranty
       ? `Home Warranty: ${warrantyCompany}${warrantyClaimNumber ? ` (Claim #${warrantyClaimNumber})` : ""}`
       : "Direct Homeowner (Diagnostic credited to repair)";
@@ -215,7 +149,7 @@ export default function BookingModal({
     onClose();
   };
 
-  const currentServiceObj = coreServices.find((s) => s.id === selectedService) || coreServices[0];
+  const currentServiceObj = bookableServices.find((s) => s.name === selectedService) || bookableServices[0];
 
   return (
     <div className="fixed inset-0 z-50 bg-slate-950/70 sm:backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-hidden touch-pan-y overscroll-none">
@@ -288,19 +222,18 @@ export default function BookingModal({
                   What service do you need?
                 </p>
                 <p className="text-xs text-slate-500 mb-3">
-                  Tap your appliance or HVAC service below:
+                  Tap the service you need below:
                 </p>
 
-                {/* 5 Core Services with Consistent Squircle Emoji Icons */}
                 <div className="space-y-2">
-                  {coreServices.map((svc) => {
-                    const isSelected = selectedService === svc.id;
+                  {bookableServices.map((svc) => {
+                    const isSelected = selectedService === svc.name;
                     const SvcIcon = svc.icon;
                     return (
                       <button
-                        key={svc.id}
+                        key={svc.name}
                         type="button"
-                        onClick={() => setSelectedService(svc.id)}
+                        onClick={() => setSelectedService(svc.name)}
                         className={`w-full p-3 rounded-2xl border text-left flex items-center justify-between transition-all cursor-pointer ${
                           isSelected
                             ? "border-emerald-600 bg-emerald-50/70 ring-2 ring-emerald-500/20 shadow-xs"
@@ -308,7 +241,7 @@ export default function BookingModal({
                         }`}
                       >
                         <div className="flex items-center gap-3 min-w-0">
-                          <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl border flex items-center justify-center shrink-0 transition-colors ${
+                          <div className={`w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 transition-colors ${
                             isSelected
                               ? "bg-emerald-600 border-emerald-600 text-white"
                               : "bg-emerald-50 border-emerald-100 text-emerald-600"
@@ -316,13 +249,10 @@ export default function BookingModal({
                             <SvcIcon className="w-5 h-5" />
                           </div>
                           <div className="min-w-0">
-                            <span className="block text-[13px] sm:text-sm font-extrabold text-slate-950 leading-snug">
+                            <span className="block text-[13px] font-extrabold text-slate-950 leading-snug">
                               {svc.name}
                             </span>
-                            <span className="inline-block mt-1 text-[10px] font-extrabold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-2 py-0.5 rounded-full border border-emerald-200">
-                              {svc.badge}
-                            </span>
-                            <p className="text-[11px] text-slate-500 mt-1 leading-snug">
+                            <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">
                               {svc.desc}
                             </p>
                           </div>

@@ -31,7 +31,7 @@ export default function FAQSection() {
             <HelpCircle className="w-3.5 h-3.5" aria-hidden="true" />
             Frequently Asked Questions
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">Common Questions About Our Services</h2>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight">Common Questions About Our Services</h2>
           <p className="mt-3 text-sm sm:text-lg text-ink-soft">
             Have questions before scheduling? Here is everything you need to know about our service process, pricing, and warranties.
           </p>
@@ -79,7 +79,7 @@ export default function FAQSection() {
 
         <div className="mt-10 p-6 rounded-3xl bg-surface-tint border border-line-tint flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h3 className="text-base font-black">Have a specific question about your HVAC or appliance?</h3>
+            <h3 className="text-base font-black">Have a specific question about your appliance?</h3>
             <p className="text-xs sm:text-sm text-ink-soft mt-0.5">
               Speak directly with an experienced technician or our DMV dispatch team today.
             </p>

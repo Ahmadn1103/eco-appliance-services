@@ -13,11 +13,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Eco Appliance Services | HVAC & Appliance Repair DC, MD, VA",
+    default: "Eco Appliance Services | Appliance Repair & Installation DC, MD, VA",
     template: "%s | Eco Appliance Services",
   },
   description:
-    "Eco Appliance Services provides professional HVAC duct cleaning, dryer vent restoration, refrigeration, laundry, and kitchen appliance repairs across Washington DC, Maryland, and Northern Virginia.",
+    "Eco Appliance Services provides professional appliance repair and installation for refrigerators, washers, dryers, ovens, ranges, and dishwashers, plus dryer vent and duct cleaning, across Washington DC, Maryland, and Northern Virginia. Home warranty claims welcome.",
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     telephone: true,
   },
   openGraph: {
-    title: "Eco Appliance Services | HVAC & Precision Appliance Repair DMV",
+    title: "Eco Appliance Services | Appliance Repair & Installation DMV",
     description:
-      "Reliable HVAC, duct cleaning, and appliance repair across Washington DC, Maryland, and Northern Virginia. Honest diagnosis and upfront pricing.",
+      "Reliable appliance repair, installation, dryer vent and duct cleaning across Washington DC, Maryland, and Northern Virginia. Honest diagnosis and upfront pricing.",
     url: "/",
     siteName: SITE_NAME,
     locale: "en_US",
@@ -46,14 +46,14 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "HVACBusiness",
+    "@type": "HomeAndConstructionBusiness",
     "@id": `${SITE_URL}/#business`,
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/logo.jpeg`,
     image: `${SITE_URL}/logo.jpeg`,
     description:
-      "Professional HVAC duct cleaning, dryer vent restoration, refrigeration, cooktop, dishwasher, and washing machine repair across the DMV.",
+      "Professional appliance repair and installation (refrigerator, washer, dryer, oven, range, cooktop, dishwasher), dryer vent cleaning, and house duct cleaning across the DMV.",
     priceRange: "$$",
     telephone: SITE_PHONE,
     areaServed: [
@@ -75,7 +75,7 @@ export default function RootLayout({
     ].map((name) => ({ "@type": "City", name })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "HVAC and appliance services",
+      name: "Appliance repair and cleaning services",
       itemListElement: [
         "Dryer vent cleaning",
         "Air duct cleaning",

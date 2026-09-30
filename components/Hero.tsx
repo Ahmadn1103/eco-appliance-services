@@ -13,7 +13,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
-import { coreServices } from "@/lib/services";
+import { serviceGroups } from "@/lib/services";
 import { useSite } from "@/components/SiteShell";
 import ZipChecker from "@/components/ZipChecker";
 
@@ -31,7 +31,7 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden bg-ink text-on-primary">
       <Image
         src="/hero-technician.jpg"
-        alt="Certified HVAC and appliance repair technician servicing luxury equipment"
+        alt="Certified appliance repair technician servicing a home appliance"
         fill
         priority
         sizes="100vw"
@@ -47,17 +47,17 @@ export default function Hero() {
             <span className="hidden sm:inline">Same-Day Service • Serving DC, Maryland &amp; Northern Virginia</span>
           </p>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08]">
-            Precision HVAC, Air Duct &amp; Appliance Services Throughout the
+          <h1 className="text-[1.75rem] sm:text-5xl lg:text-6xl font-black tracking-tight text-balance leading-[1.12] sm:leading-[1.08]">
+            Expert Appliance Repair &amp; Installation Throughout the
             <span className="block bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-300 bg-clip-text text-transparent">
               DMV
             </span>
           </h1>
 
-          <p className="text-sm sm:text-lg max-w-xl leading-relaxed text-white/80">
-            <strong className="text-white font-bold">Eco Appliance Services</strong> is your trusted specialist for residential
-            HVAC duct cleaning, dryer vent restoration, refrigeration, laundry, and kitchen appliance repairs. We deliver honest
-            upfront diagnosis and lasting energy-efficient solutions.
+          <p className="text-[13px] sm:text-lg max-w-xl leading-relaxed text-white/80">
+            <strong className="text-white font-bold">Eco Appliance Services</strong> is your trusted specialist for refrigerator,
+            washer &amp; dryer, oven, range, and dishwasher repair and installation, plus dryer vent and duct cleaning. Honest
+            upfront diagnosis, home warranty claims welcome.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-1">
@@ -104,11 +104,11 @@ export default function Hero() {
               Or pick a service to book online
             </p>
             <ul className="space-y-2">
-              {coreServices.map(({ id, title, icon: Icon, badge }) => (
+              {serviceGroups.map(({ id, title, icon: Icon, badge, bookAs }) => (
                 <li key={id}>
                   <button
                     type="button"
-                    onClick={() => openBooking(title)}
+                    onClick={() => openBooking(bookAs)}
                     className="pressable group w-full flex items-center gap-3 rounded-2xl bg-surface-alt border border-line hover:border-primary hover:bg-surface-tint/60 px-3 py-2.5 text-left"
                   >
                     <span className="w-9 h-9 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">

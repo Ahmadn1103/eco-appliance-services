@@ -14,7 +14,7 @@ export default function ContactSection() {
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-4xl font-black tracking-tight">Get in Touch with Eco Appliance Services</h2>
           <p className="mt-3 text-sm sm:text-base text-ink-soft">
-            Need urgent diagnosis, air duct sanitization, or warranty repair dispatch? Submit our quick customer inquiry form or call
+            Need an urgent appliance repair, a dryer vent or duct cleaning, or warranty repair dispatch? Submit our quick customer inquiry form or call
             our DMV dispatch team directly.
           </p>
         </div>

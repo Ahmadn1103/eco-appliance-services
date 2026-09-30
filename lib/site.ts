@@ -34,15 +34,17 @@ export const serviceRegions = [
 ];
 
 export const brands = [
-  "TRANE",
-  "CARRIER",
-  "SUB-ZERO",
-  "SAMSUNG",
+  "Samsung",
   "LG",
-  "BOSCH",
-  "WHIRLPOOL",
-  "GE MONOGRAM",
-  "LENNOX",
+  "Whirlpool",
+  "Maytag",
+  "GE",
+  "Frigidaire",
+  "Bosch",
+  "KitchenAid",
+  "Kenmore",
+  "Electrolux",
+  "Amana",
 ];
 
 // Social profile links, used for the QR codes in the footer and the header popup.
