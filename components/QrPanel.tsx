@@ -2,27 +2,25 @@
 
 import { useEffect, useState } from "react";
 import QRCode from "qrcode";
-import { Phone, QrCode } from "lucide-react";
-import { PHONE_DISPLAY, PHONE_HREF, SOCIAL_LINKS } from "@/lib/site";
+import { QrCode } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/site";
 import { FacebookIcon, InstagramIcon } from "@/components/BrandIcons";
 
-type Tab = "call" | "facebook" | "instagram";
+type Tab = "facebook" | "instagram";
 
 const tabs: { id: Tab; label: string }[] = [
-  { id: "call", label: "Call" },
   { id: "facebook", label: "Facebook" },
   { id: "instagram", label: "Instagram" },
 ];
 
 const targets: Record<Tab, { value: string; title: string; caption: string }> = {
-  call: { value: PHONE_HREF, title: "Scan to Call", caption: PHONE_DISPLAY },
   facebook: { value: SOCIAL_LINKS.facebook, title: "Scan for Facebook", caption: "Follow Eco Appliance Services" },
   instagram: { value: SOCIAL_LINKS.instagram, title: "Scan for Instagram", caption: "Follow Eco Appliance Services" },
 };
 
-/** 3-way toggle plus a client-side generated QR code. Empty social links show a placeholder, never a fake code. */
+/** Facebook / Instagram toggle plus a client-side generated QR code. Empty social links show a placeholder, never a fake code. */
 export default function QrPanel({ className = "" }: { className?: string }) {
-  const [tab, setTab] = useState<Tab>("call");
+  const [tab, setTab] = useState<Tab>("facebook");
   const [images, setImages] = useState<Partial<Record<Tab, string>>>({});
   const target = targets[tab];
 
@@ -76,7 +74,6 @@ export default function QrPanel({ className = "" }: { className?: string }) {
 
       <div className="space-y-0.5">
         <p className="text-xs font-black text-ink flex items-center justify-center gap-1.5">
-          {tab === "call" && <Phone className="w-3.5 h-3.5 text-primary" aria-hidden="true" />}
           {tab === "facebook" && <FacebookIcon className="w-3.5 h-3.5 text-primary" />}
           {tab === "instagram" && <InstagramIcon className="w-3.5 h-3.5 text-primary" />}
           {target.title}

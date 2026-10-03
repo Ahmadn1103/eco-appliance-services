@@ -17,7 +17,7 @@ export const faqs = [
   },
   {
     q: "What warranty comes with your repair and cleaning work?",
-    a: "Every repair completed by Eco Appliance Services is backed by our comprehensive 90-Day Parts and Labor Warranty. We use genuine OEM factory parts to ensure long-term durability and safety.",
+    a: "Every repair completed by Eco Appliance Services is backed by our comprehensive 30-Day Parts and Labor Warranty. We use genuine OEM factory parts to ensure long-term durability and safety.",
   },
   {
     q: "Should I repair or replace my broken equipment?",

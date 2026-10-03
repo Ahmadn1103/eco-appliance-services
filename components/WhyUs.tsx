@@ -25,27 +25,27 @@ const pillars = [
     desc: "Our service vehicles carry high-failure OEM parts, high-grade diagnostic tools, and testing meters, allowing us to complete most repairs in a single visit.",
   },
   {
-    title: "90-Day Parts & Labor Guarantee",
-    desc: "We stand behind the quality of our work. Every repair is backed by a 90-day comprehensive parts and labor warranty for complete peace of mind.",
+    title: "30-Day Parts & Labor Guarantee",
+    desc: "We stand behind the quality of our work. Every repair is backed by a 30-day comprehensive parts and labor warranty for complete peace of mind.",
   },
 ];
 
 const metrics = [
   { icon: BadgeDollarSign, label: "Diagnostic, Credited", value: "$89", note: "Applied 100% to your approved repair" },
-  { icon: ShieldCheck, label: "Parts & Labor", value: "90-Day", note: "Comprehensive warranty on every repair" },
+  { icon: ShieldCheck, label: "Parts & Labor", value: "30-Day", note: "Comprehensive warranty on every repair" },
   { icon: Clock, label: "Dispatch", value: "Same-Day", note: "Priority slots across DC, MD & VA" },
 ];
 
 export default function WhyUs() {
   return (
     <section id="why-us" className="bg-surface">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 grid lg:grid-cols-12 gap-8 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 grid lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-7">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-line-tint text-primary-strong text-xs font-bold uppercase tracking-wider shadow-xs mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-line-tint text-primary-strong text-xs font-black uppercase tracking-widest shadow-xs mb-3">
             <Award className="w-3.5 h-3.5" aria-hidden="true" />
             The Eco Appliance Standard
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-primary-strong mb-3">
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-primary-strong mb-3">
             Honest Service. Upfront Pricing. Work You Can Trust.
           </h2>
           <p className="text-sm sm:text-base text-ink-soft mb-5 max-w-2xl">

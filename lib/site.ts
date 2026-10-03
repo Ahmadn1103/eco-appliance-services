@@ -12,6 +12,7 @@ export const PHONE_HREF = "tel:5714621813";
 export const navLinks = [
   { id: "home", label: "Home" },
   { id: "services", label: "Services" },
+  { id: "about", label: "About Us" },
   { id: "process", label: "Process" },
   { id: "service-area", label: "Service Area" },
   { id: "faq", label: "FAQ" },
@@ -20,29 +21,40 @@ export const navLinks = [
 
 export const serviceRegions = [
   {
-    region: "Washington, DC",
-    areas: ["NW", "NE", "Georgetown", "Capitol Hill", "Dupont", "Adams Morgan", "Tenleytown"],
+    region: "Virginia",
+    areas: [
+      "Aldie", "Alexandria", "Annandale", "Arlington", "Ashburn", "Bristow", "Burke", "Centreville", "Chantilly", "Clifton",
+      "Dulles", "Dumfries", "Dunn Loring", "Fairfax", "Fairfax Station", "Falls Church", "Fort Belvoir", "Fredericksburg",
+      "Front Royal", "Gainesville", "Great Falls", "Haymarket", "Herndon", "Leesburg", "Lorton", "Manassas", "McLean",
+      "Merrifield", "Mount Vernon", "Oakton", "Occoquan", "Reston", "Spotsylvania", "Springfield", "Stafford", "Sterling",
+      "Strasburg", "Triangle", "Vienna", "Warrenton", "Washington", "Waterford", "West McLean", "Winchester", "Woodbridge",
+    ],
   },
   {
     region: "Maryland",
-    areas: ["Bethesda", "Rockville", "Silver Spring", "Chevy Chase", "Potomac", "Gaithersburg"],
+    areas: [
+      "Bethesda", "Bowie", "Chevy Chase", "Clinton", "College Park", "Gaithersburg", "Greenbelt", "Hyattsville", "Oxon Hill",
+      "Rockville", "Silver Spring", "Suitland", "Takoma Park", "Upper Marlboro",
+    ],
   },
   {
-    region: "Northern Virginia",
-    areas: ["Arlington", "Alexandria", "McLean", "Fairfax", "Vienna", "Tysons", "Reston", "Ashburn"],
+    region: "Washington, DC",
+    areas: ["Naval Anacost Annex", "Washington", "Washington Navy Yard"],
   },
 ];
 
+// Logo strip: 10 logos = two even rows of 5. Files live in public/brands (viewBox cropped to the real bounds).
 export const brands = [
-  "TRANE",
-  "CARRIER",
-  "SUB-ZERO",
-  "SAMSUNG",
-  "LG",
-  "BOSCH",
-  "WHIRLPOOL",
-  "GE MONOGRAM",
-  "LENNOX",
+  { name: "Trane", logo: "/brands/trane.svg" },
+  { name: "Carrier", logo: "/brands/carrier.svg" },
+  { name: "Sub-Zero", logo: "/brands/sub-zero.svg" },
+  { name: "Samsung", logo: "/brands/samsung.svg" },
+  { name: "LG", logo: "/brands/lg.svg" },
+  { name: "Bosch", logo: "/brands/bosch.svg" },
+  { name: "Whirlpool", logo: "/brands/whirlpool.svg" },
+  { name: "GE Monogram", logo: "/brands/ge-monogram.svg" },
+  { name: "Lennox", logo: "/brands/lennox.svg" },
+  { name: "KitchenAid", logo: "/brands/kitchenaid.svg" },
 ];
 
 // Social profile links, used for the QR codes in the footer and the header popup.

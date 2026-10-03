@@ -3,7 +3,7 @@ import "./globals.css";
 import { SITE_URL, SITE_NAME, SITE_PHONE } from "@/lib/site";
 
 export const viewport: Viewport = {
-  themeColor: "#059669",
+  themeColor: "#209378",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -120,7 +120,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Caveat:wght@600&display=swap"
           rel="stylesheet"
         />
         <script

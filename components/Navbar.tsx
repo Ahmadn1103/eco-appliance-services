@@ -13,6 +13,19 @@ export default function Navbar() {
   const [leaving, setLeaving] = useState(false);
   const progressRef = useRef<HTMLDivElement>(null);
   const leaveTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  // While a nav click is scrolling the page, ignore the section observer so the chip does not step through every section on the way.
+  const scrollLock = useRef(false);
+  const lockTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  const goTo = useCallback((id: string) => {
+    setActive(id);
+    scrollLock.current = true;
+    clearTimeout(lockTimer.current);
+    // `scrollend` releases the lock; the timeout is a fallback for browsers without it.
+    lockTimer.current = setTimeout(() => {
+      scrollLock.current = false;
+    }, 1500);
+  }, []);
 
   const closeMenu = useCallback(() => {
     setLeaving(true);
@@ -20,7 +33,7 @@ export default function Navbar() {
     leaveTimer.current = setTimeout(() => {
       setMenuOpen(false);
       setLeaving(false);
-    }, 160);
+    }, 100);
   }, []);
 
   const toggleMenu = () => {
@@ -40,7 +53,7 @@ export default function Navbar() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
+          if (entry.isIntersecting && !scrollLock.current) setActive(entry.target.id);
         });
       },
       { rootMargin: "-30% 0px -60% 0px" },
@@ -75,6 +88,18 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, [menuOpen, closeMenu]);
 
+  useEffect(() => {
+    const release = () => {
+      scrollLock.current = false;
+      clearTimeout(lockTimer.current);
+    };
+    window.addEventListener("scrollend", release);
+    return () => {
+      window.removeEventListener("scrollend", release);
+      clearTimeout(lockTimer.current);
+    };
+  }, []);
+
   useEffect(() => () => clearTimeout(leaveTimer.current), []);
 
   return (
@@ -96,35 +121,46 @@ export default function Navbar() {
 
       <header className="fixed top-2 sm:top-4 left-0 right-0 z-50 w-full px-3 sm:px-6 pointer-events-none">
         <div
-          className={`max-w-6xl mx-auto pointer-events-auto border border-line/90 bg-surface/95 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.08),0_2px_10px_rgba(5,150,105,0.08)] transition-all duration-200 ${
-            menuOpen ? "rounded-3xl" : "rounded-full"
+          className={`max-w-7xl mx-auto pointer-events-auto border border-line/90 bg-surface/95 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.08),0_2px_10px_rgba(32,147,120,0.08)] transition-[border-radius] duration-150 ${
+            menuOpen ? "rounded-3xl" : "rounded-[1.75rem]"
           }`}
         >
-          <div className="px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-4">
-            {/* Logo lockup */}
-            <a href="#home" className="flex items-center gap-2.5 group shrink-0" aria-label="Eco Appliance Services, home">
-              <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-xl border border-line bg-surface p-0.5 transition-transform group-hover:scale-105 group-active:scale-95">
-                <Image src="/logo-mark.png" alt="" fill sizes="40px" className="object-contain" priority />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-xs sm:text-sm font-black tracking-tight text-ink group-hover:text-primary-strong transition-colors">
+          <div className="px-3.5 sm:px-5 py-1.5 sm:py-1 flex items-center justify-between gap-2 sm:gap-4">
+            {/* Logo: transparent PNGs, no box. Phones get the emblem plus live text; sm+ gets the full lockup. */}
+            <a href="#home" className="flex items-center gap-2 group shrink-0" aria-label="Eco Appliance Services, home">
+              <Image
+                src="/logo-emblem.png"
+                alt=""
+                width={711}
+                height={503}
+                priority
+                className="sm:hidden h-11 w-auto object-contain transition-transform group-active:scale-95"
+              />
+              <div className="sm:hidden flex flex-col leading-none">
+                <span className="text-xs font-black tracking-tight text-ink">
                   Eco <span className="text-primary">Appliance</span>
                 </span>
-                <span className="mt-1 text-[8px] sm:text-[9px] font-black tracking-[0.2em] uppercase text-muted">
-                  Services
-                </span>
+                <span className="mt-1 text-[8px] font-black tracking-[0.2em] uppercase text-muted">Services</span>
               </div>
-              <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse" aria-hidden="true" />
+              <Image
+                src="/logo-full.png"
+                alt=""
+                width={711}
+                height={673}
+                priority
+                className="hidden sm:block h-20 w-auto object-contain transition-transform group-hover:scale-105 group-active:scale-95"
+              />
             </a>
 
             {/* Desktop segmented chip nav */}
-            <nav aria-label="Primary" className="hidden lg:flex bg-surface-alt border border-line p-1 rounded-full">
+            <nav aria-label="Primary" className="hidden lg:flex bg-surface-alt/90 border border-line p-1 rounded-full">
               {navLinks.map((link) => (
                 <a
                   key={link.id}
                   href={`#${link.id}`}
+                  onClick={() => goTo(link.id)}
                   aria-current={active === link.id ? "true" : undefined}
-                  className={`nav-chip px-4 py-1.5 rounded-full text-xs font-bold ${
+                  className={`nav-chip px-2.5 xl:px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap ${
                     active === link.id
                       ? "bg-primary text-on-primary shadow-xs"
                       : "text-ink-soft hover:text-ink hover:bg-surface"
@@ -137,9 +173,10 @@ export default function Navbar() {
 
             {/* Right cluster */}
             <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+              {/* Call: full-number pill at 2xl+, stacked icon badge on lg and below 2xl, plain button on phones */}
               <a
                 href={PHONE_HREF}
-                className="pressable hidden xl:inline-flex items-center gap-1.5 rounded-full bg-surface-alt border border-line px-3 py-1.5 text-xs font-bold hover:border-primary"
+                className="pressable hidden 2xl:inline-flex items-center gap-1.5 rounded-full bg-surface-alt border border-line px-3 py-1.5 text-xs font-bold whitespace-nowrap hover:border-primary"
               >
                 <Phone className="pressable-icon w-3.5 h-3.5 text-primary" aria-hidden="true" />
                 {PHONE_DISPLAY}
@@ -147,14 +184,23 @@ export default function Navbar() {
               <a
                 href={PHONE_HREF}
                 aria-label={`Call ${PHONE_DISPLAY}`}
-                className="icon-btn xl:hidden p-1.5 sm:p-2 rounded-full bg-surface-alt border border-line text-primary hover:border-primary"
+                className="pressable hidden lg:flex 2xl:hidden flex-col items-center justify-center gap-0.5 min-w-[3rem] rounded-2xl bg-primary px-1.5 py-1.5 text-on-primary hover:bg-primary-strong"
               >
-                <Phone className="w-4 h-4" aria-hidden="true" />
+                <Phone className="w-3.5 h-3.5" aria-hidden="true" />
+                <span className="text-[9px] font-bold uppercase leading-none">Call</span>
+              </a>
+              <a
+                href={PHONE_HREF}
+                aria-label={`Call ${PHONE_DISPLAY}`}
+                className="pressable sm:hidden inline-flex items-center gap-1 rounded-full bg-primary hover:bg-primary-strong text-on-primary px-3 py-2.5 text-xs font-bold whitespace-nowrap"
+              >
+                <Phone className="w-3.5 h-3.5" aria-hidden="true" />
+                Call
               </a>
               <button
                 type="button"
                 onClick={() => openBooking()}
-                className="btn-cta inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-primary via-primary to-accent text-on-primary px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-sm"
+                className="btn-cta inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-primary via-primary to-accent text-on-primary px-3 sm:px-4 py-2.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-md shadow-primary/30"
               >
                 <Calendar className="relative z-10 w-3.5 h-3.5" aria-hidden="true" />
                 <span className="relative z-10 sm:hidden">Book</span>
@@ -163,7 +209,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={openSocial}
-                aria-label="Scan QR code to call or follow us"
+                aria-label="Scan QR code to follow us"
                 className="icon-btn hidden lg:inline-flex p-2 rounded-full bg-surface-alt border border-line text-ink-soft hover:border-primary hover:text-primary"
               >
                 <QrCode className="w-4 h-4" aria-hidden="true" />
@@ -187,13 +233,25 @@ export default function Navbar() {
           {/* Mobile menu drops down inside the pill */}
           {menuOpen && (
             <div className={`header-dropdown lg:hidden px-3 pb-3 ${leaving ? "is-leaving" : ""}`}>
-              <div className="rounded-2xl bg-surface-alt border border-line p-1.5">
+              <div className="rounded-2xl bg-surface-alt border border-line p-1.5 space-y-1.5">
+                <a
+                  href={PHONE_HREF}
+                  onClick={closeMenu}
+                  className="menu-item pressable flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-strong text-on-primary px-3 py-3 whitespace-nowrap"
+                >
+                  <Phone className="w-4 h-4" aria-hidden="true" />
+                  <span className="text-[10px] font-bold uppercase tracking-wider">Call</span>
+                  <span className="text-base font-black">{PHONE_DISPLAY}</span>
+                </a>
                 <div className="grid grid-cols-3 gap-1">
                   {navLinks.map((link) => (
                     <a
                       key={link.id}
                       href={`#${link.id}`}
-                      onClick={closeMenu}
+                      onClick={() => {
+                        goTo(link.id);
+                        closeMenu();
+                      }}
                       className={`menu-item pressable px-2 py-2.5 rounded-xl text-xs font-bold text-center ${
                         active === link.id
                           ? "bg-primary text-on-primary"

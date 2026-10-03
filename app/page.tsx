@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteShell from "@/components/SiteShell";
 import Hero from "@/components/Hero";
 import ServicesSection from "@/components/ServicesSection";
+import AboutSection from "@/components/AboutSection";
 import WhyUs from "@/components/WhyUs";
 import ProcessSection from "@/components/ProcessSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
@@ -35,6 +36,7 @@ export default function Home() {
       <SiteShell>
         <Hero />
         <ServicesSection />
+        <AboutSection />
         <WhyUs />
         <ProcessSection />
         <ServiceAreaSection />

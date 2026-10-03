@@ -14,7 +14,7 @@ export function renderOgImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "linear-gradient(135deg, #064e3b 0%, #059669 100%)",
+          background: "linear-gradient(135deg, #0f3d32 0%, #209378 100%)",
           color: "white",
         }}
       >

@@ -1,0 +1,578 @@
+- generic [active] [ref=f12e1]:
+  - banner:
+    - generic [ref=f12e1166]:
+      - link "Eco Appliance Services, home" [ref=f12e1167] [cursor=pointer]:
+        - /url: "#home"
+      - navigation "Primary" [ref=f12e1168]:
+        - link "Home" [ref=f12e1169] [cursor=pointer]:
+          - /url: "#home"
+        - link "Services" [ref=f12e1170] [cursor=pointer]:
+          - /url: "#services"
+        - link "Process" [ref=f12e1171] [cursor=pointer]:
+          - /url: "#process"
+        - link "Service Area" [ref=f12e1172] [cursor=pointer]:
+          - /url: "#service-area"
+        - link "FAQ" [ref=f12e1173] [cursor=pointer]:
+          - /url: "#faq"
+        - link "Contact" [ref=f12e1174] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=f12e1175]:
+        - link "Call (571) 462-1813" [ref=f12e1176] [cursor=pointer]:
+          - /url: tel:5714621813
+          - generic [ref=f12e1179]: Call
+        - button "Book Service" [ref=f12e1180] [cursor=pointer]
+        - button "Scan QR code to call or follow us" [ref=f12e1184] [cursor=pointer]
+  - main [ref=f12e28]:
+    - generic [ref=f12e29]:
+      - img "Certified HVAC and appliance repair technician servicing luxury equipment" [ref=f12e31]
+      - generic [ref=f12e34]:
+        - paragraph [ref=f12e35]: Same-Day Service • Serving DC, Maryland & Northern Virginia
+        - heading "Precision HVAC, Air Duct & Appliance Services Throughout the DMV" [level=1] [ref=f12e36]:
+          - text: Precision HVAC, Air Duct & Appliance Services Throughout the
+          - generic [ref=f12e37]: DMV
+        - paragraph [ref=f12e38]:
+          - strong [ref=f12e39]: Eco Appliance Services
+          - text: is your trusted specialist for residential HVAC duct cleaning, dryer vent restoration, refrigeration, laundry, and kitchen appliance repairs. We deliver honest upfront diagnosis and lasting energy-efficient solutions.
+        - generic [ref=f12e40]:
+          - button "Schedule Service Online" [ref=f12e41] [cursor=pointer]
+          - link "Call (571) 462-1813" [ref=f12e47] [cursor=pointer]:
+            - /url: tel:5714621813
+    - generic [ref=f12e52]:
+      - generic [ref=f12e53]:
+        - generic [ref=f12e54]: Core Service Lines
+        - heading "What We Fix & Clean For You" [level=2] [ref=f12e57]
+        - paragraph [ref=f12e58]: Quick, reliable service with upfront pricing and our 30-day parts & labor guarantee.
+      - tablist "Services" [ref=f12e59]:
+        - tab "Refrigerator Cooling issues, leaks, not running" [selected] [ref=f12e60] [cursor=pointer]:
+          - generic [ref=f12e64]: Refrigerator
+          - generic [ref=f12e65]: Cooling issues, leaks, not running
+        - tab "Freezer Not freezing, frost, warm inside" [ref=f12e66] [cursor=pointer]:
+          - generic [ref=f12e76]: Freezer
+          - generic [ref=f12e77]: Not freezing, frost, warm inside
+        - tab "Ice Maker No ice, leaks, small or cloudy cubes" [ref=f12e78] [cursor=pointer]:
+          - generic [ref=f12e93]: Ice Maker
+          - generic [ref=f12e94]: No ice, leaks, small or cloudy cubes
+        - tab "Wine Cooler Not cooling, warm, noisy" [ref=f12e95] [cursor=pointer]:
+          - generic [ref=f12e99]: Wine Cooler
+          - generic [ref=f12e100]: Not cooling, warm, noisy
+        - tab "Washer Not spinning, not draining, leaks" [ref=f12e101] [cursor=pointer]:
+          - generic [ref=f12e107]: Washer
+          - generic [ref=f12e108]: Not spinning, not draining, leaks
+        - tab "Dryer No heat, not starting, noisy" [ref=f12e109] [cursor=pointer]:
+          - generic [ref=f12e115]: Dryer
+          - generic [ref=f12e116]: No heat, not starting, noisy
+        - tab "Washer & Dryer Combo Not drying, leaks, error codes" [ref=f12e117] [cursor=pointer]:
+          - generic [ref=f12e121]: Washer & Dryer Combo
+          - generic [ref=f12e122]: Not drying, leaks, error codes
+        - tab "Microwave Not heating, turns off" [ref=f12e123] [cursor=pointer]:
+          - generic [ref=f12e128]: Microwave
+          - generic [ref=f12e129]: Not heating, turns off
+        - tab "Double Oven One oven out, uneven heat" [ref=f12e130] [cursor=pointer]:
+          - generic [ref=f12e134]: Double Oven
+          - generic [ref=f12e135]: One oven out, uneven heat
+        - tab "Wall Oven Not heating, door issues, error codes" [ref=f12e136] [cursor=pointer]:
+          - generic [ref=f12e140]: Wall Oven
+          - generic [ref=f12e141]: Not heating, door issues, error codes
+        - tab "Cooktop Burners not lighting or heating" [ref=f12e142] [cursor=pointer]:
+          - generic [ref=f12e147]: Cooktop
+          - generic [ref=f12e148]: Burners not lighting or heating
+        - tab "Range Burners, oven & error codes" [ref=f12e149] [cursor=pointer]:
+          - generic [ref=f12e153]: Range
+          - generic [ref=f12e154]: Burners, oven & error codes
+        - tab "Range Hood Weak suction, noisy fan, no light" [ref=f12e155] [cursor=pointer]:
+          - generic [ref=f12e161]: Range Hood
+          - generic [ref=f12e162]: Weak suction, noisy fan, no light
+        - tab "Dishwasher Not cleaning, leaks, not draining" [ref=f12e163] [cursor=pointer]:
+          - generic [ref=f12e168]: Dishwasher
+          - generic [ref=f12e169]: Not cleaning, leaks, not draining
+        - tab "Garbage Disposal Not working, jammed" [ref=f12e170] [cursor=pointer]:
+          - generic [ref=f12e177]: Garbage Disposal
+          - generic [ref=f12e178]: Not working, jammed
+        - tab "Trash Compactor Won't compact, jammed, odors" [ref=f12e179] [cursor=pointer]:
+          - generic [ref=f12e184]: Trash Compactor
+          - generic [ref=f12e185]: Won't compact, jammed, odors
+        - tab "Dryer Vent Cleaning Long dry times, lint buildup" [ref=f12e186] [cursor=pointer]:
+          - generic [ref=f12e190]: Dryer Vent Cleaning
+          - generic [ref=f12e191]: Long dry times, lint buildup
+        - tab "Yearly PM Check Maintenance bundles for laundry & kitchen" [ref=f12e192] [cursor=pointer]:
+          - generic [ref=f12e197]: Yearly PM Check
+          - generic [ref=f12e198]: Maintenance bundles for laundry & kitchen
+      - tabpanel "Refrigerator Cooling issues, leaks, not running" [ref=f12e199]:
+        - generic [ref=f12e200]:
+          - generic [ref=f12e205]:
+            - heading "Refrigerator Repair" [level=3] [ref=f12e206]
+            - paragraph [ref=f12e207]: Priority 2–4 Hr Emergency Response
+          - generic [ref=f12e208]:
+            - generic [ref=f12e209]: PRIORITY COOLING
+            - generic [ref=f12e212]: 30-Day Warranty
+        - generic [ref=f12e216]:
+          - generic [ref=f12e217]:
+            - paragraph [ref=f12e218]: When your fridge stops cooling or starts leaking, we arrive fast to protect your groceries. We service luxury and standard refrigerator brands.
+            - generic [ref=f12e219]:
+              - heading "Key Fixes" [level=4] [ref=f12e220]
+              - list [ref=f12e221]:
+                - listitem [ref=f12e222]:
+                  - generic [ref=f12e226]: Warm fridge / freezing back wall
+                - listitem [ref=f12e227]:
+                  - generic [ref=f12e231]: Noisy compressor & defrost board faults
+                - listitem [ref=f12e232]:
+                  - generic [ref=f12e236]: Water leaks & fridge that won't run
+            - generic [ref=f12e237]:
+              - paragraph [ref=f12e238]: Check your ZIP
+              - generic [ref=f12e240]:
+                - textbox "Your ZIP code" [ref=f12e245]:
+                  - /placeholder: Enter your ZIP code
+                - button "Check" [ref=f12e246] [cursor=pointer]
+              - button "Book Service" [ref=f12e250] [cursor=pointer]
+              - generic [ref=f12e256]:
+                - paragraph [ref=f12e257]: Prefer to call?
+                - link "(571) 462-1813" [ref=f12e258] [cursor=pointer]:
+                  - /url: tel:5714621813
+          - generic [ref=f12e262]:
+            - generic [ref=f12e264]:
+              - generic [ref=f12e265]:
+                - heading "Book a Service" [level=3] [ref=f12e266]
+                - paragraph [ref=f12e267]: Takes under a minute. We'll call to confirm your arrival window.
+              - generic [ref=f12e268]: $89 credited to repair
+            - generic [ref=f12e272]:
+              - group "1 What do you need?" [ref=f12e273]:
+                - generic [ref=f12e274]:
+                  - generic [ref=f12e275]: "1"
+                  - text: What do you need?
+                - generic [ref=f12e276]:
+                  - button "Refrigerator" [pressed] [ref=f12e277] [cursor=pointer]
+                  - button "Freezer" [ref=f12e282] [cursor=pointer]
+                  - button "Ice Maker" [ref=f12e293] [cursor=pointer]
+                  - button "Wine Cooler" [ref=f12e309] [cursor=pointer]
+                  - button "Washer" [ref=f12e314] [cursor=pointer]
+                  - button "Dryer" [ref=f12e321] [cursor=pointer]
+                  - button "Washer & Dryer Combo" [ref=f12e328] [cursor=pointer]
+                  - button "Microwave" [ref=f12e333] [cursor=pointer]
+                  - button "Double Oven" [ref=f12e339] [cursor=pointer]
+                  - button "Wall Oven" [ref=f12e344] [cursor=pointer]
+                  - button "Cooktop" [ref=f12e349] [cursor=pointer]
+                  - button "Range" [ref=f12e355] [cursor=pointer]
+                  - button "Range Hood" [ref=f12e360] [cursor=pointer]
+                  - button "Dishwasher" [ref=f12e367] [cursor=pointer]
+                  - button "Garbage Disposal" [ref=f12e373] [cursor=pointer]
+                  - button "Trash Compactor" [ref=f12e381] [cursor=pointer]
+                  - button "Dryer Vent Cleaning" [ref=f12e387] [cursor=pointer]
+                  - button "Yearly PM Check" [ref=f12e392] [cursor=pointer]
+                  - button "House Duct Cleaning" [ref=f12e398] [cursor=pointer]
+              - group "2 When works best?" [ref=f12e404]:
+                - generic [ref=f12e405]:
+                  - generic [ref=f12e406]: "2"
+                  - text: When works best?
+                - generic [ref=f12e407]:
+                  - button "ASAP" [pressed] [ref=f12e408] [cursor=pointer]
+                  - button "Morning" [ref=f12e411] [cursor=pointer]
+                  - button "Afternoon" [ref=f12e417] [cursor=pointer]
+                  - button "Evening" [ref=f12e424] [cursor=pointer]
+              - group "3 How do we reach you?" [ref=f12e430]:
+                - generic [ref=f12e431]:
+                  - generic [ref=f12e432]: "3"
+                  - text: How do we reach you?
+                - generic [ref=f12e433]:
+                  - textbox "Full name" [ref=f12e434]
+                  - textbox "Phone number" [ref=f12e435]
+                  - textbox "Email address" [ref=f12e436]:
+                    - /placeholder: Email (for your confirmation)
+                  - textbox "ZIP code" [ref=f12e437]
+                  - textbox "Street address" [ref=f12e438]:
+                    - /placeholder: Street address (where we're coming)
+              - generic [ref=f12e439]:
+                - button "Add a date & notes (optional, helps us prepare)" [ref=f12e440] [cursor=pointer]
+                - generic [ref=f12e444]:
+                  - textbox "Preferred date" [ref=f12e446]
+                  - textbox "Describe the issue" [ref=f12e447]:
+                    - /placeholder: Brand, error code, leaking, strange sounds...
+              - generic [ref=f12e448]:
+                - button "Book My Service" [ref=f12e449] [cursor=pointer]
+                - paragraph [ref=f12e454]: $89 diagnostic fee, credited 100% toward any approved repair. No obligation.
+    - generic [ref=f12e459]:
+      - generic [ref=f12e460]:
+        - generic [ref=f12e461]: The Eco Appliance Standard
+        - heading "Honest Service. Upfront Pricing. Work You Can Trust." [level=2] [ref=f12e465]
+        - paragraph [ref=f12e466]: When a refrigerator warms up, air ducts spread dust, or a washer fails mid-cycle, you don’t need guesswork. You need a professional who knows these systems inside and out.
+        - list [ref=f12e467]:
+          - listitem [ref=f12e468]:
+            - generic [ref=f12e472]:
+              - strong [ref=f12e473]: Skilled, Dependable Technicians.
+              - text: Our technicians are trained to diagnose and repair HVAC, air duct, refrigeration, laundry, and kitchen appliance failures, and to get it right the first time.
+          - listitem [ref=f12e474]:
+            - generic [ref=f12e478]:
+              - strong [ref=f12e479]: Honest Diagnosis & Integrity.
+              - text: No aggressive sales tactics or unneeded part swaps. We inspect thoroughly and advise you honestly whether repair or replacement makes the best financial sense.
+          - listitem [ref=f12e480]:
+            - generic [ref=f12e484]:
+              - strong [ref=f12e485]: Home Warranty Claims Welcome.
+              - text: We work with major home warranty providers, including American Home Shield, Choice, and First American, so your claim is handled smoothly.
+          - listitem [ref=f12e486]:
+            - generic [ref=f12e490]:
+              - strong [ref=f12e491]: Upfront & Transparent Pricing.
+              - text: You will always receive a clear, itemized quote before any work starts. If you proceed with our repair, our initial diagnostic fee is applied 100% directly toward your service!
+          - listitem [ref=f12e492]:
+            - generic [ref=f12e496]:
+              - strong [ref=f12e497]: Stocked Mobile Warehouses.
+              - text: Our service vehicles carry high-failure OEM parts, high-grade diagnostic tools, and testing meters, allowing us to complete most repairs in a single visit.
+          - listitem [ref=f12e498]:
+            - generic [ref=f12e502]:
+              - strong [ref=f12e503]: 30-Day Parts & Labor Guarantee.
+              - text: We stand behind the quality of our work. Every repair is backed by a 30-day comprehensive parts and labor warranty for complete peace of mind.
+      - complementary [ref=f12e504]:
+        - blockquote [ref=f12e505]: "“Our goal is simple: provide honest diagnosis, quality workmanship, dependable service, and solutions our customers can trust every single day.”"
+        - generic [ref=f12e510]:
+          - paragraph [ref=f12e511]: Diagnostic, Credited
+          - paragraph [ref=f12e512]: $89
+          - paragraph [ref=f12e513]: Applied 100% to your approved repair
+        - generic [ref=f12e518]:
+          - paragraph [ref=f12e519]: Parts & Labor
+          - paragraph [ref=f12e520]: 30-Day
+          - paragraph [ref=f12e521]: Comprehensive warranty on every repair
+        - generic [ref=f12e526]:
+          - paragraph [ref=f12e527]: Dispatch
+          - paragraph [ref=f12e528]: Same-Day
+          - paragraph [ref=f12e529]: Priority slots across DC, MD & VA
+        - generic [ref=f12e530]:
+          - text: Questions before you book?
+          - link "Call (571) 462-1813" [ref=f12e531] [cursor=pointer]:
+            - /url: tel:5714621813
+    - generic [ref=f12e533]:
+      - generic [ref=f12e534]:
+        - generic [ref=f12e535]: Hassle-Free Process
+        - heading "How Eco Appliance Services Works" [level=2] [ref=f12e539]
+        - paragraph [ref=f12e540]: From your first call to the final cycle test, we make HVAC and appliance services straightforward, transparent, and completely stress-free.
+      - list [ref=f12e541]:
+        - listitem [ref=f12e543]:
+          - generic [ref=f12e548]:
+            - paragraph [ref=f12e549]: STEP 01
+            - heading "Easy Scheduling" [level=3] [ref=f12e550]
+            - paragraph [ref=f12e551]: Call our friendly DMV dispatch team or book your appointment online in under 60 seconds with your convenient time window.
+        - listitem [ref=f12e552]:
+          - generic [ref=f12e557]:
+            - paragraph [ref=f12e558]: STEP 02
+            - heading "Honest Diagnosis" [level=3] [ref=f12e559]
+            - paragraph [ref=f12e560]: Our master technician arrives on schedule, runs pinpoint diagnostic tests, and provides a clear, itemized upfront quote.
+        - listitem [ref=f12e561]:
+          - generic [ref=f12e565]:
+            - paragraph [ref=f12e566]: STEP 03
+            - heading "Precision OEM Repair" [level=3] [ref=f12e567]
+            - paragraph [ref=f12e568]: Using factory-certified OEM parts stocked in our vehicles, we repair your appliance or clean your ducts cleanly and correctly.
+        - listitem [ref=f12e569]:
+          - generic [ref=f12e574]:
+            - paragraph [ref=f12e575]: STEP 04
+            - heading "30-Day Guaranteed Peace" [level=3] [ref=f12e576]
+            - paragraph [ref=f12e577]: We perform full cycle testing to guarantee performance and protect you with our 30-day comprehensive parts and labor warranty.
+      - button "Book Your Service Call Now" [ref=f12e579] [cursor=pointer]
+    - generic [ref=f12e584]:
+      - generic [ref=f12e585]:
+        - heading "Serving DC, Maryland & Virginia" [level=2] [ref=f12e586]
+        - generic [ref=f12e588]:
+          - textbox "Your ZIP code" [ref=f12e593]:
+            - /placeholder: Enter your ZIP code
+          - button "Check" [ref=f12e594] [cursor=pointer]
+      - generic [ref=f12e598]:
+        - group [ref=f12e599]:
+          - generic "Virginia 45 cities" [ref=f12e600] [cursor=pointer]:
+            - generic [ref=f12e604]: Virginia
+            - generic [ref=f12e605]: 45 cities
+        - group [ref=f12e608]:
+          - generic "Maryland 14 cities" [ref=f12e609] [cursor=pointer]:
+            - generic [ref=f12e613]: Maryland
+            - generic [ref=f12e614]: 14 cities
+        - group [ref=f12e617]:
+          - generic "Washington, DC 3 cities" [ref=f12e618] [cursor=pointer]:
+            - generic [ref=f12e622]: Washington, DC
+            - generic [ref=f12e623]: 3 cities
+      - generic [ref=f12e626]:
+        - generic [ref=f12e627]:
+          - paragraph [ref=f12e628]:
+            - strong [ref=f12e629]: "Mon – Sat: 7:30 AM – 8:00 PM."
+            - text: "Sunday: Emergency Dispatch."
+          - paragraph [ref=f12e630]: ZIP codes within about 40 miles of our service hubs. Not sure about your area? Call and we will confirm.
+        - link "Call (571) 462-1813" [ref=f12e631] [cursor=pointer]:
+          - /url: tel:5714621813
+    - generic [ref=f12e635]:
+      - generic [ref=f12e636]:
+        - generic [ref=f12e637]:
+          - generic [ref=f12e638]: Brands We Service
+          - heading "Every Major HVAC & Appliance Brand" [level=3] [ref=f12e639]
+        - generic [ref=f12e640]: Genuine OEM parts
+      - list [ref=f12e645]:
+        - listitem [ref=f12e646]:
+          - img "Trane" [ref=f12e647]
+        - listitem [ref=f12e648]:
+          - img "Carrier" [ref=f12e649]
+        - listitem [ref=f12e650]:
+          - img "Sub-Zero" [ref=f12e651]
+        - listitem [ref=f12e652]:
+          - img "Samsung" [ref=f12e653]
+        - listitem [ref=f12e654]:
+          - img "LG" [ref=f12e655]
+        - listitem [ref=f12e656]:
+          - img "Bosch" [ref=f12e657]
+        - listitem [ref=f12e658]:
+          - img "Whirlpool" [ref=f12e659]
+        - listitem [ref=f12e660]:
+          - img "GE Monogram" [ref=f12e661]
+        - listitem [ref=f12e662]:
+          - img "Lennox" [ref=f12e663]
+        - listitem [ref=f12e664]:
+          - img "KitchenAid" [ref=f12e665]
+    - generic [ref=f12e667]:
+      - generic [ref=f12e668]:
+        - generic [ref=f12e669]: Frequently Asked Questions
+        - heading "Common Questions About Our Services" [level=2] [ref=f12e673]
+        - paragraph [ref=f12e674]: Have questions before scheduling? Here is everything you need to know about our service process, pricing, and warranties.
+      - generic [ref=f12e675]:
+        - button "How does the diagnostic fee work?" [ref=f12e677] [cursor=pointer]
+        - button "Do you work with my home warranty company?" [ref=f12e685] [cursor=pointer]
+        - button "How quickly can an Eco Appliance technician arrive in the DMV?" [ref=f12e693] [cursor=pointer]
+        - button "What HVAC and appliance brands do you service?" [ref=f12e701] [cursor=pointer]
+        - button "What warranty comes with your repair and cleaning work?" [ref=f12e710] [cursor=pointer]
+        - button "Should I repair or replace my broken equipment?" [ref=f12e718] [cursor=pointer]
+      - generic [ref=f12e726]:
+        - generic [ref=f12e727]:
+          - heading "Have a specific question about your HVAC or appliance?" [level=3] [ref=f12e728]
+          - paragraph [ref=f12e729]: Speak directly with an experienced technician or our DMV dispatch team today.
+        - generic [ref=f12e730]:
+          - link "(571) 462-1813" [ref=f12e731] [cursor=pointer]:
+            - /url: tel:5714621813
+          - button "Schedule Online" [ref=f12e734] [cursor=pointer]
+    - generic [ref=f12e736]:
+      - generic [ref=f12e737]:
+        - heading "Get in Touch with Eco Appliance Services" [level=2] [ref=f12e738]
+        - paragraph [ref=f12e739]: Need urgent diagnosis, air duct sanitization, or warranty repair dispatch? Submit our quick customer inquiry form or call our DMV dispatch team directly.
+      - generic [ref=f12e740]:
+        - generic [ref=f12e741]:
+          - generic [ref=f12e742]:
+            - generic [ref=f12e743]: Live Dispatch Phone
+            - link "Call for Same-Day Slot (571) 462-1813" [ref=f12e746] [cursor=pointer]:
+              - /url: tel:5714621813
+              - generic [ref=f12e747]: Call for Same-Day Slot
+              - generic [ref=f12e748]: (571) 462-1813
+            - button "Prefer online? Schedule Service Online" [ref=f12e749] [cursor=pointer]:
+              - generic [ref=f12e750]: Prefer online?
+              - generic [ref=f12e751]: Schedule Service Online
+          - generic [ref=f12e754]:
+            - generic [ref=f12e755]:
+              - generic [ref=f12e756]: Operating Hours
+              - generic [ref=f12e760]:
+                - generic [ref=f12e761]:
+                  - term [ref=f12e762]: Monday – Saturday
+                  - definition [ref=f12e763]: 7:30 AM – 8:00 PM
+                - generic [ref=f12e764]:
+                  - term [ref=f12e765]: Sunday
+                  - definition [ref=f12e766]: Emergency Dispatch
+            - generic [ref=f12e767]:
+              - generic [ref=f12e768]: Service Area
+              - paragraph [ref=f12e772]: Washington DC • Maryland • Northern Virginia
+            - generic [ref=f12e773]:
+              - generic [ref=f12e774]: Have a Home Warranty Claim?
+              - paragraph [ref=f12e778]:
+                - text: We work with American Home Shield, Choice Home Warranty, First American, and other major providers. Ask your provider to assign
+                - strong [ref=f12e779]: Eco Appliance Services
+                - text: as your authorized service contractor.
+        - generic [ref=f12e781]:
+          - generic [ref=f12e783]:
+            - generic [ref=f12e784]:
+              - heading "Book a Service" [level=3] [ref=f12e785]
+              - paragraph [ref=f12e786]: Takes under a minute. We'll call to confirm your arrival window.
+            - generic [ref=f12e787]: $89 credited to repair
+          - generic [ref=f12e791]:
+            - group "1 What do you need?" [ref=f12e792]:
+              - generic [ref=f12e793]:
+                - generic [ref=f12e794]: "1"
+                - text: What do you need?
+              - generic [ref=f12e795]:
+                - button "Refrigerator" [pressed] [ref=f12e796] [cursor=pointer]
+                - button "Freezer" [ref=f12e801] [cursor=pointer]
+                - button "Ice Maker" [ref=f12e812] [cursor=pointer]
+                - button "Wine Cooler" [ref=f12e828] [cursor=pointer]
+                - button "Washer" [ref=f12e833] [cursor=pointer]
+                - button "Dryer" [ref=f12e840] [cursor=pointer]
+                - button "Washer & Dryer Combo" [ref=f12e847] [cursor=pointer]
+                - button "Microwave" [ref=f12e852] [cursor=pointer]
+                - button "Double Oven" [ref=f12e858] [cursor=pointer]
+                - button "Wall Oven" [ref=f12e863] [cursor=pointer]
+                - button "Cooktop" [ref=f12e868] [cursor=pointer]
+                - button "Range" [ref=f12e874] [cursor=pointer]
+                - button "Range Hood" [ref=f12e879] [cursor=pointer]
+                - button "Dishwasher" [ref=f12e886] [cursor=pointer]
+                - button "Garbage Disposal" [ref=f12e892] [cursor=pointer]
+                - button "Trash Compactor" [ref=f12e900] [cursor=pointer]
+                - button "Dryer Vent Cleaning" [ref=f12e906] [cursor=pointer]
+                - button "Yearly PM Check" [ref=f12e911] [cursor=pointer]
+                - button "House Duct Cleaning" [ref=f12e917] [cursor=pointer]
+            - group "2 When works best?" [ref=f12e923]:
+              - generic [ref=f12e924]:
+                - generic [ref=f12e925]: "2"
+                - text: When works best?
+              - generic [ref=f12e926]:
+                - button "ASAP" [pressed] [ref=f12e927] [cursor=pointer]
+                - button "Morning" [ref=f12e930] [cursor=pointer]
+                - button "Afternoon" [ref=f12e936] [cursor=pointer]
+                - button "Evening" [ref=f12e943] [cursor=pointer]
+            - group "3 How do we reach you?" [ref=f12e949]:
+              - generic [ref=f12e950]:
+                - generic [ref=f12e951]: "3"
+                - text: How do we reach you?
+              - generic [ref=f12e952]:
+                - textbox "Full name" [ref=f12e953]
+                - textbox "Phone number" [ref=f12e954]
+                - textbox "Email address" [ref=f12e955]:
+                  - /placeholder: Email (for your confirmation)
+                - textbox "ZIP code" [ref=f12e956]
+                - textbox "Street address" [ref=f12e957]:
+                  - /placeholder: Street address (where we're coming)
+            - generic [ref=f12e958]:
+              - button "Add a date & notes (optional, helps us prepare)" [ref=f12e959] [cursor=pointer]
+              - generic [ref=f12e963]:
+                - textbox "Preferred date" [ref=f12e965]
+                - textbox "Describe the issue" [ref=f12e966]:
+                  - /placeholder: Brand, error code, leaking, strange sounds...
+            - generic [ref=f12e967]:
+              - button "Book My Service" [ref=f12e968] [cursor=pointer]
+              - paragraph [ref=f12e973]: $89 diagnostic fee, credited 100% toward any approved repair. No obligation.
+    - generic [ref=f12e978]:
+      - link "Call Dispatch (571) 462-1813" [ref=f12e979] [cursor=pointer]:
+        - /url: tel:5714621813
+        - generic [ref=f12e983]:
+          - generic [ref=f12e984]: Call Dispatch
+          - generic [ref=f12e985]: (571) 462-1813
+      - button "Same-Day Dispatch Schedule Service Online" [ref=f12e986] [cursor=pointer]:
+        - generic [ref=f12e990]:
+          - generic [ref=f12e991]: Same-Day Dispatch
+          - generic [ref=f12e992]: Schedule Service Online
+      - link "Service Area DC, MD & Northern VA" [ref=f12e993] [cursor=pointer]:
+        - /url: "#service-area"
+        - generic [ref=f12e998]:
+          - generic [ref=f12e999]: Service Area
+          - generic [ref=f12e1000]: DC, MD & Northern VA
+      - button "Book Your Repair" [ref=f12e1002] [cursor=pointer]
+  - contentinfo [ref=f12e1004]:
+    - generic [ref=f12e1005]:
+      - generic [ref=f12e1006]:
+        - link "Eco Appliance Services" [ref=f12e1007] [cursor=pointer]:
+          - /url: "#home"
+        - paragraph [ref=f12e1009]: HVAC & Precision Appliance Services
+        - paragraph [ref=f12e1010]: Honest diagnosis, upfront pricing, and workmanship backed by a 30-day parts and labor guarantee, serving Washington DC, Maryland, and Northern Virginia.
+        - generic [ref=f12e1011]:
+          - generic [ref=f12e1012]: 30-Day Warranty
+          - generic [ref=f12e1016]: $89 Diagnostic, Credited
+      - navigation "Services" [ref=f12e1020]:
+        - heading "Services" [level=4] [ref=f12e1021]
+        - list [ref=f12e1023]:
+          - listitem [ref=f12e1024]:
+            - link "Refrigerator Repair" [ref=f12e1025] [cursor=pointer]:
+              - /url: /?service=refrigerator#services
+          - listitem [ref=f12e1027]:
+            - link "Washer Repair" [ref=f12e1028] [cursor=pointer]:
+              - /url: /?service=washer#services
+          - listitem [ref=f12e1030]:
+            - link "Dryer Repair" [ref=f12e1031] [cursor=pointer]:
+              - /url: /?service=dryer#services
+          - listitem [ref=f12e1033]:
+            - link "Cooktop Repair" [ref=f12e1034] [cursor=pointer]:
+              - /url: /?service=cooktop#services
+          - listitem [ref=f12e1036]:
+            - link "Dishwasher Repair" [ref=f12e1037] [cursor=pointer]:
+              - /url: /?service=dishwasher#services
+          - listitem [ref=f12e1039]:
+            - link "Dryer Vent Cleaning" [ref=f12e1040] [cursor=pointer]:
+              - /url: /?service=dryer-vent#services
+        - link "All Services" [ref=f12e1043] [cursor=pointer]:
+          - /url: "#services"
+      - generic [ref=f12e1044]:
+        - heading "Direct Dispatch" [level=4] [ref=f12e1045]
+        - generic [ref=f12e1047]:
+          - generic [ref=f12e1048]:
+            - paragraph [ref=f12e1049]: Phone
+            - link "(571) 462-1813" [ref=f12e1050] [cursor=pointer]:
+              - /url: tel:5714621813
+          - generic [ref=f12e1053]:
+            - paragraph [ref=f12e1054]: Hours
+            - paragraph [ref=f12e1055]:
+              - generic [ref=f12e1059]:
+                - text: "Mon – Sat: 7:30 AM – 8:00 PM"
+                - generic [ref=f12e1060]: "Sunday: Emergency Dispatch"
+          - generic [ref=f12e1061]:
+            - paragraph [ref=f12e1062]: Coverage
+            - paragraph [ref=f12e1063]: Washington DC • Maryland • Northern Virginia
+      - generic [ref=f12e1067]:
+        - heading "Scan to Call" [level=4] [ref=f12e1068]
+        - generic [ref=f12e1075]:
+          - tablist "QR code type" [ref=f12e1076]:
+            - tab "Call" [selected] [ref=f12e1077] [cursor=pointer]
+            - tab "Facebook" [ref=f12e1078] [cursor=pointer]
+            - tab "Instagram" [ref=f12e1079] [cursor=pointer]
+          - 'img "QR code: Scan to Call" [ref=f12e1114]'
+          - generic [ref=f12e1087]:
+            - paragraph [ref=f12e1088]: Scan to Call
+            - paragraph [ref=f12e1091]: (571) 462-1813
+    - generic [ref=f12e1093]:
+      - paragraph [ref=f12e1094]: © 2026 Eco Appliance Services. All rights reserved.
+      - generic [ref=f12e1095]:
+        - generic [ref=f12e1096]: Same-Day Dispatch
+        - generic [aria-hidden] [ref=f12e1097]: •
+        - generic [ref=f12e1098]: Home Warranty Claims Welcome
+        - generic [aria-hidden] [ref=f12e1099]: •
+        - generic [ref=f12e1100]: Serving DC, MD & VA
+  - button "Back to top"
+  - button "Open Next.js Dev Tools" [ref=f12e1115] [cursor=pointer]
+  - alert [ref=f12e1119]
+  - dialog "Schedule dispatch" [ref=f12e1121]:
+    - generic [ref=f12e1122]:
+      - generic [ref=f12e1127]:
+        - heading "Schedule Dispatch" [level=3] [ref=f12e1128]
+        - paragraph [ref=f12e1129]: $89 Diagnostic (100% Credited With Repair)
+      - button "Close" [ref=f12e1130] [cursor=pointer]
+    - generic [ref=f12e1134]:
+      - generic [ref=f12e1135]:
+        - generic [ref=f12e1136]: Appliance Service Needed
+        - combobox "Appliance Service Needed" [ref=f12e1137]:
+          - option "Choose your service" [disabled] [selected]
+          - option "Refrigerator Repair"
+          - option "Freezer Repair"
+          - option "Ice Maker Repair"
+          - option "Wine Cooler Repair"
+          - option "Washer Repair"
+          - option "Dryer Repair"
+          - option "Washer & Dryer Combo Repair"
+          - option "Microwave Repair"
+          - option "Double Oven Repair"
+          - option "Wall Oven Repair"
+          - option "Cooktop Repair"
+          - option "Range Repair"
+          - option "Range Hood Repair"
+          - option "Dishwasher Repair"
+          - option "Garbage Disposal Repair"
+          - option "Trash Compactor Repair"
+          - option "Dryer Vent Cleaning"
+          - option "Yearly PM Check"
+          - option "House Duct Cleaning"
+      - generic [ref=f12e1138]:
+        - generic [ref=f12e1139]: Your Name
+        - textbox "Your Name" [ref=f12e1140]:
+          - /placeholder: Full Name
+      - generic [ref=f12e1141]:
+        - generic [ref=f12e1142]: Email Address
+        - textbox "Email Address" [ref=f12e1143]:
+          - /placeholder: name@email.com (optional)
+      - generic [ref=f12e1144]:
+        - generic [ref=f12e1145]:
+          - generic [ref=f12e1146]: Phone Number
+          - textbox "Phone Number" [ref=f12e1147]:
+            - /placeholder: (555) 123-4567
+        - generic [ref=f12e1148]:
+          - generic [ref=f12e1149]: DMV ZIP Code
+          - textbox "DMV ZIP Code" [ref=f12e1150]:
+            - /placeholder: e.g. 22102, 20001
+      - generic [ref=f12e1151]:
+        - generic [ref=f12e1152]: Appliance Brand & Issue Description
+        - textbox "Appliance Brand & Issue Description" [ref=f12e1153]:
+          - /placeholder: e.g. Samsung refrigerator warm, Whirlpool washer not spinning...
+      - generic [ref=f12e1154]:
+        - generic [ref=f12e1155]: $89 Diagnostic
+        - generic [ref=f12e1159]: 30-Day Warranty
+      - button "Confirm Dispatch Request" [ref=f12e1163] [cursor=pointer]

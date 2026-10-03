@@ -3,13 +3,13 @@
 import { Calendar, Clock, FileText, MapPin, Phone } from "lucide-react";
 import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
 import { useSite } from "@/components/SiteShell";
-import ContactForm from "@/components/ContactForm";
+import PanelBookingForm from "@/components/PanelBookingForm";
 
 export default function ContactSection() {
   const { openBooking } = useSite();
 
   return (
-    <section id="contact" className="bg-surface-alt py-8 sm:py-12">
+    <section id="contact" className="bg-surface-alt py-8 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-4xl font-black tracking-tight">Get in Touch with Eco Appliance Services</h2>
@@ -89,7 +89,10 @@ export default function ContactSection() {
           </div>
 
           <div className="lg:col-span-7">
-            <ContactForm />
+            <PanelBookingForm
+              title="Request an Appliance Technician"
+              subtitle="Tell us what needs repair and when you are free."
+            />
           </div>
         </div>
       </div>

@@ -8,8 +8,8 @@ import BackToTop from "@/components/BackToTop";
 import SocialModal from "@/components/SocialModal";
 
 interface SiteContextValue {
-  /** Opens the booking popup, optionally preloaded with a service name. */
-  openBooking: (service?: string) => void;
+  /** Opens the booking popup, optionally preloaded with a service name and a note (e.g. the chosen bundle). */
+  openBooking: (service?: string, notes?: string) => void;
   /** Opens the scan-to-call / social QR popup. */
   openSocial: () => void;
 }
@@ -25,10 +25,12 @@ export function useSite() {
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const [bookingOpen, setBookingOpen] = useState(false);
   const [service, setService] = useState("");
+  const [notes, setNotes] = useState("");
   const [socialOpen, setSocialOpen] = useState(false);
 
-  const openBooking = useCallback((next?: string) => {
+  const openBooking = useCallback((next?: string, note?: string) => {
     setService(next ?? "");
+    setNotes(note ?? "");
     setBookingOpen(true);
   }, []);
 
@@ -48,6 +50,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
         isOpen={bookingOpen}
         onClose={() => setBookingOpen(false)}
         initialAppliance={service}
+        initialNotes={notes}
       />
       <SocialModal isOpen={socialOpen} onClose={closeSocial} />
     </SiteContext.Provider>

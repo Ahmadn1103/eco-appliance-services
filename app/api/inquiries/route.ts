@@ -61,7 +61,9 @@ export async function POST(request: Request) {
   if (!data.name || !data.phone) {
     return Response.json({ error: "Name and phone number are required." }, { status: 400 });
   }
-  if (!data.address) {
+  // The quick booking modal collects only a ZIP; dispatch confirms the street address by phone.
+  const zipOnlyOk = data.source === "Instant Booking Modal" && /^\d{5}$/.test(data.zip);
+  if (!data.address && !zipOnlyOk) {
     return Response.json({ error: "A service address is required." }, { status: 400 });
   }
 

@@ -1,0 +1,134 @@
+[     531ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[     550ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[    1030ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[    1066ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <SegmentViewNode type="page" pagePath="page.tsx">
+      <SegmentTrieNode>
+      <Home>
+        <script>
+        <SiteShell>
+          <Navbar>
+          <main className="flex-1">
+            <Hero>
+            <ServicesSection>
+            <WhyUs>
+            <ProcessSection>
+            <ServiceAreaSection>
+            <section>
+            <FAQSection>
+            <ContactSection>
+              <section id="contact" className="bg-surface...">
+                <div className="max-w-7xl ...">
+                  <div>
+                  <div className="grid grid-...">
+                    <div>
+                    <div className="lg:col-span-7">
+                      <ContactForm>
+                        <div className="bg-white r...">
+                          <div>
+                          <form onSubmit={function handleSubmit} className="p-6 sm:p-1...">
+                            <fieldset>
+                            <fieldset>
+                            <fieldset>
+                              <legend>
+                              <div className="grid grid-...">
+                                <input
+                                  type="text"
+                                  required={true}
+                                  autoComplete="name"
+                                  aria-label="Full name"
+                                  placeholder="Full name"
+                                  value=""
+                                  onChange={function onChange}
+                                  className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white hover:border..."
+-                                 style={{caret-color:"transparent"}}
+                                >
+                                <input
+                                  type="tel"
+                                  required={true}
+                                  autoComplete="tel"
+                                  inputMode="tel"
+                                  aria-label="Phone number"
+                                  placeholder="Phone number"
+                                  value=""
+                                  onChange={function onChange}
+                                  className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white hover:border..."
+-                                 style={{caret-color:"transparent"}}
+                                >
+                                <input
+                                  type="email"
+                                  required={true}
+                                  autoComplete="email"
+                                  aria-label="Email address"
+                                  placeholder="Email (for your confirmation)"
+                                  value=""
+                                  onChange={function onChange}
+                                  className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white hover:border..."
+-                                 style={{caret-color:"transparent"}}
+                                >
+                                <input
+                                  type="text"
+                                  required={true}
+                                  autoComplete="postal-code"
+                                  inputMode="numeric"
+                                  maxLength={5}
+                                  aria-label="ZIP code"
+                                  placeholder="ZIP code"
+                                  value=""
+                                  onChange={function onChange}
+                                  className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white hover:border..."
+-                                 style={{caret-color:"transparent"}}
+                                >
+                                <input
+                                  type="text"
+                                  required={true}
+                                  autoComplete="street-address"
+                                  aria-label="Street address"
+                                  placeholder={"Street address (where we're coming)"}
+                                  value=""
+                                  onChange={function onChange}
+                                  className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white hover:border..."
+-                                 style={{caret-color:"transparent"}}
+                                >
+                            <div className="rounded-2x...">
+                              <button>
+                              <div className="grid trans...">
+                                <div className="overflow-h...">
+                                  <div className="px-4 pb-4 ...">
+                                    <div className="grid grid-...">
+                                      <input
+                                        type="date"
+                                        aria-label="Preferred date"
+                                        value=""
+                                        onChange={function onChange}
+                                        className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white hover:..."
+                                        tabIndex={-1}
+-                                       style={{caret-color:"transparent"}}
+                                      >
+                                    <textarea
+                                      rows={3}
+                                      aria-label="Describe the issue"
+                                      placeholder="Brand, error code, leaking, strange sounds..."
+                                      value=""
+                                      onChange={function onChange}
+                                      className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white hover:bo..."
+                                      tabIndex={-1}
+-                                     style={{caret-color:"transparent"}}
+                                    >
+                            ...
+            ...
+          ...
+ @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:1052
+[    1351ms] [LOG] [Fast Refresh] done in 494ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776

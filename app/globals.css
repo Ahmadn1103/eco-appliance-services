@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
-/* Role tokens filled with the existing Eco Appliance emerald / teal / slate palette. */
+/* Role tokens: the brand green is sampled from the "Appliance" wordmark in public/logo-full.png (#209378). */
 :root {
-  --primary: #059669;
-  --primary-strong: #047857;
-  --accent: #0f766e;
+  --primary: #209378;
+  --primary-strong: #19715c;
+  --primary-light: #69d3bb;
+  --accent: #157572;
+  --accent-light: #74dcd9;
   --ink: #020617;
   --ink-soft: #475569;
   --muted: #64748b;
   --surface: #ffffff;
   --surface-alt: #f8fafc;
-  --surface-tint: #ecfdf5;
+  --surface-tint: #effaf8;
   --border: #e2e8f0;
-  --border-tint: #a7f3d0;
-  --success: #059669;
+  --border-tint: #b3e6da;
+  --success: #209378;
   --warning: #d97706;
   --danger: #dc2626;
   --star: #f59e0b;
@@ -23,7 +25,9 @@
 @theme inline {
   --color-primary: var(--primary);
   --color-primary-strong: var(--primary-strong);
+  --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-muted: var(--muted);
@@ -57,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Anchor targets stay clear of the fixed header */
 main [id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 7.5rem;
 }
 
 /* Every button and link shows a pointer and focus ring */
@@ -131,7 +135,7 @@ a[href]:focus-visible {
 .icon-btn:active { transform: scale(0.9); transition-duration: 80ms; }
 
 .nav-chip {
-  transition: transform 180ms var(--ease-out-quint), background-color 180ms ease, color 180ms ease;
+  transition: transform 120ms var(--ease-out-quint), background-color 100ms ease, color 100ms ease;
 }
 .nav-chip:hover { transform: translateY(-1px); }
 .nav-chip:active { transform: scale(0.96); }
@@ -146,7 +150,7 @@ a[href]:focus-visible {
 @keyframes veilIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes veilOut { from { opacity: 1; } to { opacity: 0; } }
 @keyframes dropDownIn {
-  from { opacity: 0; transform: translateY(-8px); }
+  from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes dropDownOut {
@@ -170,19 +174,19 @@ a[href]:focus-visible {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.menu-veil { animation: veilIn 220ms ease-out both; }
-.menu-veil.is-leaving { animation: veilOut 180ms ease-in both; }
+.menu-veil { animation: veilIn 120ms ease-out both; }
+.menu-veil.is-leaving { animation: veilOut 100ms ease-in both; }
 .menu-panel { animation: panelIn 340ms var(--ease-out-quint) both; }
 .menu-panel.is-leaving { animation: panelOut 180ms ease-in both; }
-.header-dropdown { animation: dropDownIn 220ms var(--ease-out-quint) both; }
-.header-dropdown.is-leaving { animation: dropDownOut 160ms ease-in both; }
-.menu-item { animation: itemIn 260ms var(--ease-out-quint) both; }
-.menu-item:nth-child(1) { animation-delay: 70ms; }
-.menu-item:nth-child(2) { animation-delay: 110ms; }
-.menu-item:nth-child(3) { animation-delay: 150ms; }
-.menu-item:nth-child(4) { animation-delay: 190ms; }
-.menu-item:nth-child(5) { animation-delay: 230ms; }
-.menu-item:nth-child(6) { animation-delay: 270ms; }
+.header-dropdown { animation: dropDownIn 140ms var(--ease-out-quint) both; }
+.header-dropdown.is-leaving { animation: dropDownOut 100ms ease-in both; }
+.menu-item { animation: itemIn 150ms var(--ease-out-quint) both; }
+.menu-item:nth-child(1) { animation-delay: 0ms; }
+.menu-item:nth-child(2) { animation-delay: 15ms; }
+.menu-item:nth-child(3) { animation-delay: 30ms; }
+.menu-item:nth-child(4) { animation-delay: 45ms; }
+.menu-item:nth-child(5) { animation-delay: 60ms; }
+.menu-item:nth-child(6) { animation-delay: 75ms; }
 
 .panel-swap { animation: panelSwap 320ms var(--ease-out-quint) both; }
 
@@ -200,12 +204,12 @@ html { scrollbar-gutter: auto; }
 *::-webkit-scrollbar { width: 10px; height: 10px; }
 *::-webkit-scrollbar-track { background: var(--surface-tint); }
 *::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #10b981, #0f766e);
+  background: linear-gradient(180deg, #2eb897, #157572);
   border-radius: 999px;
   border: 2px solid var(--surface-tint);
 }
-*::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #059669, #115e59); }
-*::-webkit-scrollbar-thumb:active { background: #047857; }
+*::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #209378, #0f5a57); }
+*::-webkit-scrollbar-thumb:active { background: #19715c; }
 *::-webkit-scrollbar-corner { background: var(--surface-tint); }
 
 @supports not selector(::-webkit-scrollbar) {

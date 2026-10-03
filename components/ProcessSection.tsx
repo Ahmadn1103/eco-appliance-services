@@ -25,8 +25,8 @@ const steps = [
   {
     num: "04",
     icon: ShieldCheck,
-    title: "90-Day Guaranteed Peace",
-    desc: "We perform full cycle testing to guarantee performance and protect you with our 90-day comprehensive parts and labor warranty.",
+    title: "30-Day Guaranteed Peace",
+    desc: "We perform full cycle testing to guarantee performance and protect you with our 30-day comprehensive parts and labor warranty.",
   },
 ];
 
@@ -34,10 +34,10 @@ export default function ProcessSection() {
   const { openBooking } = useSite();
 
   return (
-    <section id="process" className="bg-surface-alt border-y border-line py-14 sm:py-20">
+    <section id="process" className="bg-surface-alt border-y border-line py-8 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-line-tint text-primary-strong text-xs font-bold uppercase tracking-wider shadow-xs mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-line-tint text-primary-strong text-xs font-black uppercase tracking-widest shadow-xs mb-3">
             <CalendarCheck className="w-3.5 h-3.5" aria-hidden="true" />
             Hassle-Free Process
           </div>
@@ -68,11 +68,11 @@ export default function ProcessSection() {
           ))}
         </ol>
 
-        <div className="mt-12 text-center">
+        <div className="mt-8 sm:mt-12 flex justify-center">
           <button
             type="button"
             onClick={() => openBooking()}
-            className="btn-cta inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary via-primary to-accent text-on-primary px-7 py-3.5 rounded-full font-black text-sm sm:text-base shadow-md shadow-primary/30"
+            className="btn-cta w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary via-primary to-accent text-on-primary px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-extrabold text-sm sm:text-base shadow-md shadow-primary/25"
           >
             <span className="relative z-10">Book Your Service Call Now</span>
             <ArrowRight className="relative z-10 w-4 h-4" aria-hidden="true" />

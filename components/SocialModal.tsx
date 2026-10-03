@@ -36,7 +36,7 @@ export default function SocialModal({ isOpen, onClose }: { isOpen: boolean; onCl
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Scan to call or follow us"
+      aria-label="Scan to follow us"
       className={`menu-veil ${leaving ? "is-leaving" : ""} fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/60 backdrop-blur-sm`}
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
@@ -56,7 +56,7 @@ export default function SocialModal({ isOpen, onClose }: { isOpen: boolean; onCl
             <QrCode className="w-3.5 h-3.5" aria-hidden="true" />
             Scan
           </div>
-          <h3 className="text-lg font-black tracking-tight">Call or follow us</h3>
+          <h3 className="text-lg font-black tracking-tight">Follow us</h3>
           <p className="text-xs text-ink-soft mt-1">Point your phone camera at the code.</p>
         </div>
         <QrPanel className="border-0 shadow-none p-0" />
