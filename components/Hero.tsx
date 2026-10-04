@@ -37,11 +37,11 @@ export default function Hero() {
           </h1>
 
           <p className="sm:hidden text-xs leading-snug text-white/85">
-            Duct cleaning, dryer vent &amp; appliance repair across Northern VA, DC &amp; MD. Honest upfront pricing.
+            Appliance repair, dryer vent &amp; duct cleaning across Northern VA, DC &amp; MD. Honest upfront pricing.
           </p>
           <p className="hidden sm:block text-base max-w-2xl leading-relaxed text-white/80">
             <strong className="text-white font-bold">Eco Appliance Services</strong> is your trusted specialist for residential
-            duct cleaning, dryer vent restoration, refrigeration, laundry, and kitchen appliance repairs. We deliver honest
+            refrigeration, laundry, and kitchen appliance repairs, dryer vent restoration, and duct cleaning. We deliver honest
             upfront diagnosis and lasting energy-efficient solutions.
           </p>
 
