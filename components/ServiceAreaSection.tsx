@@ -49,8 +49,8 @@ export default function ServiceAreaSection() {
         <div className="mt-6 rounded-2xl bg-surface-tint border border-line-tint p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="text-sm space-y-1">
             <p>
-              <strong className="font-black">Open 24 Hours.</strong>{" "}
-              <span className="text-ink-soft">7 days a week.</span>
+              <strong className="font-black">Mon – Sat: 8:00 AM – 7:00 PM.</strong>{" "}
+              <span className="text-ink-soft">Sunday: Emergency Dispatch.</span>
             </p>
             <p className="text-xs text-ink-soft">
               ZIP codes within about {SERVICE_RADIUS_MILES} miles of our service hubs. Not sure about your area? Call and we will confirm.
