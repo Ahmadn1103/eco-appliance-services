@@ -220,7 +220,7 @@ export default function DiagnosticPlugin({ onOpenBooking }: DiagnosticPluginProp
                     }`}
                   >
                     <span className="block text-slate-900 font-extrabold">Same-Day Priority</span>
-                    <span className="text-[11px] text-emerald-700 font-medium">Within 2–4 hours</span>
+                    <span className="text-[11px] text-emerald-700 font-medium">Within 24 hours</span>
                   </button>
 
                   <button
