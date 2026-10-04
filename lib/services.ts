@@ -68,7 +68,7 @@ export const services: Service[] = [
       "Noisy compressor & defrost board faults",
       "Water leaks & fridge that won't run",
     ],
-    turnaround: "Priority 2–4 Hr Emergency Response",
+    turnaround: "Priority 24 Hr Emergency Response",
   },
   {
     id: "freezer",
