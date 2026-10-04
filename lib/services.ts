@@ -330,34 +330,40 @@ export const services: Service[] = [
     title: "Yearly PM Check",
     icon: CalendarCheck,
     badge: "ANNUAL MAINTENANCE",
-    note: "Maintenance bundles for laundry & kitchen",
+    note: "Maintenance bundles for 2 to 5 appliances",
     quickSummary:
       "A yearly preventive maintenance visit helps catch small problems before they turn into breakdowns. Pick the bundle that matches the appliances you want checked.",
     highlightsLabel: "Why Book a Yearly Check",
     keyFixes: [
       "Catch small problems before they become repairs",
-      "Choose laundry, kitchen, or both",
+      "Choose a bundle for 2 to 5 appliances",
       "One scheduled visit, one bundle price",
     ],
     turnaround: "Schedule your yearly visit online or by phone",
     bundles: [
       {
-        id: "pm-laundry",
-        name: "Laundry Appliances",
-        price: "$139.99",
-        description: "Yearly maintenance for your washer and dryer.",
+        id: "pm-2",
+        name: "2 Appliances",
+        price: "$139.00",
+        description: "Yearly check and maintenance for any two of your appliances.",
       },
       {
-        id: "pm-kitchen",
-        name: "Kitchen Appliances",
-        price: "$169.99",
-        description: "Yearly maintenance for your refrigerator, dishwasher and range.",
+        id: "pm-3",
+        name: "3 Appliances",
+        price: "$189.00",
+        description: "Yearly check and maintenance for any three of your appliances.",
       },
       {
-        id: "pm-kitchen-laundry",
-        name: "Kitchen & Laundry Appliances",
-        price: "$239.99",
-        description: "Five appliances, one price: three kitchen appliances and two laundry appliances.",
+        id: "pm-4",
+        name: "4 Appliances",
+        price: "$239.00",
+        description: "Yearly check and maintenance for any four of your appliances.",
+      },
+      {
+        id: "pm-5",
+        name: "5 Appliances",
+        price: "$299.00",
+        description: "Yearly check and maintenance for any five of your appliances.",
       },
     ],
   },
@@ -396,7 +402,7 @@ export const services: Service[] = [
 /** Bookable services (everything except the informational warranty tile). */
 export const coreServices = services.filter((s) => !s.isWarranty);
 
-/** Booking dropdown text for one maintenance bundle, e.g. "Yearly PM Check – Laundry Appliances – $139.99". */
+/** Booking dropdown text for one maintenance bundle, e.g. "Yearly PM Check – 2 Appliances – $139.00". */
 export const bundleOption = (s: Service, b: Bundle) => `${s.title} – ${b.name} – ${b.price}`;
 
 /** Options for the booking dropdown: every bookable service, with maintenance services expanded to one option per bundle. */
