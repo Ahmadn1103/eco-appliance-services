@@ -33,7 +33,7 @@ export default function Navbar() {
     leaveTimer.current = setTimeout(() => {
       setMenuOpen(false);
       setLeaving(false);
-    }, 100);
+    }, 90);
   }, []);
 
   const toggleMenu = () => {
@@ -121,9 +121,7 @@ export default function Navbar() {
 
       <header className="fixed top-2 sm:top-4 left-0 right-0 z-50 w-full px-3 sm:px-6 pointer-events-none">
         <div
-          className={`max-w-7xl mx-auto pointer-events-auto border border-line/90 bg-surface/95 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.08),0_2px_10px_rgba(32,147,120,0.08)] transition-[border-radius] duration-150 ${
-            menuOpen ? "rounded-3xl" : "rounded-[1.75rem]"
-          }`}
+          className="max-w-7xl mx-auto pointer-events-auto border border-line/90 bg-surface sm:bg-surface/95 sm:backdrop-blur-md shadow-[0_10px_35px_rgba(0,0,0,0.08),0_2px_10px_rgba(32,147,120,0.08)] rounded-[1.75rem]"
         >
           <div className="px-3.5 sm:px-5 py-1.5 sm:py-1 flex items-center justify-between gap-2 sm:gap-4">
             {/* Logo: transparent PNGs, no box. Phones get the emblem plus live text; sm+ gets the full lockup. */}
@@ -137,8 +135,8 @@ export default function Navbar() {
                 className="sm:hidden h-11 w-auto object-contain transition-transform group-active:scale-95"
               />
               <div className="sm:hidden flex flex-col leading-none">
-                <span className="text-xs font-black tracking-tight text-ink">
-                  Eco <span className="text-primary">Appliance</span>
+                <span className="text-xs font-black tracking-tight text-primary">
+                  Eco Appliance
                 </span>
                 <span className="mt-1 text-[8px] font-black tracking-[0.2em] uppercase text-muted">Services</span>
               </div>
@@ -231,13 +229,15 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu drops down inside the pill */}
-          {menuOpen && (
-            <div className={`header-dropdown lg:hidden px-3 pb-3 ${leaving ? "is-leaving" : ""}`}>
+          {/* Always mounted so the height can animate; `inert` keeps the hidden links out of the tab order. */}
+          <div className={`header-dropdown lg:hidden ${menuOpen && !leaving ? "is-open" : ""}`} inert={!(menuOpen && !leaving)}>
+            <div className="overflow-hidden">
+              <div className="px-3 pb-3">
               <div className="rounded-2xl bg-surface-alt border border-line p-1.5 space-y-1.5">
                 <a
                   href={PHONE_HREF}
                   onClick={closeMenu}
-                  className="menu-item pressable flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-strong text-on-primary px-3 py-3 whitespace-nowrap"
+                  className="pressable flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-strong text-on-primary px-3 py-3 whitespace-nowrap"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" />
                   <span className="text-[10px] font-bold uppercase tracking-wider">Call</span>
@@ -252,7 +252,7 @@ export default function Navbar() {
                         goTo(link.id);
                         closeMenu();
                       }}
-                      className={`menu-item pressable px-2 py-2.5 rounded-xl text-xs font-bold text-center ${
+                      className={`pressable px-2 py-2.5 rounded-xl text-xs font-bold text-center ${
                         active === link.id
                           ? "bg-primary text-on-primary"
                           : "text-ink-soft hover:bg-surface hover:text-ink"
@@ -263,8 +263,9 @@ export default function Navbar() {
                   ))}
                 </div>
               </div>
+              </div>
             </div>
-          )}
+          </div>
         </div>
       </header>
     </>

@@ -371,13 +371,13 @@ export const services: Service[] = [
     id: "house-duct",
     title: "House Duct Cleaning",
     icon: House,
-    badge: "HVAC AIR QUALITY",
+    badge: "AIR QUALITY",
     note: "Dust, allergens, weak airflow",
     quickSummary:
-      "We vacuum dust, pet dander, and allergens out of your whole HVAC duct system using medical-grade HEPA negative air machines. Fresh, odor-free air in every room.",
+      "We vacuum dust, pet dander, and allergens out of your whole duct system using medical-grade HEPA negative air machines. Fresh, odor-free air in every room.",
     keyFixes: [
       "Removes trapped dust, pollen & pet dander",
-      "Improves HVAC airflow & reduces energy bills",
+      "Improves airflow & reduces energy bills",
       "Sanitizes supply & return air vents",
     ],
     turnaround: "Whole-Home Clean in 2–3 hrs",

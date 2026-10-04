@@ -1,3 +1,5 @@
+import { customerEmail, ownerEmail } from "@/lib/email-templates";
+
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
 type InquiryBody = {
@@ -14,14 +16,6 @@ type InquiryBody = {
   preferredTime?: string;
   notes?: string;
 };
-
-const escapeHtml = (value: string) =>
-  value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
 
 const clean = (value: unknown, max = 500) =>
   typeof value === "string" ? value.trim().slice(0, max) : "";
@@ -70,37 +64,14 @@ export async function POST(request: Request) {
   let finalEmail = data.email;
   if (!finalEmail) {
     const cleanDigits = data.phone.replace(/\D/g, "") || "booking";
-    finalEmail = `sms-${cleanDigits}@ecoapplianceservices.com`;
+    finalEmail = `sms-${cleanDigits}@eco-applianceservices.com`;
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(finalEmail)) {
     return Response.json({ error: "Please enter a valid email address." }, { status: 400 });
   }
 
   const ticketId = `ECO-DMV-${Math.floor(1000 + Math.random() * 9000)}`;
 
-  const rows: [string, string][] = [
-    ["Ticket", ticketId],
-    ["Source", data.source],
-    ["Name", data.name],
-    ["Phone", data.phone],
-    ["Email", data.email || "(Provided phone for SMS/Call)"],
-    ["Service / Appliance", data.service],
-    ["Symptom", data.issue],
-    ["Billing", data.billing],
-    ["Address", [data.address, data.zip].filter(Boolean).join(", ")],
-    ["Preferred date", data.preferredDate],
-    ["Preferred window", data.preferredTime],
-    ["Diagnostic fee", "$89 (credited toward approved repair)"],
-    ["Notes", data.notes],
-  ];
-  const filled = rows.filter(([, v]) => v);
-
-  const html = `<table cellpadding="8" style="font-family:Arial,sans-serif;font-size:14px;border-collapse:collapse">${filled
-    .map(
-      ([k, v]) =>
-        `<tr><td style="font-weight:bold;color:#475569;vertical-align:top;white-space:nowrap">${escapeHtml(k)}</td><td>${escapeHtml(v).replace(/\n/g, "<br>")}</td></tr>`,
-    )
-    .join("")}</table>`;
-  const text = filled.map(([k, v]) => `${k}: ${v}`).join("\n");
+  const owner = ownerEmail(data, ticketId);
 
   const send = (payload: object) =>
     fetch(RESEND_ENDPOINT, {
@@ -116,8 +87,8 @@ export async function POST(request: Request) {
     from,
     to: [to],
     subject: `New ${data.source}: ${data.service || "Service request"} – ${data.name} (${ticketId})`,
-    html,
-    text,
+    html: owner.html,
+    text: owner.text,
     ...(data.email && { reply_to: data.email }),
   });
 
@@ -127,16 +98,7 @@ export async function POST(request: Request) {
   }
 
   // Customer confirmation. The business alert already went out, so a failure here is logged, not surfaced.
-  const details = filled.filter(([k]) => ["Ticket", "Service / Appliance", "Symptom", "Address", "Preferred date", "Preferred window", "Diagnostic fee"].includes(k));
-  const customerHtml = `<div style="font-family:Arial,sans-serif;font-size:14px;color:#0f172a;max-width:520px">
-    <h2 style="margin:0 0 8px">We received your service request</h2>
-    <p>Hi ${escapeHtml(data.name)}, thanks for contacting Eco Appliance Services. A dispatch coordinator will call or text <strong>${escapeHtml(data.phone)}</strong> shortly to confirm your technician arrival window.</p>
-    <table cellpadding="6" style="border-collapse:collapse;font-size:14px">${details
-      .map(([k, v]) => `<tr><td style="font-weight:bold;color:#475569;vertical-align:top;white-space:nowrap">${escapeHtml(k)}</td><td>${escapeHtml(v)}</td></tr>`)
-      .join("")}</table>
-    <p style="color:#475569">Reply to this email if anything needs to change.</p>
-  </div>`;
-  const customerText = `Hi ${data.name}, we received your service request (${ticketId}). A dispatch coordinator will contact you at ${data.phone} shortly to confirm your arrival window.\n\n${details.map(([k, v]) => `${k}: ${v}`).join("\n")}`;
+  const customer = customerEmail(data, ticketId);
 
   if (data.email) {
     try {
@@ -144,8 +106,8 @@ export async function POST(request: Request) {
         from,
         to: [data.email],
         subject: `We received your service request (${ticketId})`,
-        html: customerHtml,
-        text: customerText,
+        html: customer.html,
+        text: customer.text,
         reply_to: to,
       });
       if (!customerRes.ok) console.error("Customer confirmation failed", customerRes.status, await customerRes.text());

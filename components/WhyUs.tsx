@@ -1,12 +1,12 @@
 "use client";
 
-import { Award, BadgeDollarSign, CheckCircle2, Clock, ShieldCheck } from "lucide-react";
+import { Award, BadgeDollarSign, CheckCircle2, Clock, Handshake, ShieldCheck } from "lucide-react";
 import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
 
 const pillars = [
   {
     title: "Skilled, Dependable Technicians",
-    desc: "Our technicians are trained to diagnose and repair HVAC, air duct, refrigeration, laundry, and kitchen appliance failures, and to get it right the first time.",
+    desc: "Our technicians are trained to diagnose and repair air duct, refrigeration, laundry, and kitchen appliance failures, and to get it right the first time.",
   },
   {
     title: "Honest Diagnosis & Integrity",
@@ -46,7 +46,9 @@ export default function WhyUs() {
             The Eco Appliance Standard
           </div>
           <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-primary-strong mb-3">
-            Honest Service. Upfront Pricing. Work You Can Trust.
+            <span className="inline-flex items-center gap-2 mr-3 sm:mr-4">Honest Service<Handshake className="w-[0.85em] h-[0.85em] shrink-0" aria-hidden="true" /></span>
+            <span className="inline-flex items-center gap-2 mr-3 sm:mr-4">Upfront Pricing<BadgeDollarSign className="w-[0.85em] h-[0.85em] shrink-0" aria-hidden="true" /></span>
+            <span className="inline-flex items-center gap-2 mr-3 sm:mr-4">Work You Can Trust<ShieldCheck className="w-[0.85em] h-[0.85em] shrink-0" aria-hidden="true" /></span>
           </h2>
           <p className="text-sm sm:text-base text-ink-soft mb-5 max-w-2xl">
             When a refrigerator warms up, air ducts spread dust, or a washer fails mid-cycle, you don’t need guesswork. You need a

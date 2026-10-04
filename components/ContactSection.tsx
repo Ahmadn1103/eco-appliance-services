@@ -57,7 +57,7 @@ export default function ContactSection() {
                 <dl className="text-sm space-y-1">
                   <div className="flex justify-between gap-3">
                     <dt className="text-ink-soft">Monday – Saturday</dt>
-                    <dd className="font-bold">7:30 AM – 8:00 PM</dd>
+                    <dd className="font-bold">8:00 AM – 7:00 PM</dd>
                   </div>
                   <div className="flex justify-between gap-3">
                     <dt className="text-ink-soft">Sunday</dt>

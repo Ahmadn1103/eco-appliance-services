@@ -10,7 +10,7 @@ Marketing and booking site for an appliance repair business serving the DC / Mar
 > This Next.js version has breaking changes. Check `node_modules/next/dist/docs/` before changing framework-level code (see `AGENTS.md`).
 
 ## Live site
-- Production: https://eco-appliance-services.vercel.app
+- Production: https://www.eco-applianceservices.com (apex redirects to www)
 - Vercel project: `eco-appliance-services` (team `elegacys-projects`)
 - Deploy: `vercel --prod` from the project root (not yet connected to git auto-deploy)
 - **Do not deploy to production unless the owner asks.** Preview locally with `npm run dev`. The last production deploy is behind the local code (see "Not yet deployed" below).
@@ -67,7 +67,7 @@ Set in `.env` locally and in Vercel (Production). Never commit them. `.env*` is 
 | Variable | Value / purpose |
 |---|---|
 | `RESEND_API_KEY` | Resend API key (rotate at resend.com/api-keys) |
-| `BOOKING_FROM_EMAIL` | `Eco Appliance Services <bookings@ecoappliancservices.com>` |
+| `BOOKING_FROM_EMAIL` | `Eco Appliance Services <bookings@eco-applianceservices.com>` (domain must be verified in Resend) |
 | `BOOKING_TO_EMAIL` | Inbox that receives booking alerts (ecoapplianceservicesdmv@gmail.com) |
 
 Changing a Vercel env var requires a redeploy to take effect.
@@ -87,9 +87,9 @@ vercel --prod    # deploy
 
 ## SEO
 Audit run 2026-09-28 (score 51/100 before fixes); reports are in `eco-appliance-services.vercel.app-audit/`.
-- Done: per-page titles, descriptions and canonicals; robots.txt and sitemap.xml; generated OG image; HVACBusiness schema (no rating) plus FAQPage schema.
+- Done: per-page titles, descriptions and canonicals; robots.txt and sitemap.xml; generated OG image; LocalBusiness schema (no rating) plus FAQPage schema.
 - Set `NEXT_PUBLIC_SITE_URL` in Vercel once the custom domain is connected, then redeploy.
-- `ecoapplianceservices.com` (with the "e") is a for-sale parked page, not ours. The Resend domain is `ecoappliancservices.com` (no "e"); confirm which one is the real website domain.
+- Domain decided: `eco-applianceservices.com` (canonical `www`). Verify it in Resend (DKIM/SPF DNS) and set `BOOKING_FROM_EMAIL` to `bookings@eco-applianceservices.com`. The previously verified Resend domain `ecoappliancservices.com` (typo) no longer matches.
 - The business is a startup. Do not add experience claims ("15+ years", "since 2021"), ratings, review counts or testimonials until they are real and verifiable. The reviews section, "5-Star Google Rated" badge and footer star rating were removed for this reason. Re-add reviews (and `aggregateRating` schema) only from real Google reviews.
 
 ## Conventions
@@ -111,7 +111,7 @@ The whole one-page redesign: new layout and styling, anchor navigation, the ZIP 
 
 ## Open items
 - [ ] Verify or reword remaining unverified claims: "master technician" / "Master Certified Field Pros", "Certified service" wording in the service cards, and the warranty-partner list. (The footer's licensed/insured/EPA lines were removed.)
-- [ ] Add the Facebook and Instagram URLs to the `sameAs` list in the HVACBusiness schema (`app/layout.tsx`).
+- [ ] Add the Facebook and Instagram URLs to the `sameAs` list in the LocalBusiness schema (`app/layout.tsx`).
 - [ ] Delete or reuse the unused old components (see Structure).
 - [ ] Deploy the local-only changes when approved.
 - [ ] Add a real address or service-area statement, licence and insurance details, an About section (the one-page design has none yet), and a Google Business Profile link (then add `sameAs` to the schema).

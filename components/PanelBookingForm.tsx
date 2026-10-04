@@ -19,7 +19,7 @@ const timeWindows = [
   "First Available / Urgent Dispatch",
   "Morning (8:00 AM - 12:00 PM)",
   "Afternoon (12:00 PM - 4:00 PM)",
-  "Evening (4:00 PM - 7:30 PM)",
+  "Evening (4:00 PM - 7:00 PM)",
 ];
 
 const baseField =

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, CalendarCheck, Search, ShieldCheck, Wrench } from "lucide-react";
 import { useSite } from "@/components/SiteShell";
 
@@ -32,6 +33,25 @@ const steps = [
 
 export default function ProcessSection() {
   const { openBooking } = useSite();
+  const listRef = useRef<HTMLOListElement>(null);
+  const [inView, setInView] = useState(false);
+
+  // Play the step sequence once, when the timeline scrolls into view.
+  useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="process" className="bg-surface-alt border-y border-line py-8 sm:py-16">
@@ -41,22 +61,28 @@ export default function ProcessSection() {
             <CalendarCheck className="w-3.5 h-3.5" aria-hidden="true" />
             Hassle-Free Process
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">How Eco Appliance Services Works</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
+            How{" "}
+            <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+              Eco Appliance Services
+            </span>{" "}
+            Works
+          </h2>
           <p className="mt-3 text-sm sm:text-lg text-ink-soft">
-            From your first call to the final cycle test, we make HVAC and appliance services straightforward, transparent, and
+            From your first call to the final cycle test, we make appliance and duct services straightforward, transparent, and
             completely stress-free.
           </p>
         </div>
 
         {/* Connected step timeline */}
-        <ol className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
+        <ol ref={listRef} className={`process-timeline ${inView ? "is-in" : ""} relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8`}>
           <span
             aria-hidden="true"
-            className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary via-primary to-accent opacity-30"
+            className="process-line hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary via-primary to-accent opacity-30"
           />
-          {steps.map(({ num, icon: Icon, title, desc }) => (
-            <li key={num} className="card-lift group relative flex lg:flex-col items-start lg:items-center gap-4 lg:text-center">
-              <span className="relative z-10 w-14 h-14 shrink-0 rounded-full bg-gradient-to-br from-primary to-accent text-on-primary ring-4 ring-surface-alt shadow-md shadow-primary/25 flex items-center justify-center">
+          {steps.map(({ num, icon: Icon, title, desc }, i) => (
+            <li key={num} style={{ "--i": i } as React.CSSProperties} className="process-step card-lift group relative flex lg:flex-col items-start lg:items-center gap-4 lg:text-center">
+              <span className="process-icon relative z-10 w-14 h-14 shrink-0 rounded-full bg-gradient-to-br from-primary to-accent text-on-primary ring-4 ring-surface-alt shadow-md shadow-primary/25 flex items-center justify-center">
                 <Icon className="w-6 h-6" aria-hidden="true" />
               </span>
               <div className="lg:px-2">

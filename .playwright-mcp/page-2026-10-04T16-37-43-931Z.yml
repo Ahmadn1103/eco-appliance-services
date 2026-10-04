@@ -1,0 +1,27 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]: Eco Appliance Services
+  - generic [ref=f3e3]: Appliance & duct services
+  - generic [ref=f3e4]:
+    - generic [ref=f3e5]: Request received
+    - generic [ref=f3e6]: We received your service request
+  - text: Hi Jordan, thanks for contacting Eco Appliance Services. Your request is in and a dispatch coordinator will reach out shortly. Your ticket number
+  - strong [ref=f3e7]: ECO-DMV-4821
+  - text: Your request Appliance Refrigerator Repair Symptom Not cooling, water on the floor Address 123 Main St, Arlington, VA, 22201 Preferred date 2026-10-08 Preferred window Morning (8am - 12pm) What happens next
+  - generic [ref=f3e8]: "1"
+  - strong [ref=f3e9]: We review your request
+  - text: A dispatch coordinator looks at your appliance and location.
+  - generic [ref=f3e10]: "2"
+  - strong [ref=f3e11]: We call or text you
+  - text: We contact you at (703) 555-0142 to confirm your technician's arrival window.
+  - generic [ref=f3e12]: "3"
+  - strong [ref=f3e13]: Your technician arrives
+  - text: Honest diagnosis and a clear quote before any work begins. The $89 diagnostic fee is credited toward an approved repair.
+  - link "Call (571) 462-1813" [ref=f3e14] [cursor=pointer]:
+    - /url: tel:5714621813
+  - generic [ref=f3e15]: Need to change something? Just reply to this email.
+  - strong [ref=f3e16]: Eco Appliance Services
+  - link "(571) 462-1813" [ref=f3e17] [cursor=pointer]:
+    - /url: tel:5714621813
+  - text: • Mon–Sat 7:30 AM – 8:00 PM • Serving VA, DC & MD
+  - link "eco-appliance-services.vercel.app" [ref=f3e18] [cursor=pointer]:
+    - /url: https://eco-appliance-services.vercel.app

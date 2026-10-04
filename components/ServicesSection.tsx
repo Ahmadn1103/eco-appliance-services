@@ -50,7 +50,7 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section id="services" className="bg-surface-tint border-y border-line-tint py-8 sm:py-16">
+    <section id="services" className="bg-surface-tint border-y border-line-tint pt-8 pb-8 sm:pt-10 sm:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-line-tint text-primary-strong text-xs font-black uppercase tracking-widest shadow-xs mb-3">

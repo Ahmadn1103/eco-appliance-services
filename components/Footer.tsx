@@ -38,7 +38,7 @@ export default function Footer() {
               Eco <span className="text-primary">Appliance</span> Services
             </span>
           </a>
-          <p className="text-sm italic text-ink">HVAC &amp; Precision Appliance Services</p>
+          <p className="text-sm italic text-ink">Precision Appliance Services</p>
           <p className="text-xs sm:text-sm leading-relaxed max-w-md">
             Honest diagnosis, upfront pricing, and workmanship backed by a 30-day parts and labor guarantee, serving Washington DC,
             Maryland, and Northern Virginia.
@@ -101,7 +101,7 @@ export default function Footer() {
               <p className="flex items-start gap-2 text-ink">
                 <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
                 <span>
-                  Mon – Sat: 7:30 AM – 8:00 PM
+                  Mon – Sat: 8:00 AM – 7:00 PM
                   <span className="block text-ink-soft text-xs">Sunday: Emergency Dispatch</span>
                 </span>
               </p>
@@ -134,7 +134,7 @@ export default function Footer() {
             <span aria-hidden="true">•</span>
             <span>Home Warranty Claims Welcome</span>
             <span aria-hidden="true">•</span>
-            <span>Serving DC, MD &amp; VA</span>
+            <span>Serving VA, DC &amp; MD</span>
           </div>
         </div>
       </div>

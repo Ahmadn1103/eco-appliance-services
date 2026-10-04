@@ -13,7 +13,7 @@ export default function ServiceAreaSection() {
           <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
             Serving{" "}
             <span className="bg-gradient-to-r from-primary via-primary-strong to-accent bg-clip-text text-transparent">
-              DC, Maryland &amp; Virginia
+              Virginia, DC &amp; Maryland
             </span>
           </h2>
 
@@ -49,7 +49,7 @@ export default function ServiceAreaSection() {
         <div className="mt-6 rounded-2xl bg-surface-tint border border-line-tint p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="text-sm space-y-1">
             <p>
-              <strong className="font-black">Mon – Sat: 7:30 AM – 8:00 PM.</strong>{" "}
+              <strong className="font-black">Mon – Sat: 8:00 AM – 7:00 PM.</strong>{" "}
               <span className="text-ink-soft">Sunday: Emergency Dispatch.</span>
             </p>
             <p className="text-xs text-ink-soft">

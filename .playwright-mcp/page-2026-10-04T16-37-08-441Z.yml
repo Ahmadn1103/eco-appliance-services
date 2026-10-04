@@ -1,0 +1,31 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]: Eco Appliance Services
+  - generic [ref=f2e3]: Appliance & duct services
+  - generic [ref=f2e4]:
+    - generic [ref=f2e5]: New service request
+    - generic [ref=f2e6]: Refrigerator Repair for Jordan Rivera
+  - text: Ticket
+  - strong [ref=f2e7]: ECO-DMV-4821
+  - text: • via Instant Booking Modal
+  - link "Call Jordan" [ref=f2e8] [cursor=pointer]:
+    - /url: tel:7035550142
+  - link "Reply by email" [ref=f2e9] [cursor=pointer]:
+    - /url: mailto:jordan@example.com
+  - link "Open in Maps" [ref=f2e10] [cursor=pointer]:
+    - /url: https://www.google.com/maps/search/?api=1&query=123%20Main%20St%2C%20Arlington%2C%20VA%2C%2022201
+  - text: Customer Name Jordan Rivera Phone
+  - link "(703) 555-0142" [ref=f2e11] [cursor=pointer]:
+    - /url: tel:7035550142
+  - text: Email
+  - link "jordan@example.com" [ref=f2e12] [cursor=pointer]:
+    - /url: mailto:jordan@example.com
+  - text: Service Appliance Refrigerator Repair Symptom Not cooling, water on the floor Billing Credit card Diagnostic fee $89, credited toward an approved repair Location Address
+  - link "123 Main St, Arlington, VA, 22201" [ref=f2e13] [cursor=pointer]:
+    - /url: https://www.google.com/maps/search/?api=1&query=123%20Main%20St%2C%20Arlington%2C%20VA%2C%2022201
+  - text: Schedule Preferred date 2026-10-08 Preferred window Morning (8am - 12pm) Notes Dog at home.Gate code 1234.
+  - strong [ref=f2e14]: Eco Appliance Services
+  - link "(571) 462-1813" [ref=f2e15] [cursor=pointer]:
+    - /url: tel:5714621813
+  - text: • Mon–Sat 7:30 AM – 8:00 PM • Serving VA, DC & MD
+  - link "eco-appliance-services.vercel.app" [ref=f2e16] [cursor=pointer]:
+    - /url: https://eco-appliance-services.vercel.app

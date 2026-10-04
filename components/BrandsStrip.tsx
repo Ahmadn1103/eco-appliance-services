@@ -10,7 +10,7 @@ export default function BrandsStrip() {
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-line-tint text-primary-strong text-xs font-black uppercase tracking-widest shadow-xs">
               Brands We Service
             </div>
-            <h3 className="text-xl sm:text-2xl font-black tracking-tight mt-2">Every Major HVAC &amp; Appliance Brand</h3>
+            <h3 className="text-xl sm:text-2xl font-black tracking-tight mt-2">Every Major Appliance Brand</h3>
           </div>
           <div className="inline-flex items-center gap-2 rounded-full bg-surface border border-line px-4 py-2 text-xs shadow-xs self-start md:self-auto">
             <ShieldCheck className="w-4 h-4 text-primary" aria-hidden="true" />
@@ -18,15 +18,15 @@ export default function BrandsStrip() {
           </div>
         </div>
 
-        <ul className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3">
-          {brands.map(({ name, logo }) => (
+        <ul className="grid grid-cols-2 sm:grid-cols-6 gap-2 sm:gap-3">
+          {brands.map(({ name, logo, ...rest }) => (
             <li
               key={name}
               className="h-12 sm:h-16 rounded-xl p-2 sm:p-3 bg-surface border border-line flex items-center justify-center hover:border-primary hover:shadow-md transition-all duration-200"
             >
               {/* Plain <img>: these are small static SVGs, so next/image optimisation adds nothing. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={logo} alt={name} loading="lazy" className="h-5 sm:h-8 w-full max-w-[7rem] object-contain" />
+              <img src={logo} alt={name} loading="lazy" className={`${"large" in rest ? "h-8 sm:h-10" : "h-5 sm:h-8"} w-full max-w-[7rem] object-contain`} />
             </li>
           ))}
         </ul>

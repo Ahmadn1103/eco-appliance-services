@@ -79,7 +79,7 @@ export default function FAQSection() {
 
         <div className="mt-10 p-6 rounded-3xl bg-surface-tint border border-line-tint flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h3 className="text-base font-black">Have a specific question about your HVAC or appliance?</h3>
+            <h3 className="text-base font-black">Have a specific question about your appliance?</h3>
             <p className="text-xs sm:text-sm text-ink-soft mt-0.5">
               Speak directly with an experienced technician or our DMV dispatch team today.
             </p>

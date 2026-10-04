@@ -80,6 +80,18 @@ export default function QrPanel({ className = "" }: { className?: string }) {
         </p>
         <p className="text-[11px] text-muted">{target.caption}</p>
       </div>
+
+      {target.value && (
+        <a
+          href={target.value}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pressable w-full inline-flex items-center justify-center gap-1.5 bg-primary text-on-primary px-3 py-1.5 rounded-full text-[11px] font-bold"
+        >
+          {tab === "facebook" ? <FacebookIcon className="w-3.5 h-3.5" /> : <InstagramIcon className="w-3.5 h-3.5" />}
+          Open {tab === "facebook" ? "Facebook" : "Instagram"}
+        </a>
+      )}
     </div>
   );
 }

@@ -35,7 +35,7 @@ const stats = [
   { value: "$89", label: "Diagnostic Fee", sub: "100% Credited With Repair" },
   { value: "30-Day", label: "Parts & Labor Warranty", sub: "Guaranteed Workmanship" },
   { value: "Same-Day", label: "Dispatch Available", sub: "Across the DMV" },
-  { value: "DC · MD · VA", label: "Service Area", sub: "Within 40 Miles" },
+  { value: "VA · DC · MD", label: "Service Area", sub: "Within 40 Miles" },
 ];
 
 export default function AboutSection() {
@@ -70,13 +70,13 @@ export default function AboutSection() {
           {/* Story + feature cards */}
           <div className="lg:col-span-7 space-y-5">
             <p className="text-sm sm:text-lg text-ink-soft leading-relaxed">
-              <strong className="text-ink font-bold">Eco Appliance Services</strong> is a local appliance and HVAC service company
-              serving Washington, DC, Maryland, and Virginia. We built it on a simple promise: clear communication, honest
-              diagnosis, and quality repairs, without high-pressure sales or surprise charges.
+              <strong className="text-ink font-bold">Eco Appliance Services</strong> is a local appliance repair service
+              for homes in Virginia, Washington, DC, and Maryland. Our promise is simple: we explain the problem clearly,
+              tell you the truth about what it needs, and fix it right. No pushy sales and no surprise charges.
             </p>
             <p className="text-sm sm:text-lg text-ink-soft leading-relaxed">
-              From refrigerators, washers, and dryers to ovens, dishwashers, dryer vents, and duct cleaning, our technicians arrive
-              prepared to diagnose the problem and resolve it as quickly as possible, ideally in a single visit.
+              We repair refrigerators, washers, dryers, ovens, dishwashers and more appliances. We clean dryer vents and air ducts. Our
+              technicians arrive ready to find the problem and fix it fast, usually in a single visit.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 pt-1">
@@ -102,19 +102,19 @@ export default function AboutSection() {
             <div className="rounded-3xl bg-surface border border-line p-3 shadow-lg">
               <div className="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] overflow-hidden rounded-2xl">
                 <Image
-                  src="/hero-technician.jpg"
-                  alt="Eco Appliance Services technician diagnosing a refrigerator"
+                  src="/tech-new.jpg"
+                  alt="Eco Appliance Services technician repairing a dryer"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover object-[62%_center]"
+                  className="object-cover object-[50%_center]"
                 />
                 <div className="absolute inset-x-3 bottom-3 flex items-center gap-3 rounded-xl bg-surface/95 backdrop-blur p-3.5 shadow-lg">
                   <span className="w-10 h-10 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                     <ShieldCheck className="w-5 h-5" aria-hidden="true" />
                   </span>
                   <div className="min-w-0">
-                    <p className="text-sm font-black leading-tight">Honest Diagnosis, Every Visit</p>
-                    <p className="text-xs text-ink-soft leading-snug">Serving DC, Maryland &amp; Virginia</p>
+                    <p className="text-sm font-black leading-tight">Accurate Diagnosis &amp; Repair</p>
+                    <p className="text-xs text-ink-soft leading-snug">Serving Virginia, DC &amp; Maryland</p>
                   </div>
                 </div>
               </div>

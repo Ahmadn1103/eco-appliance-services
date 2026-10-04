@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { SITE_URL, SITE_NAME, SITE_PHONE } from "@/lib/site";
+import { SITE_URL, SITE_NAME, SITE_PHONE, SOCIAL_LINKS } from "@/lib/site";
 
 export const viewport: Viewport = {
   themeColor: "#209378",
@@ -12,11 +12,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Eco Appliance Services | HVAC & Appliance Repair DC, MD, VA",
+    default: "Eco Appliance Services | Appliance Repair DC, MD, VA",
     template: "%s | Eco Appliance Services",
   },
   description:
-    "Eco Appliance Services provides professional HVAC duct cleaning, dryer vent restoration, refrigeration, laundry, and kitchen appliance repairs across Washington DC, Maryland, and Northern Virginia.",
+    "Eco Appliance Services provides professional duct cleaning, dryer vent restoration, refrigeration, laundry, and kitchen appliance repairs across Washington DC, Maryland, and Northern Virginia.",
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
@@ -27,15 +27,25 @@ export const metadata: Metadata = {
     telephone: true,
   },
   openGraph: {
-    title: "Eco Appliance Services | HVAC & Precision Appliance Repair DMV",
+    title: "Eco Appliance Services | Precision Appliance Repair DMV",
     description:
-      "Reliable HVAC, duct cleaning, and appliance repair across Washington DC, Maryland, and Northern Virginia. Honest diagnosis and upfront pricing.",
+      "Reliable duct cleaning and appliance repair across Washington DC, Maryland, and Northern Virginia. Honest diagnosis and upfront pricing.",
     url: "/",
     siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eco Appliance Services | Precision Appliance Repair DMV",
+    description:
+      "Reliable duct cleaning and appliance repair across Washington DC, Maryland, and Northern Virginia. Honest diagnosis and upfront pricing.",
+  },
 };
 
 export default function RootLayout({
@@ -45,15 +55,25 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "HVACBusiness",
+    "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#business`,
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/logo.jpeg`,
     image: `${SITE_URL}/logo.jpeg`,
     description:
-      "Professional HVAC duct cleaning, dryer vent restoration, refrigeration, cooktop, dishwasher, and washing machine repair across the DMV.",
+      "Professional duct cleaning, dryer vent restoration, refrigeration, cooktop, dishwasher, and washing machine repair across the DMV.",
     priceRange: "$$",
+    sameAs: Object.values(SOCIAL_LINKS).filter(Boolean),
+    knowsAbout: [
+      "Refrigerator repair",
+      "Washer and dryer repair",
+      "Dishwasher repair",
+      "Cooktop and range repair",
+      "Dryer vent cleaning",
+      "Air duct cleaning",
+      "Home warranty appliance service",
+    ],
     telephone: SITE_PHONE,
     areaServed: [
       "Washington, DC",
@@ -74,7 +94,7 @@ export default function RootLayout({
     ].map((name) => ({ "@type": "City", name })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "HVAC and appliance services",
+      name: "Appliance and duct services",
       itemListElement: [
         "Dryer vent cleaning",
         "Air duct cleaning",
@@ -98,14 +118,8 @@ export default function RootLayout({
           "Friday",
           "Saturday",
         ],
-        opens: "07:30",
-        closes: "20:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Sunday"],
-        opens: "08:30",
-        closes: "17:00",
+        opens: "08:00",
+        closes: "19:00",
       },
     ],
   };

@@ -57,7 +57,7 @@ export default function DiagnosticPlugin({ onOpenBooking }: DiagnosticPluginProp
     dryervent: {
       title: "Dryer Vent Cleaning",
       icon: "🔥",
-      category: "HVAC Fire Safety",
+      category: "Fire Safety",
       avgRepairTime: "45 mins",
       firstVisitRate: "99%",
       commonIssue: "Clothes taking multiple cycles, hot cabinet, lint accumulation",
@@ -66,11 +66,11 @@ export default function DiagnosticPlugin({ onOpenBooking }: DiagnosticPluginProp
     duct: {
       title: "House Duct Cleaning",
       icon: "💨",
-      category: "HVAC Air Quality",
+      category: "Air Quality",
       avgRepairTime: "2 - 3 hrs",
       firstVisitRate: "95%",
       commonIssue: "Restricted airflow, excessive dust, musty vents, allergy flare-ups",
-      ecoBenefit: "Improves HVAC airflow efficiency by up to 25%",
+      ecoBenefit: "Improves airflow efficiency by up to 25%",
     },
   };
 

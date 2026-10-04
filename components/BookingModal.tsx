@@ -18,6 +18,13 @@ const fieldClass =
   "w-full px-4 py-2.5 rounded-xl bg-surface-alt border border-line text-[15px] text-ink placeholder:text-muted outline-none transition-colors hover:border-muted/60 focus:border-primary focus:ring-4 focus:ring-primary/15";
 const labelClass = "block text-[13px] font-semibold uppercase tracking-wide text-ink mb-1.5";
 
+/** Red asterisk after a label; every field in this form is required. */
+const Req = () => (
+  <span className="text-danger" aria-hidden="true">
+    {" "}*
+  </span>
+);
+
 function matchService(init: string) {
   const lower = init.trim().toLowerCase();
   if (!lower) return "";
@@ -69,8 +76,12 @@ function BookingForm({
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.service) return setError("Please choose a service.");
-    if (!form.name.trim() || !form.phone.trim()) return setError("Please enter your name and phone number.");
+    if (!form.name.trim()) return setError("Please enter your name.");
+    if (!form.email.trim()) return setError("Please enter your email address.");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) return setError("Please enter a valid email address.");
+    if (!form.phone.trim()) return setError("Please enter your phone number.");
     if (!/^\d{5}$/.test(form.zip.trim())) return setError("Please enter a valid 5-digit ZIP code.");
+    if (!form.notes.trim()) return setError("Please enter your appliance brand, model and the issue.");
 
     setSubmitting(true);
     setError("");
@@ -170,7 +181,7 @@ function BookingForm({
           <form onSubmit={submit} className="p-6 space-y-4" noValidate>
             <div>
               <label htmlFor="bk-service" className={labelClass}>
-                Appliance Service Needed
+                Appliance Service Needed<Req />
               </label>
               <select
                 id="bk-service"
@@ -192,11 +203,12 @@ function BookingForm({
 
             <div>
               <label htmlFor="bk-name" className={labelClass}>
-                Your Name
+                Your Name<Req />
               </label>
               <input
                 id="bk-name"
                 type="text"
+                required
                 autoComplete="name"
                 value={form.name}
                 onChange={set("name")}
@@ -207,15 +219,16 @@ function BookingForm({
 
             <div>
               <label htmlFor="bk-email" className={labelClass}>
-                Email Address
+                Email Address<Req />
               </label>
               <input
                 id="bk-email"
+                required
                 type="email"
                 autoComplete="email"
                 value={form.email}
                 onChange={set("email")}
-                placeholder="name@email.com (optional)"
+                placeholder="name@email.com"
                 className={fieldClass}
               />
             </div>
@@ -223,10 +236,11 @@ function BookingForm({
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label htmlFor="bk-phone" className={labelClass}>
-                  Phone Number
+                  Phone Number<Req />
                 </label>
                 <input
                   id="bk-phone"
+                  required
                   type="tel"
                   autoComplete="tel"
                   value={form.phone}
@@ -237,10 +251,11 @@ function BookingForm({
               </div>
               <div>
                 <label htmlFor="bk-zip" className={labelClass}>
-                  DMV ZIP Code
+                  DMV ZIP Code<Req />
                 </label>
                 <input
                   id="bk-zip"
+                  required
                   type="text"
                   inputMode="numeric"
                   autoComplete="postal-code"
@@ -255,15 +270,16 @@ function BookingForm({
 
             <div>
               <label htmlFor="bk-notes" className={labelClass}>
-                Appliance Brand &amp; Issue Description
+                Appliance Brand, Model &amp; Issue Description<Req />
               </label>
               <textarea
                 id="bk-notes"
+                required
                 rows={2}
                 maxLength={1000}
                 value={form.notes}
                 onChange={set("notes")}
-                placeholder="e.g. Samsung refrigerator warm, Whirlpool washer not spinning..."
+                placeholder="e.g. Samsung, model RF28R7551SR, refrigerator not cooling"
                 className={`${fieldClass} resize-none`}
               />
             </div>

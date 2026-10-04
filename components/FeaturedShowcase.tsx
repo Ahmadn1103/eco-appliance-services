@@ -34,7 +34,7 @@ export default function FeaturedShowcase({ onOpenBooking }: FeaturedShowcaseProp
       desc: "Removes hazardous lint buildup in hidden wall cavities and exterior vents, ensuring safe exhaust.",
     },
     {
-      title: "Cuts Monthly HVAC & Energy Bills up to 25%",
+      title: "Cuts Monthly Energy Bills up to 25%",
       desc: "Unrestricted duct airflow enables your air handler, furnace, and dryer to operate with maximum thermal efficiency.",
     },
     {
@@ -66,7 +66,7 @@ export default function FeaturedShowcase({ onOpenBooking }: FeaturedShowcaseProp
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            As an HVAC & appliance specialist, Eco Appliance Services combines deep duct vacuuming with precision dryer exhaust clearance to keep your DMV home safe, fresh, and energy-efficient.
+            As an appliance & duct specialist, Eco Appliance Services combines deep duct vacuuming with precision dryer exhaust clearance to keep your DMV home safe, fresh, and energy-efficient.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function FeaturedShowcase({ onOpenBooking }: FeaturedShowcaseProp
                       Eco Air Quality & Safety Duo
                     </h3>
                     <p className="text-xs text-slate-400">
-                      Residential HVAC & Appliance Protection
+                      Residential Appliance & Duct Protection
                     </p>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
-// Set NEXT_PUBLIC_SITE_URL in Vercel once a custom domain is connected.
+// Set NEXT_PUBLIC_SITE_URL in Vercel (production is https://www.eco-applianceservices.com, which is also the fallback).
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://eco-appliance-services.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.eco-applianceservices.com"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Eco Appliance Services";
@@ -23,12 +23,16 @@ export const serviceRegions = [
   {
     region: "Virginia",
     areas: [
-      "Aldie", "Alexandria", "Annandale", "Arlington", "Ashburn", "Bristow", "Burke", "Centreville", "Chantilly", "Clifton",
+      "Aldie", "Alexandria", "Annandale", "Arlington", "Ashburn", "Brambleton", "Bristow", "Broadlands", "Burke", "Catlett", "Centreville", "Chantilly", "Clifton",
       "Dulles", "Dumfries", "Dunn Loring", "Fairfax", "Fairfax Station", "Falls Church", "Fort Belvoir", "Fredericksburg",
-      "Front Royal", "Gainesville", "Great Falls", "Haymarket", "Herndon", "Leesburg", "Lorton", "Manassas", "McLean",
-      "Merrifield", "Mount Vernon", "Oakton", "Occoquan", "Reston", "Spotsylvania", "Springfield", "Stafford", "Sterling",
+      "Front Royal", "Gainesville", "Great Falls", "Haymarket", "Herndon", "Leesburg", "Lorton", "Manassas", "Marshall", "McLean",
+      "Merrifield", "Midland", "Mount Vernon", "New Baltimore", "Nokesville", "Oakton", "Occoquan", "Reston", "South Riding", "Spotsylvania", "Springfield", "Stafford", "Sterling",
       "Strasburg", "Triangle", "Vienna", "Warrenton", "Washington", "Waterford", "West McLean", "Winchester", "Woodbridge",
     ],
+  },
+  {
+    region: "Washington, DC",
+    areas: ["Naval Anacost Annex", "Washington", "Washington Navy Yard"],
   },
   {
     region: "Maryland",
@@ -37,24 +41,22 @@ export const serviceRegions = [
       "Rockville", "Silver Spring", "Suitland", "Takoma Park", "Upper Marlboro",
     ],
   },
-  {
-    region: "Washington, DC",
-    areas: ["Naval Anacost Annex", "Washington", "Washington Navy Yard"],
-  },
 ];
 
-// Logo strip: 10 logos = two even rows of 5. Files live in public/brands (viewBox cropped to the real bounds).
+// Logo strip: keep an even count (12 = two rows of 6) so the last row is not left short. Files live in public/brands (viewBox cropped to the real bounds).
 export const brands = [
-  { name: "Trane", logo: "/brands/trane.svg" },
+  { name: "Kenmore", logo: "/brands/kenmore.png" },
   { name: "Carrier", logo: "/brands/carrier.svg" },
   { name: "Sub-Zero", logo: "/brands/sub-zero.svg" },
   { name: "Samsung", logo: "/brands/samsung.svg" },
   { name: "LG", logo: "/brands/lg.svg" },
-  { name: "Bosch", logo: "/brands/bosch.svg" },
+  { name: "Bosch", logo: "/brands/bosch.png" },
   { name: "Whirlpool", logo: "/brands/whirlpool.svg" },
   { name: "GE Monogram", logo: "/brands/ge-monogram.svg" },
-  { name: "Lennox", logo: "/brands/lennox.svg" },
+  { name: "Maytag", logo: "/brands/maytag.png", large: true },
   { name: "KitchenAid", logo: "/brands/kitchenaid.svg" },
+  { name: "Electrolux", logo: "/brands/electrolux.png" },
+  { name: "JennAir", logo: "/brands/jennair.png" },
 ];
 
 // Social profile links, used for the QR codes in the footer and the header popup.
