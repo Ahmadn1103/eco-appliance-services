@@ -71,7 +71,7 @@ export default function ContactSection() {
                   <MapPin className="w-4 h-4" aria-hidden="true" />
                   Service Area
                 </div>
-                <p className="text-sm text-ink-soft">Washington DC • Maryland • Northern Virginia</p>
+                <p className="text-sm text-ink-soft">Northern Virginia • Washington DC • Maryland</p>
               </div>
 
               <div className="pt-3 border-t border-line">

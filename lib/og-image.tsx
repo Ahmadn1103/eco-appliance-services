@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const ogSize = { width: 1200, height: 630 };
-export const ogAlt = "Eco Appliance Services - Appliance repair in DC, MD & VA";
+export const ogAlt = "Eco Appliance Services - Appliance repair in Northern VA, DC & MD";
 
 export function renderOgImage() {
   return new ImageResponse(
@@ -23,7 +23,7 @@ export function renderOgImage() {
           Duct &amp; Appliance Repair
         </div>
         <div style={{ fontSize: 38, marginTop: 32, opacity: 0.9 }}>
-          Washington DC · Maryland · Northern Virginia
+          Northern Virginia · Washington DC · Maryland
         </div>
         <div style={{ fontSize: 34, marginTop: 48, fontWeight: 700 }}>(571) 462-1813</div>
       </div>

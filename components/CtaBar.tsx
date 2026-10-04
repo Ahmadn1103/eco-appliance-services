@@ -36,7 +36,7 @@ export default function CtaBar() {
           </span>
           <span>
             <span className="block text-xs text-white/70">Service Area</span>
-            <span className="block text-base font-black">DC, MD &amp; Northern VA</span>
+            <span className="block text-base font-black">Northern VA, DC &amp; MD</span>
           </span>
         </a>
 

@@ -12,11 +12,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Eco Appliance Services | Appliance Repair DC, MD, VA",
+    default: "Eco Appliance Services | Appliance Repair VA, DC, MD",
     template: "%s | Eco Appliance Services",
   },
   description:
-    "Eco Appliance Services provides professional duct cleaning, dryer vent restoration, refrigeration, laundry, and kitchen appliance repairs across Washington DC, Maryland, and Northern Virginia.",
+    "Eco Appliance Services provides professional duct cleaning, dryer vent restoration, refrigeration, laundry, and kitchen appliance repairs across Northern Virginia, Washington DC, and Maryland.",
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Eco Appliance Services | Precision Appliance Repair DMV",
     description:
-      "Reliable duct cleaning and appliance repair across Washington DC, Maryland, and Northern Virginia. Honest diagnosis and upfront pricing.",
+      "Reliable duct cleaning and appliance repair across Northern Virginia, Washington DC, and Maryland. Honest diagnosis and upfront pricing.",
     url: "/",
     siteName: SITE_NAME,
     locale: "en_US",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Eco Appliance Services | Precision Appliance Repair DMV",
     description:
-      "Reliable duct cleaning and appliance repair across Washington DC, Maryland, and Northern Virginia. Honest diagnosis and upfront pricing.",
+      "Reliable duct cleaning and appliance repair across Northern Virginia, Washington DC, and Maryland. Honest diagnosis and upfront pricing.",
   },
 };
 

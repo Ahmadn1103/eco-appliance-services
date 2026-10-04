@@ -52,7 +52,7 @@ export default function Home() {
                   name: s.title,
                   description: s.quickSummary,
                   provider: { "@id": `${SITE_URL}/#business` },
-                  areaServed: ["Washington, DC", "Maryland", "Northern Virginia"],
+                  areaServed: ["Northern Virginia", "Washington, DC", "Maryland"],
                 },
               })),
           }),

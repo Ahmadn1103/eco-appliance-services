@@ -13,7 +13,7 @@ export default function ServiceAreaSection() {
           <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
             Serving{" "}
             <span className="bg-gradient-to-r from-primary via-primary-strong to-accent bg-clip-text text-transparent">
-              Virginia, DC &amp; Maryland
+              Northern Virginia, DC &amp; Maryland
             </span>
           </h2>
 
