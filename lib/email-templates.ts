@@ -86,7 +86,7 @@ function layout(opts: { preheader: string; badge: string; title: string; body: s
     <tr><td style="padding:8px 32px 28px">${opts.body}</td></tr>
     <tr><td bgcolor="${C.tint}" style="background:${C.tint};padding:20px 32px;font-family:${FONT};font-size:12px;line-height:1.6;color:${C.soft};text-align:center">
       <strong style="color:${C.ink}">${esc(SITE_NAME)}</strong><br>
-      ${link(PHONE_HREF, PHONE_DISPLAY)} &nbsp;•&nbsp; Mon–Sat 8:00 AM – 7:00 PM &nbsp;•&nbsp; Serving Northern VA, DC &amp; MD<br>
+      ${link(PHONE_HREF, PHONE_DISPLAY)} &nbsp;•&nbsp; Open 24 Hours &nbsp;•&nbsp; Serving Northern VA, DC &amp; MD<br>
       ${link(SITE_URL, SITE_URL.replace(/^https?:\/\//, ""))}
     </td></tr>
   </table>
