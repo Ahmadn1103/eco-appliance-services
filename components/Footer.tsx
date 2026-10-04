@@ -101,8 +101,8 @@ export default function Footer() {
               <p className="flex items-start gap-2 text-ink">
                 <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
                 <span>
-                  Mon – Sat: 8:00 AM – 7:00 PM
-                  <span className="block text-ink-soft text-xs">Sunday: Emergency Dispatch</span>
+                  Open 24 Hours
+                  <span className="block text-ink-soft text-xs">7 days a week</span>
                 </span>
               </p>
             </div>
