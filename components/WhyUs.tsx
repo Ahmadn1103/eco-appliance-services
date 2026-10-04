@@ -33,7 +33,7 @@ const pillars = [
 const metrics = [
   { icon: BadgeDollarSign, label: "Diagnostic, Credited", value: "$89", note: "Applied 100% to your approved repair" },
   { icon: ShieldCheck, label: "Parts & Labor", value: "30-Day", note: "Comprehensive warranty on every repair" },
-  { icon: Clock, label: "Dispatch", value: "Same-Day", note: "Priority slots across DC, MD & VA" },
+  { icon: Clock, label: "Dispatch", value: "Same-Day", note: "Priority slots across Northern VA, DC & MD" },
 ];
 
 export default function WhyUs() {

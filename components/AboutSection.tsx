@@ -71,7 +71,7 @@ export default function AboutSection() {
           <div className="lg:col-span-7 space-y-5">
             <p className="text-sm sm:text-lg text-ink-soft leading-relaxed">
               <strong className="text-ink font-bold">Eco Appliance Services</strong> is a local appliance repair service
-              for homes in Virginia, Washington, DC, and Maryland. Our promise is simple: we explain the problem clearly,
+              for homes in Northern Virginia, Washington, DC, and Maryland. Our promise is simple: we explain the problem clearly,
               tell you the truth about what it needs, and fix it right. No pushy sales and no surprise charges.
             </p>
             <p className="text-sm sm:text-lg text-ink-soft leading-relaxed">
@@ -114,7 +114,7 @@ export default function AboutSection() {
                   </span>
                   <div className="min-w-0">
                     <p className="text-sm font-black leading-tight">Accurate Diagnosis &amp; Repair</p>
-                    <p className="text-xs text-ink-soft leading-snug">Serving Virginia, DC &amp; Maryland</p>
+                    <p className="text-xs text-ink-soft leading-snug">Serving Northern Virginia, DC &amp; Maryland</p>
                   </div>
                 </div>
               </div>

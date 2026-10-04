@@ -40,8 +40,8 @@ export default function Footer() {
           </a>
           <p className="text-sm italic text-ink">Precision Appliance Services</p>
           <p className="text-xs sm:text-sm leading-relaxed max-w-md">
-            Honest diagnosis, upfront pricing, and workmanship backed by a 30-day parts and labor guarantee, serving Washington DC,
-            Maryland, and Northern Virginia.
+            Honest diagnosis, upfront pricing, and workmanship backed by a 30-day parts and labor guarantee, serving Northern Virginia,
+            Washington DC, and Maryland.
           </p>
           <div className="flex flex-wrap gap-2">
             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-primary-strong bg-primary/10 border border-line-tint px-3 py-1.5 rounded-full">
@@ -110,7 +110,7 @@ export default function Footer() {
               <p className="text-[10px] font-bold uppercase tracking-wider text-muted">Coverage</p>
               <p className="flex items-start gap-2 text-ink">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-                Washington DC • Maryland • Northern Virginia
+                Northern Virginia • Washington DC • Maryland
               </p>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function Footer() {
             <span aria-hidden="true">•</span>
             <span>Home Warranty Claims Welcome</span>
             <span aria-hidden="true">•</span>
-            <span>Serving VA, DC &amp; MD</span>
+            <span>Serving Northern VA, DC &amp; MD</span>
           </div>
         </div>
       </div>

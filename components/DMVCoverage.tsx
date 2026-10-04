@@ -42,6 +42,21 @@ export default function DMVCoverage({ onOpenBooking }: { onOpenBooking: () => vo
 
   const coverageAreas = [
     {
+      region: "Northern Virginia (VA)",
+      badge: "NoVA Core",
+      description: "Same-day coverage for Northern Virginia homeowners and communities.",
+      cities: [
+        "Fairfax & Vienna",
+        "Arlington & Crystal City",
+        "City of Alexandria",
+        "McLean & Great Falls",
+        "Tysons & Falls Church",
+        "Reston & Herndon",
+        "Ashburn & Sterling (Loudoun)",
+        "Woodbridge & Manassas",
+      ],
+    },
+    {
       region: "Washington, DC",
       badge: "District Wide",
       description: "Full service throughout all four quadrants of the nation's capital.",
@@ -73,21 +88,6 @@ export default function DMVCoverage({ onOpenBooking }: { onOpenBooking: () => vo
         "Frederick & Howard Co.",
       ],
     },
-    {
-      region: "Northern Virginia (VA)",
-      badge: "NoVA Core",
-      description: "Same-day coverage for Northern Virginia homeowners and communities.",
-      cities: [
-        "Fairfax & Vienna",
-        "Arlington & Crystal City",
-        "City of Alexandria",
-        "McLean & Great Falls",
-        "Tysons & Falls Church",
-        "Reston & Herndon",
-        "Ashburn & Sterling (Loudoun)",
-        "Woodbridge & Manassas",
-      ],
-    },
   ];
 
   return (
@@ -100,7 +100,7 @@ export default function DMVCoverage({ onOpenBooking }: { onOpenBooking: () => vo
             DMV Tri-State Coverage
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Reliable Appliance Repair Across Washington DC, Maryland & Virginia
+            Reliable Appliance Repair Across Northern Virginia, Washington DC & Maryland
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-600">
             From the heart of the District to Montgomery County, Fairfax County, and beyond, our mobile service fleet is strategically stationed to arrive fast.

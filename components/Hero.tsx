@@ -37,7 +37,7 @@ export default function Hero() {
           </h1>
 
           <p className="sm:hidden text-xs leading-snug text-white/85">
-            Duct cleaning, dryer vent &amp; appliance repair across DC, MD &amp; VA. Honest upfront pricing.
+            Duct cleaning, dryer vent &amp; appliance repair across Northern VA, DC &amp; MD. Honest upfront pricing.
           </p>
           <p className="hidden sm:block text-base max-w-2xl leading-relaxed text-white/80">
             <strong className="text-white font-bold">Eco Appliance Services</strong> is your trusted specialist for residential

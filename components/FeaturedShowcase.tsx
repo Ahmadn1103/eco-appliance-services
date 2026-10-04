@@ -145,7 +145,7 @@ export default function FeaturedShowcase({ onOpenBooking }: FeaturedShowcaseProp
               <div className="mt-6 pt-5 border-t border-slate-700/60 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
                   <span className="text-xs text-slate-400">Available across</span>
-                  <p className="text-sm font-bold text-white">DC, Maryland & Northern Virginia</p>
+                  <p className="text-sm font-bold text-white">Northern Virginia, DC & Maryland</p>
                 </div>
                 <button
                   onClick={handleBooking}
