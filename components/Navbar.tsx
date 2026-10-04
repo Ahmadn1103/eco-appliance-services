@@ -123,19 +123,19 @@ export default function Navbar() {
         <div
           className="max-w-7xl mx-auto pointer-events-auto border border-line/90 bg-surface sm:bg-surface/95 sm:backdrop-blur-md shadow-[0_10px_35px_rgba(0,0,0,0.08),0_2px_10px_rgba(32,147,120,0.08)] rounded-[1.75rem]"
         >
-          <div className="px-3.5 sm:px-5 py-1.5 sm:py-1 flex items-center justify-between gap-2 sm:gap-4">
+          <div className="px-3 min-[400px]:px-3.5 sm:px-5 py-1.5 sm:py-1 flex items-center justify-between gap-1.5 min-[400px]:gap-2 sm:gap-4">
             {/* Logo: transparent PNGs, no box. Phones get the emblem plus live text; sm+ gets the full lockup. */}
-            <a href="#home" className="flex items-center gap-2 group shrink-0" aria-label="Eco Appliance Services, home">
+            <a href="#home" className="flex items-center gap-1.5 min-[400px]:gap-2 group min-w-0 shrink sm:shrink-0" aria-label="Eco Appliance Services, home">
               <Image
                 src="/logo-emblem.png"
                 alt=""
                 width={711}
                 height={503}
                 priority
-                className="sm:hidden h-11 w-auto object-contain transition-transform group-active:scale-95"
+                className="sm:hidden h-9 min-[400px]:h-11 w-auto shrink-0 object-contain transition-transform group-active:scale-95"
               />
-              <div className="sm:hidden flex flex-col leading-none">
-                <span className="text-xs font-black tracking-tight text-primary">
+              <div className="sm:hidden flex flex-col leading-none min-w-0">
+                <span className="text-[11px] min-[400px]:text-xs font-black tracking-tight text-primary whitespace-nowrap">
                   Eco Appliance
                 </span>
                 <span className="mt-1 text-[8px] font-black tracking-[0.2em] uppercase text-muted">Services</span>
@@ -170,7 +170,7 @@ export default function Navbar() {
             </nav>
 
             {/* Right cluster */}
-            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <div className="flex items-center gap-1 min-[400px]:gap-1.5 sm:gap-2 shrink-0">
               {/* Call: full-number pill at 2xl+, stacked icon badge on lg and below 2xl, plain button on phones */}
               <a
                 href={PHONE_HREF}
@@ -190,7 +190,7 @@ export default function Navbar() {
               <a
                 href={PHONE_HREF}
                 aria-label={`Call ${PHONE_DISPLAY}`}
-                className="pressable sm:hidden inline-flex items-center gap-1 rounded-full bg-primary hover:bg-primary-strong text-on-primary px-3 py-2.5 text-xs font-bold whitespace-nowrap"
+                className="pressable sm:hidden inline-flex items-center gap-1 rounded-full bg-primary hover:bg-primary-strong text-on-primary px-2.5 min-[400px]:px-3 py-2.5 text-xs font-bold whitespace-nowrap"
               >
                 <Phone className="w-3.5 h-3.5" aria-hidden="true" />
                 Call
@@ -198,7 +198,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => openBooking()}
-                className="btn-cta inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-primary via-primary to-accent text-on-primary px-3 sm:px-4 py-2.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-md shadow-primary/30"
+                className="btn-cta inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-primary via-primary to-accent text-on-primary px-2.5 min-[400px]:px-3 sm:px-4 py-2.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-md shadow-primary/30"
               >
                 <Calendar className="relative z-10 w-3.5 h-3.5" aria-hidden="true" />
                 <span className="relative z-10 sm:hidden">Book</span>
@@ -217,7 +217,7 @@ export default function Navbar() {
                 onClick={toggleMenu}
                 aria-label="Toggle navigation menu"
                 aria-expanded={menuOpen && !leaving}
-                className={`icon-btn lg:hidden p-1.5 sm:p-2 rounded-full border ${
+                className={`icon-btn lg:hidden shrink-0 p-1.5 sm:p-2 rounded-full border ${
                   menuOpen && !leaving
                     ? "bg-primary text-on-primary border-primary"
                     : "bg-surface-alt text-ink border-line"
